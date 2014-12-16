@@ -23,6 +23,8 @@
  */
 package com.github.daytron.simpledialogfx;
 
+import com.github.daytron.simpledialogfx.dialog.ConfirmationDialog;
+import com.github.daytron.simpledialogfx.dialog.ErrorDialog;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -43,6 +45,11 @@ public class MainApp extends Application {
         stage.setTitle("JavaFX and Maven");
         stage.setScene(scene);
         stage.show();
+        
+        ConfirmationDialog dialog = new ConfirmationDialog("Error", "This is sample dialog");
+        dialog.setTitle("");
+        dialog.showAndWait();
+        
     }
 
     /**

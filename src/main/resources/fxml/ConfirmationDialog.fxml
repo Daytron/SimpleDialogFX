@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane hgap="14.0" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../styles/StyleDialog.css" vgap="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
+      <children>
+        <Label id="title" fx:id="messageLabel" maxWidth="1.7976931348623157E308" text="message" textAlignment="LEFT" wrapText="true">
+          <font>
+            <Font name="System Bold" size="13.0" />
+          </font>
+        </Label>
+        <Label id="message" fx:id="detailsLabel" maxWidth="1.7976931348623157E308" text="details" textAlignment="LEFT" wrapText="true">
+          <font>
+            <Font size="12.0" />
+          </font>
+        </Label>
+      </children>
+    </VBox>
+    <HBox maxHeight="-Infinity" maxWidth="+Infinity" minHeight="-Infinity" minWidth="-Infinity" GridPane.rowIndex="1">
+      <children>
+        <Pane HBox.hgrow="ALWAYS" />
+        <Button id="no-btn" fx:id="noButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#no_btn_on_click" text="No" HBox.hgrow="NEVER">
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+        <HBox fx:id="okParent" alignment="CENTER">
+          <children>
+            <Button id="yes-btn" fx:id="yesButton" minWidth="80.0" mnemonicParsing="false" onAction="#yes_btn_on_click" text="Yes" HBox.hgrow="NEVER">
+              <HBox.margin>
+                <Insets left="14.0" />
+              </HBox.margin>
+            </Button>
+          </children>
+               <HBox.margin>
+                  <Insets right="14.0" />
+               </HBox.margin>
+        </HBox>
+      </children>
+    </HBox>
+  </children>
+  <columnConstraints>
+    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" />
+  </columnConstraints>
+  <padding>
+    <Insets bottom="14.0" />
+  </padding>
+  <rowConstraints>
+    <RowConstraints valignment="CENTER" vgrow="ALWAYS" />
+    <RowConstraints vgrow="NEVER" />
+  </rowConstraints>
+</GridPane>
