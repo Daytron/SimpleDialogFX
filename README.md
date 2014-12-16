@@ -45,9 +45,6 @@ See Javadoc for more information.
 Want to contribute? Please do open up an issue for any bug reports, recommendation or feedback. 
 
 
-### Javadoc
-[Javadoc source]
-
 
 License
 ----
