@@ -38,7 +38,7 @@ class Dialog extends Stage {
     // Response chosen by the user
     private DialogResponse response;
 
-    public Dialog(String header, String details) {
+    protected Dialog(String header, String details) {
         this.header = header;
         this.details = details;
         
@@ -46,7 +46,7 @@ class Dialog extends Stage {
         this.response = DialogResponse.CANCEL;
     }
 
-    public void setResponse(DialogResponse response) {
+    protected void setResponse(DialogResponse response) {
         this.response = response;
     }
 
