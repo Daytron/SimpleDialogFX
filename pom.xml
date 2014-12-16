@@ -4,10 +4,12 @@
 
     <groupId>com.github.daytron</groupId>
     <artifactId>SimpleDialogFX</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>SimpleDialogFX</name>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Lightweight modal dialog library for JavaFX.</description>
+    <url>https://github.com/Daytron/SimpleDialogFX</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,12 +17,41 @@
         <netbeans.hint.license>mit</netbeans.hint.license>
     </properties>
 
-    <organization>
-        <name>Ryan Gilera</name>
-    </organization>
-
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <name>Ryan Gilera</name>
+            <email>ryangilera@gmail.com</email>
+            <organizationUrl>https://github.com/Daytron</organizationUrl>
+        </developer>
+    </developers>
+    
+    <scm>
+        <connection>scm:git:git@github.com:daytron/simpledialogfx.git</connection>
+        <url>scm:git:git@github.com:daytron/simpledialogfx.git</url>
+        <developerConnection>scm:git:git@github.com:daytron/simpledialogfx.git</developerConnection>
+    </scm>
+    
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
