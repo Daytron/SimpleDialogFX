@@ -1,0 +1,22 @@
+package com.github.daytron.simpledialogfx;
+
+import com.github.daytron.simpledialogfx.dialog.ConfirmationDialog;
+import com.github.daytron.simpledialogfx.dialog.ErrorDialog;
+import com.github.daytron.simpledialogfx.dialog.GenericOKDialog;
+import com.github.daytron.simpledialogfx.dialog.InfoDialog;
+import com.github.daytron.simpledialogfx.dialog.WarningDialog;
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class MainApp extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+
+        GenericOKDialog dialog = new GenericOKDialog("Generic OK Dialog", 
+                "This is pretty much generic style.");
+        dialog.showAndWait();
+
+    }
+
+}
