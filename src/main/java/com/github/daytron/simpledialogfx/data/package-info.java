@@ -21,16 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of dialog responses available.
- * @author Ryan Gilera
+ * Holds constants data for the dialogs.
+ *
+ * @since 1.0.0
+ * @author Ryan Gilera ryangilera@gmail.com
+ * @version 1.0
  */
-public enum DialogResponse {
-    OK,
-    CANCEL,
-    YES,
-    NO,
-    NO_RESPONSE;
-}
+package com.github.daytron.simpledialogfx.data;

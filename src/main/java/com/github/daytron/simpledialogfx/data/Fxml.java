@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- *
+ * List FXML files.
  * @author Ryan Gilera ryangilera@gmail.com
  */
 public enum Fxml {
@@ -34,13 +34,13 @@ public enum Fxml {
     ERROR_DIALOG("/fxml/ErrorDialog.fxml"),
     OK_DIALOG("/fxml/GenericOKDialog.fxml");
         
-    private final String file;
+    private final String fxml;
 
     private Fxml(String msg) {
-        this.file = msg;
+        this.fxml = msg;
     }
 
     public String getFxml() {
-        return file;
+        return fxml;
     }
 }

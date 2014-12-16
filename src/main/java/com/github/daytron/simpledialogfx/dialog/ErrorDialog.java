@@ -41,11 +41,12 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
 /**
- * FXML Controller class
+ * The Error Dialog class that provides a single user response option, OK.
  *
  * @author Ryan Gilera
  */
 public final class ErrorDialog extends Dialog implements Initializable {
+
     @FXML
     private Label messageLabel;
     @FXML
@@ -55,19 +56,22 @@ public final class ErrorDialog extends Dialog implements Initializable {
     @FXML
     private Button okButton;
 
-
-    private DialogResponse response;
-    
+    /**
+     * Accepts two <code>String</code> parameters for the constructor.
+     *
+     * @param header The text inside the colored header
+     * @param details The text for message details
+     */
     public ErrorDialog(String header, String details) {
         super(header, details);
-        
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass()
                 .getResource(Fxml.ERROR_DIALOG.getFxml()));
         fxmlLoader.setController(this);
-        
+
         centerOnScreen();
         setTitle(DialogText.ERROR_HEAD_TITLE.getText());
-        
+
         try {
             setScene(new Scene((Parent) fxmlLoader.load()));
         } catch (IOException e) {
@@ -75,9 +79,10 @@ public final class ErrorDialog extends Dialog implements Initializable {
         }
 
     }
-    
+
     /**
-     * Initializes the controller class.
+     * Initializes the dialog. Set default focus to OK button. Wrap the text for
+     * details message label and apply the user-defined header and details.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -93,12 +98,18 @@ public final class ErrorDialog extends Dialog implements Initializable {
 
         this.messageLabel.setText(getHeader());
         this.detailsLabel.setText(getDetails());
-    }    
+    }
 
+    /**
+     * Event handler when okButton is pressed. Sets response to OK and closes
+     * the dialog window.
+     *
+     * @param event Action event object
+     */
     @FXML
     private void ok_btn_on_click(ActionEvent event) {
-        this.response = DialogResponse.OK;
+        setResponse(DialogResponse.YES);
         close();
     }
-    
+
 }

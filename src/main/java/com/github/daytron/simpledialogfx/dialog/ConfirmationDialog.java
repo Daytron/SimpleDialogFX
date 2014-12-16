@@ -41,7 +41,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
 /**
- * FXML Controller class
+ * The Confirmation Dialog class that provides two user response options, namely
+ * YES or NO.
  *
  * @author Ryan Gilera
  */
@@ -58,16 +59,22 @@ public final class ConfirmationDialog extends Dialog implements Initializable {
     @FXML
     private Button yesButton;
 
+    /**
+     * Accepts two <code>String</code> parameters for the constructor.
+     *
+     * @param header The text inside the colored header
+     * @param details The text for message details
+     */
     public ConfirmationDialog(String header, String details) {
         super(header, details);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass()
                 .getResource(Fxml.CONFIRMATION_DIALOG.getFxml()));
         fxmlLoader.setController(this);
-        
+
         centerOnScreen();
         setTitle(DialogText.CONFIRMATION_HEAD_TITLE.getText());
-        
+
         try {
             setScene(new Scene((Parent) fxmlLoader.load()));
         } catch (IOException e) {
@@ -77,7 +84,8 @@ public final class ConfirmationDialog extends Dialog implements Initializable {
     }
 
     /**
-     * Initializes the controller class.
+     * Initializes the dialog. Set default focus to OK button. Wrap the text for
+     * details message label and apply the user-defined header and details.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -95,11 +103,24 @@ public final class ConfirmationDialog extends Dialog implements Initializable {
         this.detailsLabel.setText(getDetails());
     }
 
+    /**
+     * Event handler when noButton is pressed. Sets response to NO and closes
+     * the dialog window.
+     *
+     * @param event Action event object
+     */
     @FXML
     private void no_btn_on_click(ActionEvent event) {
+        setResponse(DialogResponse.NO);
         close();
     }
 
+    /**
+     * Event handler when yesButton is pressed. Sets response to YES and closes
+     * the dialog window.
+     *
+     * @param event Action event object
+     */
     @FXML
     private void yes_btn_on_click(ActionEvent event) {
         setResponse(DialogResponse.YES);

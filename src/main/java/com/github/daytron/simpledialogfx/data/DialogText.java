@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- *
+ * List of default window titles for the dialogs.
  * @author Ryan Gilera
  */
 public enum DialogText {
