@@ -14,7 +14,7 @@
   <children>
     <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
       <children>
-        <Label id="title" fx:id="messageLabel" maxWidth="1.7976931348623157E308" text="message" textAlignment="LEFT" wrapText="true">
+        <Label id="title-generic" fx:id="messageLabel" maxWidth="1.7976931348623157E308" styleClass="title" text="message" textAlignment="LEFT" wrapText="true">
           <font>
             <Font name="System Bold" size="13.0" />
           </font>
