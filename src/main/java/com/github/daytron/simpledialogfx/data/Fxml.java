@@ -30,8 +30,8 @@ package com.github.daytron.simpledialogfx.data;
 public enum Fxml {
     CONFIRMATION_DIALOG("/fxml/ConfirmationDialog.fxml"),
     INFO_DIALOG("/fxml/InfoDialog.fxml"),
-    WARNING_DIALOG("/fxml/"),
-    ERROR_DIALOG("/fxml/"),
+    WARNING_DIALOG("/fxml/WarningDialog.fxml"),
+    ERROR_DIALOG("/fxml/ErrorDialog.fxml"),
     OK_DIALOG("/fxml/GenericOKDialog.fxml");
         
     private final String file;
