@@ -45,7 +45,7 @@ import javafx.scene.layout.HBox;
  *
  * @author Ryan Gilera
  */
-public final class ErrorDialog extends Dialog implements Initializable {
+public final class WarningDialog extends Dialog implements Initializable {
     @FXML
     private Label messageLabel;
     @FXML
@@ -58,15 +58,15 @@ public final class ErrorDialog extends Dialog implements Initializable {
 
     private DialogResponse response;
     
-    public ErrorDialog(String header, String details) {
+    public WarningDialog(String header, String details) {
         super(header, details);
         
         FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                .getResource(Fxml.ERROR_DIALOG.getFxml()));
+                .getResource(Fxml.WARNING_DIALOG.getFxml()));
         fxmlLoader.setController(this);
         
         centerOnScreen();
-        setTitle(DialogText.ERROR_HEAD_TITLE.getText());
+        setTitle(DialogText.WARNING_HEAD_TITLE.getText());
         
         try {
             setScene(new Scene((Parent) fxmlLoader.load()));
