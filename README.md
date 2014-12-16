@@ -48,8 +48,19 @@ Result:
 
 See Javadoc for more information.
 
-### Javadoc
-[Javadoc source]
+### Installation
+The library is available in Maven Central. To start using SimpleDialogFX, simply add the following elements to your pom.xml file:
+
+```
+<dependency>
+  <groupId>com.github.daytron</groupId>
+  <artifactId>SimpleDialogFX</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+### API Docs
+See [Javadoc]
 
 ### Development
 
@@ -62,4 +73,4 @@ License
 
 MIT
 
-[Javadoc source]:https://daytron.github.io/SimpleDialogFX/apidocs/
+[Javadoc]:https://daytron.github.io/SimpleDialogFX/apidocs/
