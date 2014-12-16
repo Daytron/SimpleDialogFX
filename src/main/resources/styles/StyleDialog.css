@@ -25,23 +25,27 @@ THE SOFTWARE.
     Created on : 15-Dec-2014, 17:41:37
     Author     : Ryan Gilera
 */
-#title {
+.title {
     -fx-font-family: "Helvetica";
     -fx-font-size: 25px;
-    -mid-gray: rgb(216, 222, 227);
-    -fx-background-color: -mid-gray;
     -fx-padding: 10 10 10 10;
     -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }
 
+
 #title-info {
-    -fx-padding: 10 10 10 10;
-    -fx-font-weight: bold;
-    -fx-font-family: "Helvetica";
-    -fx-font-size: 25px;
     -fx-background-color: 
-        linear-gradient(to bottom, #7ABCFF 0%, #60ABF8 44%, #4096EE 100% );
-    -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
+        linear-gradient(to bottom, #A3D1FF 0%, #92C6FA 44%, #7BB7F3 100% );
+}
+
+#title-confirm {
+    -fx-background-color: 
+        linear-gradient(to bottom, #A3FFCE 0%, #92FAC3 44%, #7BF3B3 100% );
+}
+
+#title-error {
+    -fx-background-color: 
+        linear-gradient(to bottom, #7BFFD1 0%, #60F8C3 44%, #40EEB1 100% );
 }
 
 #message {
