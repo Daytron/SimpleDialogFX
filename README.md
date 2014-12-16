@@ -1,6 +1,6 @@
 # SimpleDialogFX   
 
-Easy to use lightweigth dialog library for JavaFX applications.
+Easy to use lightweight dialog library for JavaFX applications.
 
 ### Features
   - Minimal design 
