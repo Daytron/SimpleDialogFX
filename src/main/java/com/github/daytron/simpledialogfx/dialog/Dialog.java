@@ -58,7 +58,7 @@ class Dialog extends Stage {
     /**
      * Sets the response to the given response parameter.
      *
-     * @param response A DialogResponse object pass as an argument
+     * @param response A <code>DialogResponse</code> object pass as an argument
      */
     protected void setResponse(DialogResponse response) {
         this.response = response;
