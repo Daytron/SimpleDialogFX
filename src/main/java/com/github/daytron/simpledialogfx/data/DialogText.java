@@ -32,7 +32,13 @@ public enum DialogText {
     CONFIRMATION_HEAD_TITLE("Confirmation Dialog"),
     
     // Error Dialog
-    ERROR_HEAD_TITLE("Error Dialog"),;
+    ERROR_HEAD_TITLE("Error Dialog"),
+    
+    // Information Dialog
+    INFO_HEAD_TITLE("Information Dialog"),
+    
+    // Warning Dialog
+    WARNING_HEAD_TITLE("Warning Dialog");
     
     
     

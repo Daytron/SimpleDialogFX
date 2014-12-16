@@ -62,7 +62,7 @@ public final class ErrorDialog extends Dialog implements Initializable {
         super(header, details);
         
         FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                .getResource(Fxml.ERROR_DIALOG.getFxml()));
+                .getResource(Fxml.OK_DIALOG.getFxml()));
         fxmlLoader.setController(this);
         
         centerOnScreen();
