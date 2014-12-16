@@ -48,6 +48,9 @@ Result:
 
 See Javadoc for more information.
 
+### Javadoc
+[Javadoc source]
+
 ### Development
 
 Want to contribute? Please do open up an issue for any bug reports, recommendation or feedback. 
@@ -59,11 +62,4 @@ License
 
 MIT
 
-
-[ControlsFX 8.20.8]:http://fxexperience.com/controlsfx/
-[Gson 2.3]:https://code.google.com/p/google-gson/
-[JavaFX]:http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html
-[TestFX 3.1.2]:https://github.com/TestFX/TestFX
-[JUnit 4.11]:http://junit.org/
-[Javadoc source]:https://daytron.github.io/Flipit-Map-Creator/apidocs/
-[app icon]:https://raw.githubusercontent.com/Daytron/Flipit-Map-Creator/master/src/main/resources/images/icon42x42.png
+[Javadoc source]:https://daytron.github.io/SimpleDialogFX/apidocs/
