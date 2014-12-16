@@ -62,7 +62,7 @@ public final class InfoDialog extends Dialog implements Initializable {
         super(header, details);
         
         FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                .getResource(Fxml.OK_DIALOG.getFxml()));
+                .getResource(Fxml.INFO_DIALOG.getFxml()));
         fxmlLoader.setController(this);
         
         centerOnScreen();

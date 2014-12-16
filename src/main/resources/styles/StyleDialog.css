@@ -34,6 +34,16 @@ THE SOFTWARE.
     -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }
 
+#title-info {
+    -fx-padding: 10 10 10 10;
+    -fx-font-weight: bold;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 25px;
+    -fx-background-color: 
+        linear-gradient(to bottom, #7ABCFF 0%, #60ABF8 44%, #4096EE 100% );
+    -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
+}
+
 #message {
     -fx-font-family: "Helvetica";
     -fx-font-size: 14px;
