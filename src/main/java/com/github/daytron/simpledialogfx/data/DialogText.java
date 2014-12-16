@@ -40,8 +40,6 @@ public enum DialogText {
     // Warning Dialog
     WARNING_HEAD_TITLE("Warning Dialog");
     
-    
-    
     private String text;
 
     private DialogText(String text) {
