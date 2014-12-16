@@ -43,7 +43,7 @@ class Dialog extends Stage {
         this.details = details;
         
         // Default response
-        this.response = DialogResponse.CANCEL;
+        this.response = DialogResponse.NO_RESPONSE;
     }
 
     protected void setResponse(DialogResponse response) {

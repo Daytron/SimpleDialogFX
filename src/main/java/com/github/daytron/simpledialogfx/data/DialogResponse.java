@@ -31,5 +31,6 @@ public enum DialogResponse {
     OK,
     CANCEL,
     YES,
-    NO;
+    NO,
+    NO_RESPONSE;
 }
