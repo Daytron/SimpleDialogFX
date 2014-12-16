@@ -39,15 +39,19 @@ Result:
 
 ![](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D)
 
+##### Dialogs available:
+- `InfoDialog`
+- `ConfirmationDialog`
+- `WarningDialog`
+- `ErrorDialog`
+- `GenericOKDialog`
+
 See Javadoc for more information.
 
 ### Development
 
 Want to contribute? Please do open up an issue for any bug reports, recommendation or feedback. 
 
-
-### Javadoc
-[Javadoc source]
 
 
 License
