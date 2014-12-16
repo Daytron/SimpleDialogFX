@@ -25,12 +25,29 @@ package com.github.daytron.simpledialogfx.data;
 
 /**
  * List of dialog responses available.
+ *
  * @author Ryan Gilera
  */
 public enum DialogResponse {
+
+    /**
+     * OK response
+     */
     OK,
+    /**
+     * CANCEL response
+     */
     CANCEL,
+    /**
+     * YES response
+     */
     YES,
+    /**
+     * NO response
+     */
     NO,
+    /**
+     * NO response at all - Default
+     */
     NO_RESPONSE;
 }

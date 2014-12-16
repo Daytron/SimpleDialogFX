@@ -25,30 +25,41 @@ package com.github.daytron.simpledialogfx.data;
 
 /**
  * List of default window titles for the dialogs.
+ *
  * @author Ryan Gilera
  */
 public enum DialogText {
-    // Confirmation Dialog
+
+    /**
+     * Confirmation Dialog window title
+     */
     CONFIRMATION_HEAD_TITLE("Confirmation Dialog"),
-    
-    // Error Dialog
+    /**
+     * Error Dialog window title
+     */
     ERROR_HEAD_TITLE("Error Dialog"),
-    
-    // Information Dialog
+    /**
+     * Information Dialog window title
+     */
     INFO_HEAD_TITLE("Information Dialog"),
-    
-    // Warning Dialog
+    /**
+     * Warning Dialog window title
+     */
     WARNING_HEAD_TITLE("Warning Dialog");
-    
+
     private String text;
 
     private DialogText(String text) {
         this.text = text;
     }
 
+    /**
+     * Retrieve text value
+     *
+     * @return The <code>String</code> object as the text.
+     */
     public String getText() {
         return text;
     }
-    
-    
+
 }

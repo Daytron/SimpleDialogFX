@@ -65,7 +65,7 @@ public final class GenericOKDialog extends Dialog implements Initializable {
         super(header, details);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass()
-                .getResource(Fxml.OK_DIALOG.getFxml()));
+                .getResource(Fxml.OK_DIALOG.getPath()));
         fxmlLoader.setController(this);
 
         centerOnScreen();
@@ -81,6 +81,11 @@ public final class GenericOKDialog extends Dialog implements Initializable {
     /**
      * Initializes the dialog. Set default focus to OK button. Wrap the text for
      * details message label and apply the user-defined header and details.
+     *
+     * @param url The location used to resolve relative paths for the root
+     * object, or null if the location is not known
+     * @param rb The resources used to localize the root object, or null if the
+     * root object was not localized.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

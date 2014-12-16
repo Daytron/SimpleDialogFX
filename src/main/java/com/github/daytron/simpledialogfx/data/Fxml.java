@@ -25,22 +25,44 @@ package com.github.daytron.simpledialogfx.data;
 
 /**
  * List FXML files.
+ *
  * @author Ryan Gilera ryangilera@gmail.com
  */
 public enum Fxml {
+
+    /**
+     * Confirmation Dialog FXML file path
+     */
     CONFIRMATION_DIALOG("/fxml/ConfirmationDialog.fxml"),
+    /**
+     * Information Dialog FXML file path
+     */
     INFO_DIALOG("/fxml/InfoDialog.fxml"),
+    /**
+     * Warning Dialog FXML file path
+     */
     WARNING_DIALOG("/fxml/WarningDialog.fxml"),
+    /**
+     * Error Dialog FXML file path
+     */
     ERROR_DIALOG("/fxml/ErrorDialog.fxml"),
+    /**
+     * Generic OK Dialog FXML file path
+     */
     OK_DIALOG("/fxml/GenericOKDialog.fxml");
-        
-    private final String fxml;
+
+    private final String path;
 
     private Fxml(String msg) {
-        this.fxml = msg;
+        this.path = msg;
     }
 
-    public String getFxml() {
-        return fxml;
+    /**
+     * Retrieve the FXML file path
+     *
+     * @return The <code>String</code> object as file path
+     */
+    public String getPath() {
+        return path;
     }
 }
