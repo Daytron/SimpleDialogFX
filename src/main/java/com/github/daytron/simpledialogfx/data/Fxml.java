@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List FXML files.
+ * List of FXML files.
  *
  * @author Ryan Gilera ryangilera@gmail.com
  */
