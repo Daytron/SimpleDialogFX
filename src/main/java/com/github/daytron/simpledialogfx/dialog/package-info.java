@@ -27,6 +27,6 @@
  *
  * @since 1.0.0
  * @author Ryan Gilera ryangilera@gmail.com
- * @version 1.0
+ * @version 1.0.0
  */
 package com.github.daytron.simpledialogfx.dialog;
