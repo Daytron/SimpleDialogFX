@@ -113,7 +113,7 @@ public final class InfoDialog extends Dialog implements Initializable {
      */
     @FXML
     private void ok_btn_on_click(ActionEvent event) {
-        setResponse(DialogResponse.YES);
+        setResponse(DialogResponse.OK);
         close();
     }
 
