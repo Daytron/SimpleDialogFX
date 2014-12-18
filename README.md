@@ -6,6 +6,9 @@ Easy to use lightweight dialog library for JavaFX applications.
   - Minimal design 
   - Apply your own title, head and message texts.
 
+### Update
+**[18-12-2014]** The upcoming new release is now push to version 2.0.0 instead of the previous stated version 1.2.0. This is due to the complete overhaul refactor of how the library works with a much more simplified way of constructing dialogs, more dialogs and more user customizations.
+
 ### Dialogs
 ![Info](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InfoDialog.png?token=AGk1WtIl0yQai-c3MiXwwyPwtbakmtY4ks5UmUB6wA%3D%3D)
 ![Confirmation](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmDialog.png?token=AGk1Wszv2Ed0NeExs00rvs0RxzWKNHquks5UmUChwA%3D%3D)

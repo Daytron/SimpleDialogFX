@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License
  *
  * Copyright 2014 Ryan Gilera.
@@ -24,45 +24,13 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of FXML files.
  *
- * @author Ryan Gilera ryangilera@gmail.com
+ * @author Ryan Gilera
  */
-public enum Fxml {
-
-    /**
-     * Confirmation Dialog FXML file path
-     */
-    CONFIRMATION_DIALOG("/fxml/ConfirmationDialog.fxml"),
-    /**
-     * Information Dialog FXML file path
-     */
-    INFO_DIALOG("/fxml/InfoDialog.fxml"),
-    /**
-     * Warning Dialog FXML file path
-     */
-    WARNING_DIALOG("/fxml/WarningDialog.fxml"),
-    /**
-     * Error Dialog FXML file path
-     */
-    ERROR_DIALOG("/fxml/ErrorDialog.fxml"),
-    /**
-     * Generic OK Dialog FXML file path
-     */
-    GENERIC_OK_DIALOG("/fxml/GenericOKDialog.fxml");
-
-    private final String path;
-
-    private Fxml(String msg) {
-        this.path = msg;
-    }
-
-    /**
-     * Retrieve the FXML file path
-     *
-     * @return The <code>String</code> object as file path
-     */
-    public String getPath() {
-        return path;
-    }
+public enum DialogType {
+    CONFIRMATION,
+    INFORMATION,
+    WARNING,
+    ERROR,
+    GENERIC_OK;
 }

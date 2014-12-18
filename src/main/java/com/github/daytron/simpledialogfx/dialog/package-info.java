@@ -23,10 +23,10 @@
  */
 
 /**
- * Base package for all dialogs.
+ * Main package for the dialog library.
  *
  * @since 1.0.0
  * @author Ryan Gilera ryangilera@gmail.com
- * @version 1.0.0
+ * @version 2.0.0
  */
 package com.github.daytron.simpledialogfx.dialog;
