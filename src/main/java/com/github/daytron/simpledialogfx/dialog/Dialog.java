@@ -42,6 +42,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 /**
@@ -63,18 +64,18 @@ public final class Dialog extends Stage implements Initializable {
     private Button yesButton;
     @FXML
     private Button noButton;
-    
+
     // Top head label
     private final String header;
     // Details label
     private final String details;
     // Response chosen by the user
     private DialogResponse response;
-    
+
     private Scene scene;
 
     private FXMLLoader fxmlLoader;
-    
+
     private DialogType dialogType;
 
     /**
@@ -98,13 +99,13 @@ public final class Dialog extends Stage implements Initializable {
                         .getResource(Fxml.INFO_DIALOG.getPath()));
                 setTitle(DialogText.INFO_HEAD_TITLE.getText());
                 break;
-            
+
             case CONFIRMATION:
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.CONFIRMATION_DIALOG.getPath()));
                 setTitle(DialogText.CONFIRMATION_HEAD_TITLE.getText());
                 break;
-                
+
             case WARNING:
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.WARNING_DIALOG.getPath()));
@@ -116,13 +117,13 @@ public final class Dialog extends Stage implements Initializable {
                         .getResource(Fxml.ERROR_DIALOG.getPath()));
                 setTitle(DialogText.ERROR_HEAD_TITLE.getText());
                 break;
-                
+
             case GENERIC_OK:
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.GENERIC_OK_DIALOG.getPath()));
                 break;
         }
-        
+
         fxmlLoader.setController(this);
         try {
             this.scene = new Scene((Parent) fxmlLoader.load());
@@ -132,7 +133,52 @@ public final class Dialog extends Stage implements Initializable {
             Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        
+    }
+
+    /**
+     * Initializes the dialog. Set default focus to OK button. Wrap the text for
+     * details message label and apply the user-defined header and details.
+     *
+     * @param location The location used to resolve relative paths for the root
+     * object, or null if the location is not known
+     * @param resources The resources used to localize the root object, or null
+     * if the root object was not localized.
+     */
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // Set default focus to the appropriate button
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                switch (dialogType) {
+                    case INFORMATION:
+                        okButton.requestFocus();
+                        break;
+
+                    case CONFIRMATION:
+                        yesButton.requestFocus();
+                        break;
+
+                    case WARNING:
+                        okButton.requestFocus();
+                        break;
+
+                    case ERROR:
+                        okButton.requestFocus();
+                        break;
+
+                    case GENERIC_OK:
+                        okButton.requestFocus();
+                        break;
+                }
+
+            }
+        });
+
+        this.detailsLabel.setWrapText(true);
+
+        this.messageLabel.setText(getHeader());
+        this.detailsLabel.setText(getDetails());
     }
 
     /**
@@ -140,9 +186,9 @@ public final class Dialog extends Stage implements Initializable {
      *
      * @param response A <code>DialogResponse</code> object pass as an argument
      */
-    protected void setResponse(DialogResponse response) {
+    private void setResponse(DialogResponse response) {
         this.response = response;
-        
+
     }
 
     /**
@@ -171,55 +217,90 @@ public final class Dialog extends Stage implements Initializable {
     public String getHeader() {
         return header;
     }
-    
-    public void setFont(String font) {
-        
+
+    /**
+     * Allows to change both font sizes for the header and the details label
+     * with a single font size <code>integer</code> parameter given.
+     *
+     * @param font_size Font size in pixels for both header and details labels 
+     * in pixels
+     */
+    public void setFontSize(int font_size) {
+        setFontSize(font_size, font_size);
     }
 
     /**
-     * Initializes the dialog. Set default focus to OK button. Wrap the text for
-     * details message label and apply the user-defined header and details.
+     * Allows to change both font sizes for the header and the details label
+     * with two font sizes <code>integer</code> parameters given.
      *
-     * @param location The location used to resolve relative paths for the root
-     * object, or null if the location is not known
-     * @param resources The resources used to localize the root object, or null if the
-     * root object was not localized.
+     * @param header_font_size The header font size in pixels
+     * @param details_font_size The details font size in pixels
      */
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        // Set default focus to the appropriate button
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                switch (dialogType) {
-            case INFORMATION:
-                okButton.requestFocus();
-                break;
-            
-            case CONFIRMATION:
-                yesButton.requestFocus();
-                break;
-                
-            case WARNING:
-                okButton.requestFocus();
-                break;
+    public void setFontSize(int header_font_size, int details_font_size) {
+        this.messageLabel
+                .setStyle("-fx-font-size:" + Integer.toString(header_font_size) + "px;");
+        this.detailsLabel
+                .setStyle("-fx-font-size:" + Integer.toString(details_font_size) + "px;");
+    }
 
-            case ERROR:
-                okButton.requestFocus();
-                break;
-                
-            case GENERIC_OK:
-                okButton.requestFocus();
-                break;
-        }
-                
-            }
-        });
-        
-        this.detailsLabel.setWrapText(true);
-      
-        this.messageLabel.setText(getHeader());
-        this.detailsLabel.setText(getDetails());
+    /**
+     * Allows to change both font families for the header and the details label
+     * with a single font family <code>String</code> parameter given.
+     *
+     * @param font_family Font family for both header
+     * and details labels in <code>Strings</code>
+     */
+    public void setFontFamily(String font_family) {
+        setFontFamily(font_family, font_family);
+    }
+
+    /**
+     * Allows to change both font families for the header and the details label
+     * with two font families <code>String</code> parameters given.
+     *
+     * @param header_font_family The header font family in <code>Strings</code>
+     * @param details_font_family The details font family in
+     * <code>Strings</code>
+     */
+    public void setFontFamily(String header_font_family, String details_font_family) {
+        this.messageLabel
+                .setStyle("-fx-font-family: \"" + header_font_family + "\";");
+        this.detailsLabel
+                .setStyle("-fx-font-family: \"" + details_font_family + "\";");
+    }
+
+    /**
+     * Allows to change the font sizes and the font families for the header and
+     * details label with a single font family and a single font size.
+     *
+     * @param font_family The font family for header and details labels in
+     * <code>Strings</code>
+     * @param font_size The font size for header and details labels in
+     * <code>Strings</code>
+     */
+    public void setFont(String font_family, int font_size) {
+        setFont(font_family, font_size, font_family, font_size);
+    }
+
+    /**
+     * Allows to change the font sizes and the font families for the header and
+     * details label.
+     *
+     * @param header_font_family The header font family in <code>Strings</code>
+     * @param header_font_size The header font size in pixels
+     * @param details_font_family The details font family in
+     * <code>Strings</code>
+     * @param details_font_size The details font size in pixels
+     */
+    public void setFont(String header_font_family, int header_font_size,
+            String details_font_family, int details_font_size) {
+        this.messageLabel
+                .setStyle("-fx-font-family: \"" + header_font_family + "\";"
+                        + "-fx-font-size:" + Integer.toString(header_font_size) + "px;");
+        this.detailsLabel
+                .setStyle("-fx-font-family: \"" + details_font_family + "\";"
+                        + "-fx-font-size:" + Integer.toString(details_font_size) + "px;");
+
     }
 
     /**
@@ -233,7 +314,7 @@ public final class Dialog extends Stage implements Initializable {
         setResponse(DialogResponse.YES);
         close();
     }
-    
+
     /**
      * Event handler when noButton is pressed. Sets response to NO and closes
      * the dialog window.
@@ -245,7 +326,7 @@ public final class Dialog extends Stage implements Initializable {
         setResponse(DialogResponse.NO);
         close();
     }
-    
+
     /**
      * Event handler when okButton is pressed. Sets response to OK and closes
      * the dialog window.
