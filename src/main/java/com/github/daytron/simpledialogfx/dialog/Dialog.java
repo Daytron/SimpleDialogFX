@@ -145,6 +145,11 @@ public final class Dialog extends Stage implements Initializable {
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.GENERIC_OK_CANCEL_DIALOG.getPath()));
                 break;
+                
+            case GENERIC_YES_NO:
+                fxmlLoader = new FXMLLoader(getClass()
+                        .getResource(Fxml.GENERIC_YES_NO_DIALOG.getPath()));
+                break;
         }
 
         fxmlLoader.setController(this);
@@ -201,6 +206,10 @@ public final class Dialog extends Stage implements Initializable {
 
                     case GENERIC_OK_CANCEL:
                         okButton.requestFocus();
+                        break;
+                    
+                    case GENERIC_YES_NO:
+                        yesButton.requestFocus();
                         break;
                 }
 

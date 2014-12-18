@@ -53,7 +53,11 @@ public enum Fxml {
     /**
      * Generic OK and CANCEL Dialog FXML file path
      */
-    GENERIC_OK_CANCEL_DIALOG("/fxml/GenericOKCANCELDialog.fxml");
+    GENERIC_OK_CANCEL_DIALOG("/fxml/GenericOKCANCELDialog.fxml"),
+    /**
+     * Generic YES and NO Dialog FXML file path
+     */
+    GENERIC_YES_NO_DIALOG("/fxml/GenericYESNODialog.fxml");
 
     private final String path;
 
