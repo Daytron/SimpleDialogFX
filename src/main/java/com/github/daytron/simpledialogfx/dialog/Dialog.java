@@ -63,6 +63,8 @@ public final class Dialog extends Stage implements Initializable {
     @FXML
     private Button okButton;
     @FXML
+    private Button cancelButton;
+    @FXML
     private Button yesButton;
     @FXML
     private Button noButton;
@@ -138,6 +140,11 @@ public final class Dialog extends Stage implements Initializable {
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.GENERIC_OK_DIALOG.getPath()));
                 break;
+                
+            case GENERIC_OK_CANCEL:
+                fxmlLoader = new FXMLLoader(getClass()
+                        .getResource(Fxml.GENERIC_OK_CANCEL_DIALOG.getPath()));
+                break;
         }
 
         fxmlLoader.setController(this);
@@ -189,6 +196,10 @@ public final class Dialog extends Stage implements Initializable {
                         break;
 
                     case GENERIC_OK:
+                        okButton.requestFocus();
+                        break;
+                        
+                    case GENERIC_OK_CANCEL:
                         okButton.requestFocus();
                         break;
                 }
@@ -365,6 +376,18 @@ public final class Dialog extends Stage implements Initializable {
     @FXML
     private void ok_btn_on_click(ActionEvent event) {
         setResponse(DialogResponse.OK);
+        close();
+    }
+    
+    /**
+     * Event handler when okButton is pressed. Sets response to OK and closes
+     * the dialog window.
+     *
+     * @param event Action event object
+     */
+    @FXML
+    private void cancel_btn_on_click(ActionEvent event) {
+        setResponse(DialogResponse.CANCEL);
         close();
     }
 }

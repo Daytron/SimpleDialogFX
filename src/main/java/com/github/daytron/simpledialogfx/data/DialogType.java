@@ -32,5 +32,6 @@ public enum DialogType {
     INFORMATION,
     WARNING,
     ERROR,
-    GENERIC_OK;
+    GENERIC_OK,
+    GENERIC_OK_CANCEL;
 }
