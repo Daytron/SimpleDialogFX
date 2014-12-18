@@ -10,12 +10,13 @@ Easy to use lightweight dialog library for JavaFX applications.
 **[18-12-2014]** The upcoming release is now push to version 2.0.0 instead of the previous stated version 1.2.0. This is due to the complete overhaul refactor of how the library works with a much more simplified way of constructing dialogs, more dialogs and more user customizations.
 
 ### Dialogs
+<p align="center">
 ![Info](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InfoDialog.png?token=AGk1WtIl0yQai-c3MiXwwyPwtbakmtY4ks5UmUB6wA%3D%3D)
 ![Confirmation](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmDialog.png?token=AGk1Wszv2Ed0NeExs00rvs0RxzWKNHquks5UmUChwA%3D%3D)
 ![Warning](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/WarningDialog.png?token=AGk1WkOat2dl0G-gUxoeE8ockiVejWY-ks5UmUC6wA%3D%3D)
 ![Error](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ErrorDialog.png?token=AGk1Why_GDl4ELib3F_X8rq1NS2chp1kks5UmUDQwA%3D%3D)
 ![GenericOK](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKDialog.png?token=AGk1Whpo9J-RTuqldAtwGAGa-qAG1jXxks5UmUHzwA%3D%3D)
-
+</p>
 ### Installation
 SimpleDialogFX is available in Maven Central. To start using, simply add the following elements to your pom.xml file:
 
@@ -51,8 +52,9 @@ if (dialog.getResponse() == DialogResponse.YES) {
 ```
 
 Result:
-
+<p align="center">
 ![](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D)
+</p>
 
 ##### Dialogs available (v1.0.0 only):
 - `InfoDialog`
