@@ -7,7 +7,7 @@ Easy to use lightweight dialog library for JavaFX applications.
   - Apply your own title, head and message texts.
 
 ### Update
-**[18-12-2014]** The upcoming new release is now push to version 2.0.0 instead of the previous stated version 1.2.0. This is due to the complete overhaul refactor of how the library works with a much more simplified way of constructing dialogs, more dialogs and more user customizations.
+**[18-12-2014]** The upcoming release is now push to version 2.0.0 instead of the previous stated version 1.2.0. This is due to the complete overhaul refactor of how the library works with a much more simplified way of constructing dialogs, more dialogs and more user customizations.
 
 ### Dialogs
 ![Info](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InfoDialog.png?token=AGk1WtIl0yQai-c3MiXwwyPwtbakmtY4ks5UmUB6wA%3D%3D)
@@ -15,6 +15,17 @@ Easy to use lightweight dialog library for JavaFX applications.
 ![Warning](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/WarningDialog.png?token=AGk1WkOat2dl0G-gUxoeE8ockiVejWY-ks5UmUC6wA%3D%3D)
 ![Error](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ErrorDialog.png?token=AGk1Why_GDl4ELib3F_X8rq1NS2chp1kks5UmUDQwA%3D%3D)
 ![GenericOK](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKDialog.png?token=AGk1Whpo9J-RTuqldAtwGAGa-qAG1jXxks5UmUHzwA%3D%3D)
+
+### Installation
+SimpleDialogFX is available in Maven Central. To start using, simply add the following elements to your pom.xml file:
+
+```
+<dependency>
+  <groupId>com.github.daytron</groupId>
+  <artifactId>SimpleDialogFX</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
 
 ### Usage
 ##### Prior to version 2.0.0
@@ -71,20 +82,7 @@ Dialog dialog = new Dialog(
 dialog.showAndWait();
 ```
 
-
-
-### Installation
-The library is available in Maven Central. To start using SimpleDialogFX, simply add the following elements to your pom.xml file:
-
-```
-<dependency>
-  <groupId>com.github.daytron</groupId>
-  <artifactId>SimpleDialogFX</artifactId>
-  <version>1.0.0</version>
-</dependency>
-```
-
-### API Docs
+### Documentation
 See [Javadoc]
 
 ### Development
