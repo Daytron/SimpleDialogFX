@@ -17,6 +17,7 @@ Easy to use lightweight dialog library for JavaFX applications.
 ![GenericOK](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKDialog.png?token=AGk1Whpo9J-RTuqldAtwGAGa-qAG1jXxks5UmUHzwA%3D%3D)
 
 ### Usage
+##### Prior to version 2.0.0
 For a confirmation dialog, simply create a new `ConfirmationDialog` object.
 ```
 ConfirmationDialog dialog = new ConfirmationDialog("Confirm Action","Are you sure?");
@@ -42,7 +43,7 @@ Result:
 
 ![](https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D)
 
-##### Dialogs available:
+##### Dialogs available (v1.0.0 only):
 - `InfoDialog`
 - `ConfirmationDialog`
 - `WarningDialog`
@@ -50,6 +51,27 @@ Result:
 - `GenericOKDialog`
 
 See Javadoc for more information.
+
+##### For the upcoming version 2.0.0 and above
+For any type of dialog with native window style, you only have to create a new `Dialog` object. For a confirmation dialog:
+```
+Dialog dialog = new Dialog(
+                DialogType.CONFIRMATION,
+                "Confirm Action",
+                "Are you sure?");
+dialog.showAndWait();
+```
+For an undecorated window style:
+```
+Dialog dialog = new Dialog(
+                DialogType.CONFIRMATION,
+                DialogStyle.UNDECORATED,
+                "Confirm Action",
+                "Are you sure?");
+dialog.showAndWait();
+```
+
+
 
 ### Installation
 The library is available in Maven Central. To start using SimpleDialogFX, simply add the following elements to your pom.xml file:
