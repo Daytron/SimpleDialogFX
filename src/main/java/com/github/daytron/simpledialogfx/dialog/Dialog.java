@@ -24,6 +24,7 @@
 package com.github.daytron.simpledialogfx.dialog;
 
 import com.github.daytron.simpledialogfx.data.DialogResponse;
+import com.github.daytron.simpledialogfx.data.DialogStyle;
 import com.github.daytron.simpledialogfx.data.DialogText;
 import com.github.daytron.simpledialogfx.data.DialogType;
 import com.github.daytron.simpledialogfx.data.Fxml;
@@ -42,8 +43,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * The master controller class for building any derivatives of dialogs
@@ -79,13 +81,27 @@ public final class Dialog extends Stage implements Initializable {
     private DialogType dialogType;
 
     /**
+     * Construct a dialog using the default "native" dialog style. The type of
+     * dialog to be created is determine by the dialogType parameter.
+     *
+     * @param dialogType The dialog type to be created.
+     * @param header The text for the colored header label
+     * @param details The text for the message details label
+     */
+    public Dialog(DialogType dialogType, String header, String details) {
+        this(dialogType, DialogStyle.NATIVE, header, details);
+    }
+
+    /**
      * Accepts two <code>String</code> parameters for the constructor.
      *
      * @param dialogType The type of dialog to build
-     * @param header The text inside the colored header
-     * @param details The text for message details
+     * @param dialogStyle The dialog style to be created
+     * @param header The text for the colored header label
+     * @param details The text for the message details label
      */
-    public Dialog(DialogType dialogType, String header, String details) {
+    public Dialog(DialogType dialogType, DialogStyle dialogStyle,
+            String header, String details) {
         this.dialogType = dialogType;
         this.header = header;
         this.details = details;
@@ -129,6 +145,11 @@ public final class Dialog extends Stage implements Initializable {
             this.scene = new Scene((Parent) fxmlLoader.load());
             setScene(scene);
             centerOnScreen();
+
+            if (dialogStyle == DialogStyle.UNDECORATED) {
+                getScene().setFill(Color.TRANSPARENT);
+                initStyle(StageStyle.TRANSPARENT);
+            }
         } catch (IOException ex) {
             Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -222,7 +243,7 @@ public final class Dialog extends Stage implements Initializable {
      * Allows to change both font sizes for the header and the details label
      * with a single font size <code>integer</code> parameter given.
      *
-     * @param font_size Font size in pixels for both header and details labels 
+     * @param font_size Font size in pixels for both header and details labels
      * in pixels
      */
     public void setFontSize(int font_size) {
@@ -247,8 +268,8 @@ public final class Dialog extends Stage implements Initializable {
      * Allows to change both font families for the header and the details label
      * with a single font family <code>String</code> parameter given.
      *
-     * @param font_family Font family for both header
-     * and details labels in <code>Strings</code>
+     * @param font_family Font family for both header and details labels in
+     * <code>Strings</code>
      */
     public void setFontFamily(String font_family) {
         setFontFamily(font_family, font_family);
