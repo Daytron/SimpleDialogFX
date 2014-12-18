@@ -55,7 +55,7 @@ import javafx.stage.StageStyle;
 public final class Dialog extends Stage implements Initializable {
 
     @FXML
-    private Label messageLabel;
+    private Label headerLabel;
     @FXML
     private Label detailsLabel;
     @FXML
@@ -198,7 +198,7 @@ public final class Dialog extends Stage implements Initializable {
 
         this.detailsLabel.setWrapText(true);
 
-        this.messageLabel.setText(getHeader());
+        this.headerLabel.setText(getHeader());
         this.detailsLabel.setText(getDetails());
     }
 
@@ -258,7 +258,7 @@ public final class Dialog extends Stage implements Initializable {
      * @param details_font_size The details font size in pixels
      */
     public void setFontSize(int header_font_size, int details_font_size) {
-        this.messageLabel
+        this.headerLabel
                 .setStyle("-fx-font-size:" + Integer.toString(header_font_size) + "px;");
         this.detailsLabel
                 .setStyle("-fx-font-size:" + Integer.toString(details_font_size) + "px;");
@@ -284,7 +284,7 @@ public final class Dialog extends Stage implements Initializable {
      * <code>Strings</code>
      */
     public void setFontFamily(String header_font_family, String details_font_family) {
-        this.messageLabel
+        this.headerLabel
                 .setStyle("-fx-font-family: \"" + header_font_family + "\";");
         this.detailsLabel
                 .setStyle("-fx-font-family: \"" + details_font_family + "\";");
@@ -315,13 +315,21 @@ public final class Dialog extends Stage implements Initializable {
      */
     public void setFont(String header_font_family, int header_font_size,
             String details_font_family, int details_font_size) {
-        this.messageLabel
+        this.headerLabel
                 .setStyle("-fx-font-family: \"" + header_font_family + "\";"
                         + "-fx-font-size:" + Integer.toString(header_font_size) + "px;");
         this.detailsLabel
                 .setStyle("-fx-font-family: \"" + details_font_family + "\";"
                         + "-fx-font-size:" + Integer.toString(details_font_size) + "px;");
 
+    }
+
+    public Label getHeaderLabel() {
+        return headerLabel;
+    }
+
+    public Label getDetailsLabel() {
+        return detailsLabel;
     }
 
     /**

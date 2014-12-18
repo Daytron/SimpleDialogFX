@@ -14,12 +14,12 @@
   <children>
     <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
       <children>
-        <Label id="title-info" fx:id="messageLabel" maxWidth="1.7976931348623157E308" styleClass="title" text="message" textAlignment="LEFT" wrapText="true">
+        <Label id="header-info" fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
           <font>
             <Font name="System Bold" size="13.0" />
           </font>
         </Label>
-        <Label id="message" fx:id="detailsLabel" maxWidth="1.7976931348623157E308" text="details" textAlignment="LEFT" wrapText="true">
+        <Label id="details" fx:id="detailsLabel" maxWidth="1.7976931348623157E308" text="details" textAlignment="LEFT" wrapText="true">
           <font>
             <Font size="12.0" />
           </font>

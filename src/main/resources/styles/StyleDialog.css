@@ -25,39 +25,39 @@ THE SOFTWARE.
     Created on : 15-Dec-2014, 17:41:37
     Author     : Ryan Gilera
 */
-.title {
+.header {
     -fx-font-family: "Helvetica";
     -fx-font-size: 25px;
     -fx-padding: 10 10 10 10;
     -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }
 
-#title-generic {
+#header-generic {
     -mid-gray: rgb(216, 222, 227);
     -fx-background-color: -mid-gray;
 }
 
-#title-info {
+#header-info {
     -fx-background-color: 
         linear-gradient(to bottom, #A3D1FF 0%, #92C6FA 44%, #7BB7F3 100% );
 }
 
-#title-confirm {
+#header-confirm {
     -fx-background-color: 
         linear-gradient(to bottom, #A3FFCE 0%, #92FAC3 44%, #7BF3B3 100% );
 }
 
-#title-error {
+#header-error {
     -fx-background-color: 
         linear-gradient(to bottom, #FFA3A5 0%, #FA9294 44%, #F37B7D 100% );
 }
 
-#title-warning {
+#header-warning {
     -fx-background-color: 
         linear-gradient(to bottom, #FFD1A3 0%, #FAC692 44%, #F3B77B 100% );
 }
 
-#message {
+#details {
     -fx-font-family: "Helvetica";
     -fx-font-size: 14px;
     -fx-padding: 5 10 10 10;
