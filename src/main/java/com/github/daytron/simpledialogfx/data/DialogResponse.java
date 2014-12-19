@@ -47,6 +47,10 @@ public enum DialogResponse {
      */
     NO,
     /**
+     * CLOSE response when user press x button
+     */
+    CLOSE,
+    /**
      * NO response at all - Default
      */
     NO_RESPONSE;

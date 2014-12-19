@@ -35,6 +35,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -46,6 +47,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
 
 /**
  * The master controller class for building any derivatives of dialogs
@@ -164,8 +166,20 @@ public final class Dialog extends Stage implements Initializable {
             }
             
             setResizable(false);
+            
+            // Apply CLOSE action upon pressing x button
+            setOnCloseRequest(new EventHandler<WindowEvent>() {
+
+                @Override
+                public void handle(WindowEvent event) {
+                    response = DialogResponse.CLOSE;
+                }
+            });
         } catch (IOException ex) {
             Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE, null, ex);
+            
+            // Close dialog when an exception occur
+            close();
         }
 
     }
