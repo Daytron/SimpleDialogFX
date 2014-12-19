@@ -156,7 +156,8 @@ public final class Dialog extends Stage implements Initializable {
      * @param header The text for the colored header label
      * @param details The text for the message details label
      */
-    public Dialog(DialogType dialogType, String title, String header, String details) {
+    public Dialog(DialogType dialogType, String title, String header, 
+            String details) {
         this(dialogType,
                 DialogStyle.NATIVE,
                 title,
@@ -175,6 +176,18 @@ public final class Dialog extends Stage implements Initializable {
     public Dialog(Exception exception) {
         this(DialogStyle.NATIVE, exception);
     }
+    
+    /**
+     * Construct an exception dialog using the default "native" dialog style.
+     * The header is automatically set to the default exception header label
+     * text with the title given.
+     *
+     * @param title The window title of the dialog
+     * @param exception An exception object to be displayed
+     */
+    public Dialog(String title, Exception exception) {
+        this(DialogStyle.NATIVE, title, exception);
+    }
 
     /**
      * Construct an exception dialog with optional dialog style. The header is
@@ -186,7 +199,21 @@ public final class Dialog extends Stage implements Initializable {
      * @param exception An exception object to be displayed
      */
     public Dialog(DialogStyle dialogStyle, Exception exception) {
-        this(DialogType.EXCEPTION, dialogStyle, "",
+        this(dialogStyle, "", exception);
+    }
+    
+    /**
+     * Construct an exception dialog with optional dialog style. The header is
+     * automatically set to the default exception header label text with the
+     * title given. The details label is set to the class name of the exception
+     * object.
+     *
+     * @param dialogStyle The dialog style to be created
+     * @param title The window title of the dialog
+     * @param exception An exception object to be displayed
+     */
+    public Dialog(DialogStyle dialogStyle, String title, Exception exception) {
+        this(DialogType.EXCEPTION, dialogStyle, title,
                 DialogText.EXCEPTION_HEADER.getText(),
                 exception.getClass().getName(),
                 exception);
