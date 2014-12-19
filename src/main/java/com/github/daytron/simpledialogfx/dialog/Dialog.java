@@ -94,7 +94,7 @@ public final class Dialog extends Stage implements Initializable {
      * dialog to be created is determine by the dialogType parameter. The
      * default title is set to empty;
      *
-     * @param dialogType The dialog type to be created.
+     * @param dialogType The dialog type to be created
      * @param header The text for the colored header label
      * @param details The text for the message details label
      */
@@ -102,6 +102,64 @@ public final class Dialog extends Stage implements Initializable {
         this(dialogType,
                 DialogStyle.NATIVE,
                 "",
+                header,
+                details,
+                null);
+    }
+    
+    /**
+     * Construct a dialog with optional dialog style. The type of
+     * dialog to be created is determine by the dialogType parameter. The
+     * default title is set to empty;
+     *
+     * @param dialogType The dialog type to be created
+     * @param dialogStyle The dialog style to be created
+     * @param header The text for the colored header label
+     * @param details The text for the message details label
+     */
+    public Dialog(DialogType dialogType, DialogStyle dialogStyle, 
+            String header, String details) {
+        this(dialogType,
+                dialogStyle,
+                "",
+                header,
+                details,
+                null);
+    }
+    
+    /**
+     * Construct a dialog with optional dialog style. The type of
+     * dialog to be created is determine by the dialogType parameter.
+     *
+     * @param dialogType The dialog type to be created
+     * @param dialogStyle The dialog style to be created
+     * @param title The window title of the dialog
+     * @param header The text for the colored header label
+     * @param details The text for the message details label
+     */
+    public Dialog(DialogType dialogType, DialogStyle dialogStyle, String title,
+            String header, String details) {
+        this(dialogType,
+                dialogStyle,
+                title,
+                header,
+                details,
+                null);
+    }
+
+    /**
+     * Construct a dialog using the default "native" dialog style. The type of
+     * dialog to be created is determine by the dialogType parameter. 
+     *
+     * @param dialogType The dialog type to be created
+     * @param title The window title of the dialog
+     * @param header The text for the colored header label
+     * @param details The text for the message details label
+     */
+    public Dialog(DialogType dialogType, String title, String header, String details) {
+        this(dialogType,
+                DialogStyle.NATIVE,
+                title,
                 header,
                 details,
                 null);
