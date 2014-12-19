@@ -26,7 +26,7 @@
                   <Font size="12.0" />
                 </font>
               </Label>
-                  <TextField id="text-label" fx:id="text_label" prefHeight="25.0" prefWidth="193.0" />
+                  <TextField id="text-label" fx:id="text_field" prefHeight="25.0" prefWidth="193.0" />
                </children>
                <padding>
                   <Insets top="10.0" />
