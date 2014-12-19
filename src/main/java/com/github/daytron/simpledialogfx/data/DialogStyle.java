@@ -30,6 +30,12 @@ package com.github.daytron.simpledialogfx.data;
  */
 public enum DialogStyle {
 
+    /**
+     * Native window style depending on user OS
+     */
     NATIVE,
+    /**
+     * Undecorated window style
+     */
     UNDECORATED;
 }

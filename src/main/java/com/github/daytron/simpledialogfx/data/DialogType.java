@@ -25,16 +25,45 @@ package com.github.daytron.simpledialogfx.data;
 
 /**
  * List of dialog types
+ *
  * @author Ryan Gilera
  */
 public enum DialogType {
+
+    /**
+     * Confirmation dialog
+     */
     CONFIRMATION,
+    /**
+     * Information dialog
+     */
     INFORMATION,
+    /**
+     * Warning dialog
+     */
     WARNING,
+    /**
+     * Error dialog
+     */
     ERROR,
+    /**
+     * Exception dialog
+     */
     EXCEPTION,
+    /**
+     * Input text dialog
+     */
     INPUT_TEXT,
+    /**
+     * Generic OK dialog
+     */
     GENERIC_OK,
+    /**
+     * Generic OK and CANCEL dialog
+     */
     GENERIC_OK_CANCEL,
+    /**
+     * Generic YES and NO dialog
+     */
     GENERIC_YES_NO;
 }

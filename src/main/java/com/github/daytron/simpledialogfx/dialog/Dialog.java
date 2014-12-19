@@ -53,7 +53,7 @@ import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 /**
- * The master controller class for building any derivatives of dialogs
+ * The controller class for building any derivatives of dialogs
  *
  * @author Ryan Gilera
  */
@@ -220,9 +220,9 @@ public final class Dialog extends Stage implements Initializable {
      */
     public Dialog(DialogType dialogType, DialogStyle dialogStyle,
             String title, String header, String details, Exception exception) {
-        this.dialogType = dialogType;
-
         setTitle(title);
+
+        this.dialogType = dialogType;
         this.header = header;
         this.details = details;
         this.exception = exception;
@@ -282,6 +282,7 @@ public final class Dialog extends Stage implements Initializable {
         }
 
         fxmlLoader.setController(this);
+
         try {
             this.scene = new Scene((Parent) fxmlLoader.load());
             setScene(scene);
@@ -617,7 +618,7 @@ public final class Dialog extends Stage implements Initializable {
         if (this.dialogType == DialogType.INPUT_TEXT) {
             this.textEntry = this.text_label.getText();
         }
-        
+
         setResponse(DialogResponse.SEND);
         close();
     }
