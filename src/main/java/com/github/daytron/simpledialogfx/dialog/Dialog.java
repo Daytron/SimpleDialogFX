@@ -220,7 +220,8 @@ public final class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Accepts two <code>String</code> parameters for the constructor.
+     * Construct a dialog with all parameters given. Allows full customization 
+     * for building the dialog.
      *
      * @param dialogType The type of dialog to build
      * @param dialogStyle The dialog style to be created
@@ -238,7 +239,7 @@ public final class Dialog extends Stage implements Initializable {
         this.details = details;
         this.exception = exception;
 
-        // Default response
+        // Default dialog action response
         this.response = DialogResponse.NO_RESPONSE;
 
         switch (dialogType) {
