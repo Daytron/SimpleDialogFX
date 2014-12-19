@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- *
+ * List of dialog types
  * @author Ryan Gilera
  */
 public enum DialogType {
@@ -32,6 +32,7 @@ public enum DialogType {
     INFORMATION,
     WARNING,
     ERROR,
+    EXCEPTION,
     GENERIC_OK,
     GENERIC_OK_CANCEL,
     GENERIC_YES_NO;

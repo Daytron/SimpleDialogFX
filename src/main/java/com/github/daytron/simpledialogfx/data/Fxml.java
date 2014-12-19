@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of FXML files.
+ * List of FXML file paths.
  *
  * @author Ryan Gilera ryangilera@gmail.com
  */
@@ -46,6 +46,10 @@ public enum Fxml {
      * Error Dialog FXML file path
      */
     ERROR_DIALOG("/fxml/ErrorDialog.fxml"),
+    /**
+     * Exception Dialog FXML file path
+     */
+    EXCEPTION_DIALOG("/fxml/ExceptionDialog.fxml"),
     /**
      * Generic OK Dialog FXML file path
      */

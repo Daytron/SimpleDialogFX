@@ -57,8 +57,29 @@ THE SOFTWARE.
         linear-gradient(to bottom, #FFD1A3 0%, #FAC692 44%, #F3B77B 100% );
 }
 
+#header-exception {
+    -fx-background-color: 
+        linear-gradient(to bottom, #E2A3FF 0%, #D992FA 44%, #CD7BF3 100% );
+}
+
+#exception-trace-label {
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 12px;
+    -fx-padding: 0 10 10 10;
+}
+
+#exception-area {
+    
+}
+
 #details {
     -fx-font-family: "Helvetica";
     -fx-font-size: 14px;
     -fx-padding: 5 10 10 10;
+}
+
+#details-exception {
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 14px;
+    -fx-padding: 5 10 5 10;
 }

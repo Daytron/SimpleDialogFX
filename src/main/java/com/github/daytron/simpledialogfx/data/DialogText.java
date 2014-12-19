@@ -33,21 +33,45 @@ public enum DialogText {
     /**
      * Confirmation Dialog window title
      */
-    CONFIRMATION_HEAD_TITLE("Confirmation Dialog"),
+    CONFIRMATION_TITLE("Confirmation Dialog"),
+    /**
+     * Confirmation Dialog header label
+     */
+    CONFIRMATION_HEADER("Confirmation"),
     /**
      * Error Dialog window title
      */
-    ERROR_HEAD_TITLE("Error Dialog"),
+    ERROR_TITLE("Error Dialog"),
+    /**
+     * Error Dialog header label
+     */
+    ERROR_HEADER("Error"),
     /**
      * Information Dialog window title
      */
-    INFO_HEAD_TITLE("Information Dialog"),
+    INFO_TITLE("Information Dialog"),
+    /**
+     * Information Dialog header label
+     */
+    INFO_HEADER("Information"),
     /**
      * Warning Dialog window title
      */
-    WARNING_HEAD_TITLE("Warning Dialog");
+    WARNING_TITLE("Warning Dialog"),
+    /**
+     * Warning Dialog header label
+     */
+    WARNING_HEADER("Warning"),
+    /**
+     * Exception Dialog window title
+     */
+    EXCEPTION_TITLE("Exception Dialog"),
+    /**
+     * Exception Dialog header label
+     */
+    EXCEPTION_HEADER("Exception Encountered");
 
-    private String text;
+    private final String text;
 
     private DialogText(String text) {
         this.text = text;

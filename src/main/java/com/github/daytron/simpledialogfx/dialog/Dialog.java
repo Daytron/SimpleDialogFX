@@ -43,6 +43,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -70,6 +71,8 @@ public final class Dialog extends Stage implements Initializable {
     private Button yesButton;
     @FXML
     private Button noButton;
+    @FXML
+    private TextArea exception_area;
 
     // Top head label
     private final String header;
@@ -82,18 +85,53 @@ public final class Dialog extends Stage implements Initializable {
 
     private FXMLLoader fxmlLoader;
 
-    private DialogType dialogType;
+    private final DialogType dialogType;
+
+    private final Exception exception;
 
     /**
      * Construct a dialog using the default "native" dialog style. The type of
-     * dialog to be created is determine by the dialogType parameter.
+     * dialog to be created is determine by the dialogType parameter. The
+     * default title is set to empty;
      *
      * @param dialogType The dialog type to be created.
      * @param header The text for the colored header label
      * @param details The text for the message details label
      */
     public Dialog(DialogType dialogType, String header, String details) {
-        this(dialogType, DialogStyle.NATIVE, header, details);
+        this(dialogType,
+                DialogStyle.NATIVE,
+                "",
+                header,
+                details,
+                null);
+    }
+
+    /**
+     * Construct an exception dialog using the default "native" dialog style.
+     * The header is automatically set to the default exception header label
+     * text with the title empty.
+     *
+     * @param exception An exception object to be displayed
+     */
+    public Dialog(Exception exception) {
+        this(DialogStyle.NATIVE, exception);
+    }
+
+    /**
+     * Construct an exception dialog with optional dialog style. The header is
+     * automatically set to the default exception header label text with the
+     * title empty. The details label is set to the class name of the exception
+     * object.
+     *
+     * @param dialogStyle The dialog style to be created
+     * @param exception An exception object to be displayed
+     */
+    public Dialog(DialogStyle dialogStyle, Exception exception) {
+        this(DialogType.EXCEPTION, dialogStyle, "",
+                DialogText.EXCEPTION_HEADER.getText(),
+                exception.getClass().getName(),
+                exception);
     }
 
     /**
@@ -101,14 +139,19 @@ public final class Dialog extends Stage implements Initializable {
      *
      * @param dialogType The type of dialog to build
      * @param dialogStyle The dialog style to be created
+     * @param title The dialog window title
      * @param header The text for the colored header label
      * @param details The text for the message details label
+     * @param exception An exception object to be displayed
      */
     public Dialog(DialogType dialogType, DialogStyle dialogStyle,
-            String header, String details) {
+            String title, String header, String details, Exception exception) {
         this.dialogType = dialogType;
+
+        setTitle(title);
         this.header = header;
         this.details = details;
+        this.exception = exception;
 
         // Default response
         this.response = DialogResponse.NO_RESPONSE;
@@ -117,25 +160,27 @@ public final class Dialog extends Stage implements Initializable {
             case INFORMATION:
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.INFO_DIALOG.getPath()));
-                setTitle(DialogText.INFO_HEAD_TITLE.getText());
+
                 break;
 
             case CONFIRMATION:
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.CONFIRMATION_DIALOG.getPath()));
-                setTitle(DialogText.CONFIRMATION_HEAD_TITLE.getText());
                 break;
 
             case WARNING:
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.WARNING_DIALOG.getPath()));
-                setTitle(DialogText.WARNING_HEAD_TITLE.getText());
                 break;
 
             case ERROR:
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.ERROR_DIALOG.getPath()));
-                setTitle(DialogText.ERROR_HEAD_TITLE.getText());
+                break;
+
+            case EXCEPTION:
+                fxmlLoader = new FXMLLoader(getClass()
+                        .getResource(Fxml.EXCEPTION_DIALOG.getPath()));
                 break;
 
             case GENERIC_OK:
@@ -164,9 +209,9 @@ public final class Dialog extends Stage implements Initializable {
                 getScene().setFill(Color.TRANSPARENT);
                 initStyle(StageStyle.TRANSPARENT);
             }
-            
+
             setResizable(false);
-            
+
             // Apply CLOSE action upon pressing x button
             setOnCloseRequest(new EventHandler<WindowEvent>() {
 
@@ -177,7 +222,7 @@ public final class Dialog extends Stage implements Initializable {
             });
         } catch (IOException ex) {
             Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE, null, ex);
-            
+
             // Close dialog when an exception occur
             close();
         }
@@ -216,6 +261,10 @@ public final class Dialog extends Stage implements Initializable {
                         okButton.requestFocus();
                         break;
 
+                    case EXCEPTION:
+                        okButton.requestFocus();
+                        break;
+
                     case GENERIC_OK:
                         okButton.requestFocus();
                         break;
@@ -236,6 +285,16 @@ public final class Dialog extends Stage implements Initializable {
 
         this.headerLabel.setText(getHeader());
         this.detailsLabel.setText(getDetails());
+
+        if (dialogType == DialogType.EXCEPTION) {
+            if (this.exception != null) {
+                this.exception_area.clear();
+                this.exception_area.appendText(this.exception.getMessage());
+            }
+
+            this.exception_area.setWrapText(true);
+            this.exception_area.setEditable(false);
+        }
     }
 
     /**
@@ -371,13 +430,33 @@ public final class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the details label object. Allows user to customize FX label 
+     * Retrieve the details label object. Allows user to customize FX label
      * object.
      *
      * @return DetailsLabel object
      */
     public Label getDetailsLabel() {
         return detailsLabel;
+    }
+
+    /**
+     * Retrieve the text area object for the exception area. Allows user to
+     * customize FX text area object.
+     *
+     * @return TextArea object
+     */
+    public TextArea getException_area() {
+        return exception_area;
+    }
+
+    /**
+     * Retrieve the exception object, if the dialog does not hold an exception,
+     * return null.
+     *
+     * @return The exception object
+     */
+    public Exception getException() {
+        return exception;
     }
 
     /**
