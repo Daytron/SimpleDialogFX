@@ -69,7 +69,15 @@ public enum DialogText {
     /**
      * Exception Dialog header label
      */
-    EXCEPTION_HEADER("Exception Encountered");
+    EXCEPTION_HEADER("Exception Encountered"),
+    /**
+     * Input Text Dialog window title
+     */
+    INPUT_TEXT_TITLE("Input Text Dialog"),
+    /**
+     * Input Text Dialog header label
+     */
+    INPUT_TEXT_HEADER("Enter a text");
 
     private final String text;
 

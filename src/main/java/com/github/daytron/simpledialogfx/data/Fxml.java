@@ -51,6 +51,10 @@ public enum Fxml {
      */
     EXCEPTION_DIALOG("/fxml/ExceptionDialog.fxml"),
     /**
+     * Input Text Dialog FXML file path
+     */
+    INPUT_TEXT_DIALOG("/fxml/InputTextDialog.fxml"),
+    /**
      * Generic OK Dialog FXML file path
      */
     GENERIC_OK_DIALOG("/fxml/GenericOKDialog.fxml"),

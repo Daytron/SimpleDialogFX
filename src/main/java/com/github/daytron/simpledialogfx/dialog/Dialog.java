@@ -44,6 +44,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -73,6 +74,10 @@ public final class Dialog extends Stage implements Initializable {
     private Button noButton;
     @FXML
     private TextArea exception_area;
+    @FXML
+    private TextField text_label;
+    @FXML
+    private Button sendButton;
 
     // Top head label
     private final String header;
@@ -88,6 +93,8 @@ public final class Dialog extends Stage implements Initializable {
     private final DialogType dialogType;
 
     private final Exception exception;
+
+    private String textEntry;
 
     /**
      * Construct a dialog using the default "native" dialog style. The type of
@@ -106,18 +113,18 @@ public final class Dialog extends Stage implements Initializable {
                 details,
                 null);
     }
-    
+
     /**
-     * Construct a dialog with optional dialog style. The type of
-     * dialog to be created is determine by the dialogType parameter. The
-     * default title is set to empty;
+     * Construct a dialog with optional dialog style. The type of dialog to be
+     * created is determine by the dialogType parameter. The default title is
+     * set to empty;
      *
      * @param dialogType The dialog type to be created
      * @param dialogStyle The dialog style to be created
      * @param header The text for the colored header label
      * @param details The text for the message details label
      */
-    public Dialog(DialogType dialogType, DialogStyle dialogStyle, 
+    public Dialog(DialogType dialogType, DialogStyle dialogStyle,
             String header, String details) {
         this(dialogType,
                 dialogStyle,
@@ -126,10 +133,10 @@ public final class Dialog extends Stage implements Initializable {
                 details,
                 null);
     }
-    
+
     /**
-     * Construct a dialog with optional dialog style. The type of
-     * dialog to be created is determine by the dialogType parameter.
+     * Construct a dialog with optional dialog style. The type of dialog to be
+     * created is determine by the dialogType parameter.
      *
      * @param dialogType The dialog type to be created
      * @param dialogStyle The dialog style to be created
@@ -149,14 +156,14 @@ public final class Dialog extends Stage implements Initializable {
 
     /**
      * Construct a dialog using the default "native" dialog style. The type of
-     * dialog to be created is determine by the dialogType parameter. 
+     * dialog to be created is determine by the dialogType parameter.
      *
      * @param dialogType The dialog type to be created
      * @param title The window title of the dialog
      * @param header The text for the colored header label
      * @param details The text for the message details label
      */
-    public Dialog(DialogType dialogType, String title, String header, 
+    public Dialog(DialogType dialogType, String title, String header,
             String details) {
         this(dialogType,
                 DialogStyle.NATIVE,
@@ -176,7 +183,7 @@ public final class Dialog extends Stage implements Initializable {
     public Dialog(Exception exception) {
         this(DialogStyle.NATIVE, exception);
     }
-    
+
     /**
      * Construct an exception dialog using the default "native" dialog style.
      * The header is automatically set to the default exception header label
@@ -201,7 +208,7 @@ public final class Dialog extends Stage implements Initializable {
     public Dialog(DialogStyle dialogStyle, Exception exception) {
         this(dialogStyle, "", exception);
     }
-    
+
     /**
      * Construct an exception dialog with optional dialog style. The header is
      * automatically set to the default exception header label text with the
@@ -220,7 +227,7 @@ public final class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct a dialog with all parameters given. Allows full customization 
+     * Construct a dialog with all parameters given. Allows full customization
      * for building the dialog.
      *
      * @param dialogType The type of dialog to build
@@ -238,6 +245,9 @@ public final class Dialog extends Stage implements Initializable {
         this.header = header;
         this.details = details;
         this.exception = exception;
+
+        // Default value for the text field
+        this.textEntry = "";
 
         // Default dialog action response
         this.response = DialogResponse.NO_RESPONSE;
@@ -267,6 +277,11 @@ public final class Dialog extends Stage implements Initializable {
             case EXCEPTION:
                 fxmlLoader = new FXMLLoader(getClass()
                         .getResource(Fxml.EXCEPTION_DIALOG.getPath()));
+                break;
+
+            case INPUT_TEXT:
+                fxmlLoader = new FXMLLoader(getClass()
+                        .getResource(Fxml.INPUT_TEXT_DIALOG.getPath()));
                 break;
 
             case GENERIC_OK:
@@ -349,6 +364,10 @@ public final class Dialog extends Stage implements Initializable {
 
                     case EXCEPTION:
                         okButton.requestFocus();
+                        break;
+
+                    case INPUT_TEXT:
+                        sendButton.requestFocus();
                         break;
 
                     case GENERIC_OK:
@@ -546,6 +565,17 @@ public final class Dialog extends Stage implements Initializable {
     }
 
     /**
+     * Retrieve user input text from the Input Text Dialog, if no text is given
+     * or a different dialog is used, then return string value is empty as the
+     * default value.
+     *
+     * @return The string input text entered from the Input Text Dialog
+     */
+    public String getTextEntry() {
+        return textEntry;
+    }
+
+    /**
      * Event handler when yesButton is pressed. Sets response to YES and closes
      * the dialog window.
      *
@@ -593,4 +623,17 @@ public final class Dialog extends Stage implements Initializable {
         close();
     }
 
+    /**
+     * Event handler when sendButton is pressed. Sets response to SEND and
+     * closes the dialog window.
+     *
+     * @param event Action event object
+     */
+    @FXML
+    private void send_btn_on_click(ActionEvent event) {
+        this.textEntry = this.text_label.getText();
+
+        setResponse(DialogResponse.SEND);
+        close();
+    }
 }

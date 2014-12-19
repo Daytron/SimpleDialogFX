@@ -51,6 +51,10 @@ public enum DialogResponse {
      */
     CLOSE,
     /**
+     * SEND response
+     */
+    SEND,
+    /**
      * NO response at all - Default
      */
     NO_RESPONSE;
