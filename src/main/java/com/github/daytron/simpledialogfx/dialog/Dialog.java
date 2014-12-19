@@ -30,6 +30,7 @@ import com.github.daytron.simpledialogfx.data.DialogType;
 import com.github.daytron.simpledialogfx.data.Fxml;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -106,12 +107,7 @@ public final class Dialog extends Stage implements Initializable {
      * @param details The text for the message details label
      */
     public Dialog(DialogType dialogType, String header, String details) {
-        this(dialogType,
-                DialogStyle.NATIVE,
-                "",
-                header,
-                details,
-                null);
+        this(dialogType, DialogStyle.NATIVE, "", header, details, null);
     }
 
     /**
@@ -126,12 +122,7 @@ public final class Dialog extends Stage implements Initializable {
      */
     public Dialog(DialogType dialogType, DialogStyle dialogStyle,
             String header, String details) {
-        this(dialogType,
-                dialogStyle,
-                "",
-                header,
-                details,
-                null);
+        this(dialogType, dialogStyle, "", header, details, null);
     }
 
     /**
@@ -146,12 +137,7 @@ public final class Dialog extends Stage implements Initializable {
      */
     public Dialog(DialogType dialogType, DialogStyle dialogStyle, String title,
             String header, String details) {
-        this(dialogType,
-                dialogStyle,
-                title,
-                header,
-                details,
-                null);
+        this(dialogType, dialogStyle, title, header, details, null);
     }
 
     /**
@@ -165,12 +151,7 @@ public final class Dialog extends Stage implements Initializable {
      */
     public Dialog(DialogType dialogType, String title, String header,
             String details) {
-        this(dialogType,
-                DialogStyle.NATIVE,
-                title,
-                header,
-                details,
-                null);
+        this(dialogType, DialogStyle.NATIVE, title, header, details, null);
     }
 
     /**
@@ -394,7 +375,8 @@ public final class Dialog extends Stage implements Initializable {
         if (dialogType == DialogType.EXCEPTION) {
             if (this.exception != null) {
                 this.exception_area.clear();
-                this.exception_area.appendText(this.exception.getMessage());
+                this.exception_area.appendText(
+                        Arrays.toString(this.exception.getStackTrace()));
             }
 
             this.exception_area.setWrapText(true);
@@ -631,8 +613,11 @@ public final class Dialog extends Stage implements Initializable {
      */
     @FXML
     private void send_btn_on_click(ActionEvent event) {
-        this.textEntry = this.text_label.getText();
-
+        // Future proof for other uses of send event handler
+        if (this.dialogType == DialogType.INPUT_TEXT) {
+            this.textEntry = this.text_label.getText();
+        }
+        
         setResponse(DialogResponse.SEND);
         close();
     }
