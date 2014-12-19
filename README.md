@@ -60,7 +60,7 @@ Dialog dialog = new Dialog(
                 "Are you sure?");
 dialog.showAndWait();
 ```
-For prebuilt texts for a confirmation dialog:
+For a confirmation dialog with prebuilt texts:
 ```
 Dialog dialog = new Dialog(
                 DialogType.CONFIRMATION,
