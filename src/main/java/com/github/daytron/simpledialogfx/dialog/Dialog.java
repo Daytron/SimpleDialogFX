@@ -76,7 +76,7 @@ public final class Dialog extends Stage implements Initializable {
     @FXML
     private TextArea exception_area;
     @FXML
-    private TextField text_label;
+    private TextField text_field;
     @FXML
     private Button sendButton;
 
@@ -528,8 +528,8 @@ public final class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the text area object for the exception area. Allows user to
-     * customize FX text area object.
+     * Retrieve the <code>TextArea</code> object for the exception area. Allows user to
+     * customize FX <code>TextArea</code> object.
      *
      * @return TextArea object
      */
@@ -541,7 +541,7 @@ public final class Dialog extends Stage implements Initializable {
      * Retrieve the exception object, if the dialog does not hold an exception,
      * return null.
      *
-     * @return The exception object
+     * @return The <code>Exception</code> object
      */
     public Exception getException() {
         return exception;
@@ -556,6 +556,16 @@ public final class Dialog extends Stage implements Initializable {
      */
     public String getTextEntry() {
         return textEntry;
+    }
+
+    /**
+     * Retrieve the <code>TextField</code> object. Allows user to customize FX
+     * <code>TextField</code> object.
+     *
+     * @return
+     */
+    public TextField getTextField() {
+        return text_field;
     }
 
     /**
@@ -616,7 +626,7 @@ public final class Dialog extends Stage implements Initializable {
     private void send_btn_on_click(ActionEvent event) {
         // Future proof for other uses of send event handler
         if (this.dialogType == DialogType.INPUT_TEXT) {
-            this.textEntry = this.text_label.getText();
+            this.textEntry = this.text_field.getText();
         }
 
         setResponse(DialogResponse.SEND);
