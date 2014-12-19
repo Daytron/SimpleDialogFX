@@ -70,7 +70,7 @@ Result:
 See Javadoc for more information.
 
 ##### For the upcoming version 2.0.0 and above
-For any type of dialog with native window style, you only have to create a new `Dialog` object. For a confirmation dialog:
+For any type of dialog with native window style, you only have to create a new `Dialog` object. For example a confirmation dialog would look like this:
 ```
 Dialog dialog = new Dialog(
                 DialogType.CONFIRMATION,
@@ -85,6 +85,29 @@ Dialog dialog = new Dialog(
                 DialogStyle.UNDECORATED,
                 "Confirm Action",
                 "Are you sure?");
+dialog.showAndWait();
+```
+For prebuilt texts for a confirmation dialog:
+```
+Dialog dialog = new Dialog(
+                DialogType.CONFIRMATION,
+                DialogText.CONFIRMATION_TITLE.getText(),
+                DialogText.CONFIRMATION_HEADER.getText(),
+                "Are you sure?");
+dialog.showAndWait();
+```
+
+For an exception dialog:
+```
+Dialog dialog = new Dialog(exception);
+dialog.showAndWait();
+```
+
+For undecorated exception dialog:
+```
+Dialog dialog = new Dialog(
+                DialogStyle.UNDECORATED,
+                exception);
 dialog.showAndWait();
 ```
 
