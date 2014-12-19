@@ -528,8 +528,8 @@ public final class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the <code>TextArea</code> object for the exception area. Allows user to
-     * customize FX <code>TextArea</code> object.
+     * Retrieve the <code>TextArea</code> object for the exception area. Allows
+     * user to customize FX <code>TextArea</code> object.
      *
      * @return TextArea object
      */
