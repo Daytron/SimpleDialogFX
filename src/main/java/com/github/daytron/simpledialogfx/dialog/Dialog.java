@@ -549,7 +549,7 @@ public final class Dialog extends Stage implements Initializable {
     /**
      * Retrieve user input text from the Input Text Dialog, if no text is given
      * or a different dialog is used, then return string value is empty as the
-     * default value.
+     * default value. Return value is null if the created is not an input dialog.
      *
      * @return The string input text entered from the Input Text Dialog
      */
@@ -559,7 +559,8 @@ public final class Dialog extends Stage implements Initializable {
 
     /**
      * Retrieve the <code>TextField</code> object. Allows user to customize FX
-     * <code>TextField</code> object.
+     * <code>TextField</code> object. This is only for input's text field dialog.
+     * Returns null if the dialog created is not an input dialog.
      *
      * @return
      */
