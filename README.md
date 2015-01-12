@@ -118,6 +118,15 @@ setFontFamily(String header_font_family, String details_font_family)
 setFont(String font_family, int font_size)
 setFont(String header_font_family, int header_font_size, String details_font_family, int details_font_size)
 ```
+##### Responses
+The list of all available dialog responses:
+- OK
+- CANCEL
+- YES
+- NO
+- CLOSE (When user clicks dialog's close button instead)
+- SEND
+- NO_RESPONSE (Default value until the user iteracts with it)
 
 ##### Misc
 UI components can be extracted, allowing you to customize the dialog as you see fit.
@@ -127,7 +136,7 @@ getDetailsLabel()   // The label text below header
 getTextField()      // For Input dialog's textfield
 getException_area() // For Exception dialog's textarea
 ```
-In addition, the Dialog class itself is a subclass of the Stage class, so you can further customize the look and style of your dialog.
+In addition, the Dialog class itself is a subclass of the Stage class, so you can further customize the look and style of your dialogs.
 
 ### Documentation
 See [Javadoc] for more information.
