@@ -4,11 +4,11 @@ Easy to use lightweight dialog library for JavaFX applications.
 
 ### Features
   - Minimal design 
-  - Custom fonts
-  - Custom title, head and message texts
+  - Apply custom fonts
+  - Add your own custom title, head and message texts
   - Flexible constructor options
-  - Custom css style on all dialog labels, textfield and textarea
-  - Automatic resize dialog to fit texts
+  - Apply custom CSS style on all dialog UI components
+  - Automatically resize to fit your contents
 
 
 ### Dialogs
@@ -43,6 +43,7 @@ SimpleDialogFX is available in Maven Central. To start using, simply add the fol
 ```
 
 ### Usage
+#####Construction
 For any type of dialog with native window style, you only have to create a new `Dialog` object. For example a confirmation dialog would look like this:
 ```
 Dialog dialog = new Dialog(
@@ -107,6 +108,27 @@ Result:
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D" alt="Result Example Dialog" />
 </p>
 <br /><br />
+##### Font
+Apply any style fonts using these methods:
+```
+setFontSize(int font_size)
+setFontSize(int header_font_size, int details_font_size)
+setFontFamily(String font_family)
+setFontFamily(String header_font_family, String details_font_family)
+setFont(String font_family, int font_size)
+setFont(String header_font_family, int header_font_size, String details_font_family, int details_font_size)
+```
+
+##### Misc
+UI components can be extracted, allowing you to customize the dialog as you see fit.
+```
+getHeaderLabel()    // The colored head label
+getDetailsLabel()   // The label text below header
+getTextField()      // For Input dialog's textfield
+getException_area() // For Exception dialog's textarea
+```
+In addition, the Dialog class itself is a subclass of the Stage class, so you can further customize the look and style of your dialog.
+
 ### Documentation
 See [Javadoc] for more information.
 
@@ -122,3 +144,4 @@ License
 MIT
 
 [Javadoc]:https://daytron.github.io/SimpleDialogFX/apidocs/
+
