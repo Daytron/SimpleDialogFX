@@ -21,14 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.github.daytron.simpledialogfx.data;
+package com.github.daytron.simpledialogfx.dialog;
 
 /**
  * List of FXML file paths.
  *
  * @author Ryan Gilera ryangilera@gmail.com
  */
-public enum Fxml {
+enum Fxml {
 
     /**
      * Confirmation Dialog FXML file path

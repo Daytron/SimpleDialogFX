@@ -27,7 +27,6 @@ import com.github.daytron.simpledialogfx.data.DialogResponse;
 import com.github.daytron.simpledialogfx.data.DialogStyle;
 import com.github.daytron.simpledialogfx.data.DialogText;
 import com.github.daytron.simpledialogfx.data.DialogType;
-import com.github.daytron.simpledialogfx.data.Fxml;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
