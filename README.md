@@ -126,7 +126,7 @@ The list of all available dialog responses:
 - NO
 - CLOSE (When user clicks dialog's close button instead)
 - SEND
-- NO_RESPONSE (Default value until the user iteracts with it)
+- NO_RESPONSE (Default value until the user interacts with it)
 
 ##### Misc
 UI components can be extracted, allowing you to customize the dialog as you see fit.
