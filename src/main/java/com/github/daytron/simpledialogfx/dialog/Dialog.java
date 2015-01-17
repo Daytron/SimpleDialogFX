@@ -56,7 +56,7 @@ import javafx.stage.WindowEvent;
  *
  * @author Ryan Gilera
  */
-public final class Dialog extends Stage implements Initializable {
+public class Dialog extends Stage implements Initializable {
 
     @FXML
     private Label headerLabel;
@@ -420,6 +420,8 @@ public final class Dialog extends Stage implements Initializable {
     public String getHeader() {
         return header;
     }
+    
+    
 
     /**
      * Allows to change both font sizes for the header and the details label
