@@ -399,7 +399,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return A DialogResponse object pass as an argument
      */
-    public DialogResponse getResponse() {
+    public final DialogResponse getResponse() {
         return response;
     }
 
@@ -408,7 +408,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return A <code>String</code> object pertaining to the message details
      */
-    public String getDetails() {
+    public final String getDetails() {
         return details;
     }
 
@@ -417,7 +417,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return A <code>String</code> object pertaining to the header
      */
-    public String getHeader() {
+    public final String getHeader() {
         return header;
     }
     
@@ -514,7 +514,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return HeaderLabel object
      */
-    public Label getHeaderLabel() {
+    public final Label getHeaderLabel() {
         return headerLabel;
     }
 
@@ -524,7 +524,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return DetailsLabel object
      */
-    public Label getDetailsLabel() {
+    public final Label getDetailsLabel() {
         return detailsLabel;
     }
 
@@ -534,7 +534,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return TextArea object
      */
-    public TextArea getException_area() {
+    public final TextArea getExceptionArea() {
         return exception_area;
     }
 
@@ -544,7 +544,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return The <code>Exception</code> object
      */
-    public Exception getException() {
+    public final Exception getException() {
         return exception;
     }
 
@@ -555,7 +555,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return The string input text entered from the Input Text Dialog
      */
-    public String getTextEntry() {
+    public final String getTextEntry() {
         return textEntry;
     }
 
@@ -566,7 +566,7 @@ public class Dialog extends Stage implements Initializable {
      *
      * @return
      */
-    public TextField getTextField() {
+    public final TextField getTextField() {
         return text_field;
     }
 
