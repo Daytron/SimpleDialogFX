@@ -66,8 +66,44 @@ public enum HeaderColorStyle {
     /**
      * This value is selected whenever the user apply their own color style
      */
-    GLOSS_CUSTOM("");
-
+    GLOSS_CUSTOM(""),
+    
+    GLOSS_DARKBLUE("-fx-background-color: linear-gradient(to bottom, rgba(123,149,255,1) 0%,rgba(94,125,250,1) 44%,rgba(59,96,243,1) 100%);"),
+    GLOSS_VIOLET("-fx-background-color: linear-gradient(to bottom, rgba(191,123,255,1) 0%,rgba(175,94,250,1) 44%,rgba(154,59,243,1) 100%);"),
+    GLOSS_PINK("-fx-background-color: linear-gradient(to bottom, rgba(255,123,200,1) 0%,rgba(250,94,185,1) 44%,rgba(243,59,166,1) 100%);"),
+    GLOSS_RED("-fx-background-color: linear-gradient(to bottom, rgba(255,125,123,1) 0%,rgba(250,96,94,1) 44%,rgba(243,62,59,1) 100%);"),
+    GLOSS_SKYBLUE("-fx-background-color: linear-gradient(to bottom, rgba(123,149,255,1) 0%,rgba(94,125,250,1) 44%,rgba(59,96,243,1) 100%);"),
+    GLOSS_BRIGHTBLUE("-fx-background-color: linear-gradient(to bottom, rgba(123,189,255,1) 0%,rgba(94,172,250,1) 44%,rgba(59,151,243,1) 100%);"),
+    GLOSS_LIGHTGREENBLUE("-fx-background-color: linear-gradient(to bottom, rgba(123,248,255,1) 0%,rgba(94,242,250,1) 44%,rgba(59,234,243,1) 100%);"),
+    GLOSS_GREEN("-fx-background-color: linear-gradient(to bottom, rgba(123,255,174,1) 0%,rgba(94,250,154,1) 44%,rgba(59,243,129,1) 100%);"),
+    GLOSS_BRIGHTGREEN("-fx-background-color: linear-gradient(to bottom, rgba(141,255,123,1) 0%,rgba(115,250,94,1) 44%,rgba(83,243,59,1) 100%);"),
+    GLOSS_YELLOW("-fx-background-color: linear-gradient(to bottom, rgba(255,255,123,1) 0%,rgba(250,250,94,1) 44%,rgba(243,243,59,1) 100%);"),
+    GLOSS_ORANGE("-fx-background-color: linear-gradient(to bottom, rgba(255,189,123,1) 0%,rgba(250,172,94,1) 44%,rgba(243,151,59,1) 100%);"),
+    
+    DIMTORIGHT_BRIGHTBLUE("-fx-background-color: linear-gradient(to right, rgba(190,226,240,1) 0%,rgba(61,137,223,1) 100%);"),
+    DIMTORIGHT_LIGHTGREENBLUE("-fx-background-color: linear-gradient(to right, rgba(190,240,225,1) 0%,rgba(61,223,215,1) 100%);"),
+    DIMTORIGHT_GREEN("-fx-background-color: linear-gradient(to right, rgba(191,240,190,1) 0%,rgba(61,223,99,1) 100%);"),
+    DIMTORIGHT_YELLOW("-fx-background-color: linear-gradient(to right, rgba(240,228,190,1) 0%,rgba(220,223,61,1) 100%);"),
+    DIMTORIGHT_ORANGE("-fx-background-color: linear-gradient(to right, rgba(240,204,190,1) 0%,rgba(223,147,61,1) 100%);"),
+    DIMTORIGHT_RED("-fx-background-color: linear-gradient(to right, rgba(240,190,203,1) 0%,rgba(223,61,64,1) 100%);"),
+    DIMTORIGHT_PINK("-fx-background-color: linear-gradient(to right, rgba(233,190,240,1) 0%,rgba(223,61,204,1) 100%); "),
+    DIMTORIGHT_VIOLET("-fx-background-color: linear-gradient(to right, rgba(212,190,240,1) 0%,rgba(174,61,223,1) 100%);"),
+    DIMTORIGHT_PURPLE("-fx-background-color: linear-gradient(to right, rgba(202,190,240,1) 0%,rgba(139,61,223,1) 100%); "),
+    DIMTORIGHT_BLUE("-fx-background-color: linear-gradient(to right, rgba(190,212,240,1) 0%,rgba(61,93,223,1) 100%); "),
+    DIMTORIGHT_LIGHTBLUE("-fx-background-color: linear-gradient(to right, rgba(190,231,240,1) 0%,rgba(61,153,223,1) 100%); "),
+    
+    DIMTOLEFT_BRIGHTBLUE("-fx-background-color: linear-gradient(to left, rgba(190,226,240,1) 0%,rgba(61,137,223,1) 100%);"),
+    DIMTOLEFT_LIGHTGREENBLUE("-fx-background-color: linear-gradient(to left, rgba(190,240,225,1) 0%,rgba(61,223,215,1) 100%);"),
+    DIMTOLEFT_GREEN("-fx-background-color: linear-gradient(to left, rgba(191,240,190,1) 0%,rgba(61,223,99,1) 100%);"),
+    DIMTOLEFT_YELLOW("-fx-background-color: linear-gradient(to left, rgba(240,228,190,1) 0%,rgba(220,223,61,1) 100%);"),
+    DIMTOLEFT_ORANGE("-fx-background-color: linear-gradient(to left, rgba(240,204,190,1) 0%,rgba(223,147,61,1) 100%);"),
+    DIMTOLEFT_RED("-fx-background-color: linear-gradient(to left, rgba(240,190,203,1) 0%,rgba(223,61,64,1) 100%);"),
+    DIMTOLEFT_PINK("-fx-background-color: linear-gradient(to left, rgba(233,190,240,1) 0%,rgba(223,61,204,1) 100%); "),
+    DIMTOLEFT_VIOLET("-fx-background-color: linear-gradient(to left, rgba(212,190,240,1) 0%,rgba(174,61,223,1) 100%);"),
+    DIMTOLEFT_PURPLE("-fx-background-color: linear-gradient(to left, rgba(202,190,240,1) 0%,rgba(139,61,223,1) 100%); "),
+    DIMTOLEFT_BLUE("-fx-background-color: linear-gradient(to left, rgba(190,212,240,1) 0%,rgba(61,93,223,1) 100%); "),
+    DIMTOLEFT_LIGHTBLUE("-fx-background-color: linear-gradient(to left, rgba(190,231,240,1) 0%,rgba(61,153,223,1) 100%); ");
+    
     private final String colorStyle;
 
     private HeaderColorStyle(String colorStyle) {
