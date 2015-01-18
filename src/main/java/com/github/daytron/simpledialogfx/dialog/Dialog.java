@@ -211,6 +211,10 @@ public class Dialog extends Stage implements Initializable {
 
     /**
      * Construct a dialog with default color style for the header label.
+     * <p>
+     * Note: Using exception dialog will overwrite the details message with the
+     * exception's name and null exception parameter will result to pre-built 
+     * error text in exception dialog's header, details and trace texts.
      *
      * @param dialogType The type of dialog to build
      * @param dialogStyle The dialog style to be created
@@ -228,6 +232,10 @@ public class Dialog extends Stage implements Initializable {
     /**
      * Construct a dialog with all parameters given. Allows full explicit
      * customization for dialog building.
+     * <p>
+     * Note: Using exception dialog will overwrite the details message with the
+     * exception's name and null exception parameter will result to pre-built 
+     * error text in exception dialog's header, details and trace texts.
      *
      * @param dialogType The type of dialog to build
      * @param dialogStyle The dialog style to be created
@@ -241,12 +249,24 @@ public class Dialog extends Stage implements Initializable {
             String title, String header, HeaderColorStyle headerColorStyle,
             String details, Exception exception) {
         setTitle(title);
+        
         this.headerColorStyle = headerColorStyle;
-
         this.dialogType = dialogType;
-        this.header = header;
-        this.details = details;
         this.exception = exception;
+
+        // Filter behaviour for exception dialog
+        if (dialogType == DialogType.EXCEPTION) {
+            if (this.exception != null) {
+                this.header = header;
+                this.details = this.exception.getClass().getName();
+            } else {
+                this.header = DialogText.NO_EXCEPTION_HEADER.getText();
+                this.details = DialogText.NO_EXCEPTION_DETAILS.getText();
+            }
+        } else {
+            this.header = header;
+            this.details = details;
+        }
 
         // Default value for the text field
         this.textEntry = "";
@@ -394,11 +414,16 @@ public class Dialog extends Stage implements Initializable {
         this.headerLabel.setText(getHeader());
         this.detailsLabel.setText(getDetails());
 
+        // Filter behaviour for exception dialog
         if (dialogType == DialogType.EXCEPTION) {
+            this.exception_area.clear();
+            
             if (this.exception != null) {
-                this.exception_area.clear();
                 this.exception_area.appendText(
                         Arrays.toString(this.exception.getStackTrace()));
+            } else {
+                this.exception_area.appendText(
+                        DialogText.NO_EXCEPTION_TRACE.getText());
             }
 
             this.exception_area.setWrapText(true);

@@ -77,7 +77,22 @@ public enum DialogText {
     /**
      * Input Text Dialog header label
      */
-    INPUT_TEXT_HEADER("Enter a text");
+    INPUT_TEXT_HEADER("Enter a text"),
+    /**
+     * No exception header message if the exception parameter in the constructor
+     * is null
+     */
+    NO_EXCEPTION_HEADER("No Exception Found"),
+    /**
+     * No exception details message if the exception parameter in the
+     * constructor is null
+     */
+    NO_EXCEPTION_DETAILS("Exception parameter given is null."),
+    /**
+     * No exception trace message if the exception parameter in the constructor
+     * is null
+     */
+    NO_EXCEPTION_TRACE("No trace found.");
 
     private final String text;
 
