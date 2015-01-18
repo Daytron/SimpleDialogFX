@@ -1,0 +1,16 @@
+GLOSS:
+Name: Blue 3D #14
+Direction: Vertical
+Saturation: +31
+
+DIMTORIGHT:
+Name: Blue 3D #8
+Direction: Horizontal (to right)
+Saturation: +30
+Lightness: +33
+
+DIMTOLEFT:
+Name: Blue 3D #8
+Direction: Horizontal (to left)
+Saturation: +30
+Lightness: +33
