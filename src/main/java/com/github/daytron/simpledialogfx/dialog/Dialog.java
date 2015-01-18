@@ -435,45 +435,10 @@ public class Dialog extends Stage implements Initializable {
     }
 
     private void applyHeaderColorStyle(HeaderColorStyle headerColorStyle) {
-        switch (this.headerColorStyle) {
-            case GLOSS_CONFIRM:
-                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_CONFIRM.getColorStyle());
-                break;
-
-            case GLOSS_ERROR:
-                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_ERROR.getColorStyle());
-                break;
-
-            case GLOSS_EXCEPTION:
-                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_EXCEPTION.getColorStyle());
-                break;
-
-            case GLOSS_GENERIC:
-                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_GENERIC.getColorStyle());
-                break;
-
-            case GLOSS_INFO:
-                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_INFO.getColorStyle());
-                break;
-
-            case GLOSS_INPUT:
-                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_INPUT.getColorStyle());
-                break;
-
-            case GLOSS_WARNING:
-                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_WARNING.getColorStyle());
-                break;
-
-            case GLOSS_CUSTOM:
-                break;
-
-            case DEFAULT:
-                break;
-
-            default:
-                break;
-
+        if (!headerColorStyle.getColorStyle().isEmpty()) {
+            this.getHeaderLabel().setStyle(headerColorStyle.getColorStyle());
         }
+        
     }
 
     /**
@@ -530,7 +495,7 @@ public class Dialog extends Stage implements Initializable {
      */
     public final void setHeaderColorStyle(HeaderColorStyle headerColorStyle) {
         this.headerColorStyle = headerColorStyle;
-        this.applyHeaderColorStyle(this.headerColorStyle);
+        this.applyHeaderColorStyle(headerColorStyle);
     }
 
     /**
@@ -687,7 +652,7 @@ public class Dialog extends Stage implements Initializable {
      * <code>TextField</code> object. This is only for input's text field
      * dialog. Returns null if the dialog created is not an input dialog.
      *
-     * @return
+     * @return The <code>TextField</code> object
      */
     public final TextField getTextField() {
         return text_field;
