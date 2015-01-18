@@ -27,6 +27,7 @@ import com.github.daytron.simpledialogfx.data.DialogResponse;
 import com.github.daytron.simpledialogfx.data.DialogStyle;
 import com.github.daytron.simpledialogfx.data.DialogText;
 import com.github.daytron.simpledialogfx.data.DialogType;
+import com.github.daytron.simpledialogfx.data.HeaderColorStyle;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
@@ -95,6 +96,8 @@ public class Dialog extends Stage implements Initializable {
     private final Exception exception;
 
     private String textEntry;
+
+    private HeaderColorStyle headerColorStyle;
 
     /**
      * Construct a dialog using the default "native" dialog style. The type of
@@ -207,8 +210,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct a dialog with all parameters given. Allows full customization
-     * for building the dialog.
+     * Construct a dialog with default color style for the header label.
      *
      * @param dialogType The type of dialog to build
      * @param dialogStyle The dialog style to be created
@@ -219,7 +221,27 @@ public class Dialog extends Stage implements Initializable {
      */
     public Dialog(DialogType dialogType, DialogStyle dialogStyle,
             String title, String header, String details, Exception exception) {
+        this(dialogType, dialogStyle, title, header, HeaderColorStyle.DEFAULT,
+                details, exception);
+    }
+
+    /**
+     * Construct a dialog with all parameters given. Allows full explicit
+     * customization for dialog building.
+     *
+     * @param dialogType The type of dialog to build
+     * @param dialogStyle The dialog style to be created
+     * @param title The dialog window title
+     * @param header The text for the colored header label
+     * @param headerColorStyle The chosen color style for the header
+     * @param details The text for the message details label
+     * @param exception An exception object to be displayed
+     */
+    public Dialog(DialogType dialogType, DialogStyle dialogStyle,
+            String title, String header, HeaderColorStyle headerColorStyle,
+            String details, Exception exception) {
         setTitle(title);
+        this.headerColorStyle = headerColorStyle;
 
         this.dialogType = dialogType;
         this.header = header;
@@ -382,6 +404,51 @@ public class Dialog extends Stage implements Initializable {
             this.exception_area.setWrapText(true);
             this.exception_area.setEditable(false);
         }
+
+        // Apply Header CSS style color
+        this.applyHeaderColorStyle(this.headerColorStyle);
+    }
+
+    private void applyHeaderColorStyle(HeaderColorStyle headerColorStyle) {
+        switch (this.headerColorStyle) {
+            case GLOSS_CONFIRM:
+                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_CONFIRM.getColorStyle());
+                break;
+
+            case GLOSS_ERROR:
+                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_ERROR.getColorStyle());
+                break;
+
+            case GLOSS_EXCEPTION:
+                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_EXCEPTION.getColorStyle());
+                break;
+
+            case GLOSS_GENERIC:
+                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_GENERIC.getColorStyle());
+                break;
+
+            case GLOSS_INFO:
+                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_INFO.getColorStyle());
+                break;
+
+            case GLOSS_INPUT:
+                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_INPUT.getColorStyle());
+                break;
+
+            case GLOSS_WARNING:
+                getHeaderLabel().setStyle(HeaderColorStyle.GLOSS_WARNING.getColorStyle());
+                break;
+
+            case GLOSS_CUSTOM:
+                break;
+
+            case DEFAULT:
+                break;
+
+            default:
+                break;
+
+        }
     }
 
     /**
@@ -420,8 +487,38 @@ public class Dialog extends Stage implements Initializable {
     public final String getHeader() {
         return header;
     }
-    
-    
+
+    /**
+     * Retrieve the header's JavaFX CSS background color style
+     *
+     * @return A <code>HeaderColorStyle</code> option containing a color scheme.
+     */
+    public final HeaderColorStyle getHeaderColorStyle() {
+        return headerColorStyle;
+    }
+
+    /**
+     * Apply different JavaFX CSS background color style for the header label
+     *
+     * @param headerColorStyle A <code>HeaderColorStyle</code> option containing
+     * a color scheme.
+     */
+    public final void setHeaderColorStyle(HeaderColorStyle headerColorStyle) {
+        this.headerColorStyle = headerColorStyle;
+        this.applyHeaderColorStyle(this.headerColorStyle);
+    }
+
+    /**
+     * Apply custom JavaFX CSS background color style on header label. Improper
+     * JavaFX CSS declaration will result to nothing.
+     *
+     * @param colorStyle A JavaFX CSS style declaration in <code>String</code>
+     * form.
+     */
+    public final void setCustomHeaderColorStyle(String colorStyle) {
+        this.headerColorStyle = HeaderColorStyle.GLOSS_CUSTOM;
+        this.getHeaderLabel().setStyle(colorStyle);
+    }
 
     /**
      * Allows to change both font sizes for the header and the details label
@@ -551,7 +648,8 @@ public class Dialog extends Stage implements Initializable {
     /**
      * Retrieve user input text from the Input Text Dialog, if no text is given
      * or a different dialog is used, then return string value is empty as the
-     * default value. Return value is null if the created is not an input dialog.
+     * default value. Return value is null if the created is not an input
+     * dialog.
      *
      * @return The string input text entered from the Input Text Dialog
      */
@@ -561,8 +659,8 @@ public class Dialog extends Stage implements Initializable {
 
     /**
      * Retrieve the <code>TextField</code> object. Allows user to customize FX
-     * <code>TextField</code> object. This is only for input's text field dialog.
-     * Returns null if the dialog created is not an input dialog.
+     * <code>TextField</code> object. This is only for input's text field
+     * dialog. Returns null if the dialog created is not an input dialog.
      *
      * @return
      */
