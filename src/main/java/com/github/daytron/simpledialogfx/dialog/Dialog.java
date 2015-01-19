@@ -74,9 +74,9 @@ public class Dialog extends Stage implements Initializable {
     @FXML
     private Button noButton;
     @FXML
-    private TextArea exception_area;
+    private TextArea exceptionArea;
     @FXML
-    private TextField text_field;
+    private TextField inputTextField;
     @FXML
     private Button sendButton;
 
@@ -416,18 +416,18 @@ public class Dialog extends Stage implements Initializable {
 
         // Filter behaviour for exception dialog
         if (dialogType == DialogType.EXCEPTION) {
-            this.exception_area.clear();
+            this.exceptionArea.clear();
             
             if (this.exception != null) {
-                this.exception_area.appendText(
+                this.exceptionArea.appendText(
                         Arrays.toString(this.exception.getStackTrace()));
             } else {
-                this.exception_area.appendText(
+                this.exceptionArea.appendText(
                         DialogText.NO_EXCEPTION_TRACE.getText());
             }
 
-            this.exception_area.setWrapText(true);
-            this.exception_area.setEditable(false);
+            this.exceptionArea.setWrapText(true);
+            this.exceptionArea.setEditable(false);
         }
 
         // Apply Header CSS style color
@@ -622,7 +622,7 @@ public class Dialog extends Stage implements Initializable {
      * @return TextArea object
      */
     public final TextArea getExceptionArea() {
-        return exception_area;
+        return exceptionArea;
     }
 
     /**
@@ -655,7 +655,7 @@ public class Dialog extends Stage implements Initializable {
      * @return The <code>TextField</code> object
      */
     public final TextField getTextField() {
-        return text_field;
+        return inputTextField;
     }
 
     /**
@@ -716,7 +716,7 @@ public class Dialog extends Stage implements Initializable {
     private void send_btn_on_click(ActionEvent event) {
         // Future proof for other uses of send event handler
         if (this.dialogType == DialogType.INPUT_TEXT) {
-            this.textEntry = this.text_field.getText();
+            this.textEntry = this.inputTextField.getText();
         }
 
         setResponse(DialogResponse.SEND);
