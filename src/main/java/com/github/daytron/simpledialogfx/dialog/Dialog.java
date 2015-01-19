@@ -111,6 +111,22 @@ public class Dialog extends Stage implements Initializable {
     public Dialog(DialogType dialogType, String header, String details) {
         this(dialogType, DialogStyle.NATIVE, "", header, details, null);
     }
+    
+    /**
+     * Construct a dialog using the default "native" dialog style with custom 
+     * header background style color. The type of dialog to be created is 
+     * determine by the dialogType parameter. The default title is set to empty;
+     *
+     * @param dialogType The dialog type to be created
+     * @param headerColorStyle
+     * @param header The text for the colored header label
+     * @param details The text for the message details label
+     */
+    public Dialog(DialogType dialogType, HeaderColorStyle headerColorStyle, 
+            String header, String details) {
+        this(dialogType, DialogStyle.NATIVE, "", header, headerColorStyle, 
+                details, null);
+    }
 
     /**
      * Construct a dialog with optional dialog style. The type of dialog to be
