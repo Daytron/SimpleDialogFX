@@ -724,8 +724,8 @@ public class Dialog extends Stage implements Initializable {
     /**
      * Retrieve user input text from the Input Text Dialog, if no text is given
      * or a different dialog is used, then return string value is empty as the
-     * default value. Return value is null if the created is not an input
-     * dialog.
+     * default value. Returns an empty <code>String</code> if the dialog 
+     * created is not an input dialog.
      *
      * @return The string input text entered from the Input Text Dialog
      */
