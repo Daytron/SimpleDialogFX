@@ -98,6 +98,7 @@ public class Dialog extends Stage implements Initializable {
     private String textEntry;
 
     private HeaderColorStyle headerColorStyle;
+    private boolean isLoadingError;
 
     /**
      * Construct a dialog using the default "native" dialog style. The type of
@@ -264,6 +265,7 @@ public class Dialog extends Stage implements Initializable {
     public Dialog(DialogType dialogType, DialogStyle dialogStyle,
             String title, String header, HeaderColorStyle headerColorStyle,
             String details, Exception exception) {
+        this.isLoadingError = false;
         setTitle(title);
         
         this.headerColorStyle = headerColorStyle;
@@ -362,9 +364,9 @@ public class Dialog extends Stage implements Initializable {
             });
         } catch (IOException ex) {
             Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE, null, ex);
-
-            // Close dialog when an exception occur
-            close();
+            this.isLoadingError = true;
+            
+            
         }
 
     }
@@ -380,6 +382,11 @@ public class Dialog extends Stage implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if (this.isLoadingError) {
+            close();
+            return;
+        }
+        
         // Set default focus to the appropriate button
         Platform.runLater(new Runnable() {
             @Override
@@ -473,7 +480,7 @@ public class Dialog extends Stage implements Initializable {
      * @return A DialogResponse object pass as an argument
      */
     public final DialogResponse getResponse() {
-        return response;
+        return this.response;
     }
 
     /**
@@ -482,7 +489,7 @@ public class Dialog extends Stage implements Initializable {
      * @return A <code>String</code> object pertaining to the message details
      */
     public final String getDetails() {
-        return details;
+        return this.details;
     }
 
     /**
@@ -491,7 +498,7 @@ public class Dialog extends Stage implements Initializable {
      * @return A <code>String</code> object pertaining to the header
      */
     public final String getHeader() {
-        return header;
+        return this.header;
     }
 
     /**
@@ -500,7 +507,7 @@ public class Dialog extends Stage implements Initializable {
      * @return A <code>HeaderColorStyle</code> option containing a color scheme.
      */
     public final HeaderColorStyle getHeaderColorStyle() {
-        return headerColorStyle;
+        return this.headerColorStyle;
     }
 
     /**
