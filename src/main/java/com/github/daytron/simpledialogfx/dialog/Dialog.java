@@ -112,10 +112,10 @@ public class Dialog extends Stage implements Initializable {
     public Dialog(DialogType dialogType, String header, String details) {
         this(dialogType, DialogStyle.NATIVE, "", header, details, null);
     }
-    
+
     /**
-     * Construct a dialog using the default "native" dialog style with custom 
-     * header background style color. The type of dialog to be created is 
+     * Construct a dialog using the default "native" dialog style with custom
+     * header background style color. The type of dialog to be created is
      * determine by the dialogType parameter. The default title is set to empty;
      *
      * @param dialogType The dialog type to be created
@@ -123,9 +123,9 @@ public class Dialog extends Stage implements Initializable {
      * @param header The text for the colored header label
      * @param details The text for the message details label
      */
-    public Dialog(DialogType dialogType, HeaderColorStyle headerColorStyle, 
+    public Dialog(DialogType dialogType, HeaderColorStyle headerColorStyle,
             String header, String details) {
-        this(dialogType, DialogStyle.NATIVE, "", header, headerColorStyle, 
+        this(dialogType, DialogStyle.NATIVE, "", header, headerColorStyle,
                 details, null);
     }
 
@@ -230,7 +230,7 @@ public class Dialog extends Stage implements Initializable {
      * Construct a dialog with default color style for the header label.
      * <p>
      * Note: Using exception dialog will overwrite the details message with the
-     * exception's name and null exception parameter will result to pre-built 
+     * exception's name and null exception parameter will result to pre-built
      * error text in exception dialog's header, details and trace texts.
      *
      * @param dialogType The type of dialog to build
@@ -251,7 +251,7 @@ public class Dialog extends Stage implements Initializable {
      * customization for dialog building.
      * <p>
      * Note: Using exception dialog will overwrite the details message with the
-     * exception's name and null exception parameter will result to pre-built 
+     * exception's name and null exception parameter will result to pre-built
      * error text in exception dialog's header, details and trace texts.
      *
      * @param dialogType The type of dialog to build
@@ -267,7 +267,7 @@ public class Dialog extends Stage implements Initializable {
             String details, Exception exception) {
         this.isLoadingError = false;
         setTitle(title);
-        
+
         this.headerColorStyle = headerColorStyle;
         this.dialogType = dialogType;
         this.exception = exception;
@@ -365,8 +365,7 @@ public class Dialog extends Stage implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE, null, ex);
             this.isLoadingError = true;
-            
-            
+
         }
 
     }
@@ -386,7 +385,7 @@ public class Dialog extends Stage implements Initializable {
             close();
             return;
         }
-        
+
         // Set default focus to the appropriate button
         Platform.runLater(new Runnable() {
             @Override
@@ -440,7 +439,7 @@ public class Dialog extends Stage implements Initializable {
         // Filter behaviour for exception dialog
         if (dialogType == DialogType.EXCEPTION) {
             this.exceptionArea.clear();
-            
+
             if (this.exception != null) {
                 this.exceptionArea.appendText(
                         Arrays.toString(this.exception.getStackTrace()));
@@ -461,7 +460,7 @@ public class Dialog extends Stage implements Initializable {
         if (!headerColorStyle.getColorStyle().isEmpty()) {
             this.getHeaderLabel().setStyle(headerColorStyle.getColorStyle());
         }
-        
+
     }
 
     /**
@@ -534,8 +533,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Allows to change both font sizes for the header and the details label
-     * with a single font size <code>integer</code> parameter given.
+     * Allows to change both font sizes in pixels for the header and the details
+     * label with a single font size <code>integer</code> parameter given.
      *
      * @param font_size Font size in pixels for both header and details labels
      * in pixels
@@ -545,8 +544,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Allows to change both font sizes for the header and the details label
-     * with two font sizes <code>integer</code> parameters given.
+     * Allows to change both font sizes in pixels for the header and the details
+     * label with two font sizes <code>integer</code> parameters given.
      *
      * @param header_font_size The header font size in pixels
      * @param details_font_size The details font size in pixels
@@ -556,6 +555,26 @@ public class Dialog extends Stage implements Initializable {
                 .setStyle("-fx-font-size:" + Integer.toString(header_font_size) + "px;");
         this.detailsLabel
                 .setStyle("-fx-font-size:" + Integer.toString(details_font_size) + "px;");
+    }
+
+    /**
+     * Set header label's font size in pixels
+     *
+     * @param font_size Header label font size
+     */
+    public void setHeaderFontSize(int font_size) {
+        this.headerLabel
+                .setStyle("-fx-font-size:" + Integer.toString(font_size) + "px;");
+    }
+
+    /**
+     * Set details label's font size in pixels
+     *
+     * @param font_size Details label font size
+     */
+    public void setDetailsFontSize(int font_size) {
+        this.detailsLabel
+                .setStyle("-fx-font-size:" + Integer.toString(font_size) + "px;");
     }
 
     /**
@@ -582,6 +601,26 @@ public class Dialog extends Stage implements Initializable {
                 .setStyle("-fx-font-family: \"" + header_font_family + "\";");
         this.detailsLabel
                 .setStyle("-fx-font-family: \"" + details_font_family + "\";");
+    }
+
+    /**
+     * Set header label's font family using local machine fonts.
+     *
+     * @param font_family Font family in <code>Strings</code>
+     */
+    public void setHeaderFontFamily(String font_family) {
+        this.headerLabel
+                .setStyle("-fx-font-family: \"" + font_family + "\";");
+    }
+
+    /**
+     * Set details label's font family using local machine fonts.
+     *
+     * @param font_family Font family in <code>Strings</code>
+     */
+    public void setDetailsFontFamily(String font_family) {
+        this.detailsLabel
+                .setStyle("-fx-font-family: \"" + font_family + "\";");
     }
 
     /**
@@ -616,6 +655,30 @@ public class Dialog extends Stage implements Initializable {
                 .setStyle("-fx-font-family: \"" + details_font_family + "\";"
                         + "-fx-font-size:" + Integer.toString(details_font_size) + "px;");
 
+    }
+
+    /**
+     * Set both header label's font family and size.
+     *
+     * @param font_family Font family in <code>Strings</code>
+     * @param font_size Font size in <code>integer</code> (pixels)
+     */
+    public void setHeaderFont(String font_family, int font_size) {
+        this.headerLabel
+                .setStyle("-fx-font-family: \"" + font_family + "\";"
+                        + "-fx-font-size:" + Integer.toString(font_size) + "px;");
+    }
+
+    /**
+     * Set both details label's font family and size.
+     *
+     * @param font_family Font family in <code>Strings</code>
+     * @param font_size Font size in <code>integer</code> (pixels)
+     */
+    public void setDetailsFont(String font_family, int font_size) {
+        this.detailsLabel
+                .setStyle("-fx-font-family: \"" + font_family + "\";"
+                        + "-fx-font-size:" + Integer.toString(font_size) + "px;");
     }
 
     /**
