@@ -50,7 +50,7 @@ Easy to use lightweight dialog library for JavaFX applications.
 ### <a name='installation'></a>Installation <sup><a href='#home'>[back to top]</a></sup>  
 SimpleDialogFX is available in Maven Central. To start using, simply add the following elements to your pom.xml file:
 
-```
+```xml
 <dependency>
   <groupId>com.github.daytron</groupId>
   <artifactId>SimpleDialogFX</artifactId>
@@ -61,7 +61,7 @@ SimpleDialogFX is available in Maven Central. To start using, simply add the fol
 ### <a name='usage'></a>Usage <sup><a href='#home'>[back to top]</a></sup> 
 #####<a name='construction'></a>Construction
 For any type of dialog with native window style, you only have to create a new `Dialog` object. For example a confirmation dialog would look like this:
-```
+```java
 Dialog dialog = new Dialog(
                 DialogType.CONFIRMATION,
                 "Confirm Action",
@@ -69,7 +69,7 @@ Dialog dialog = new Dialog(
 dialog.showAndWait();
 ```
 For an undecorated window style:
-```
+```java
 Dialog dialog = new Dialog(
                 DialogType.CONFIRMATION,
                 DialogStyle.UNDECORATED,
@@ -78,7 +78,7 @@ Dialog dialog = new Dialog(
 dialog.showAndWait();
 ```
 For a confirmation dialog with prebuilt texts:
-```
+```java
 Dialog dialog = new Dialog(
                 DialogType.CONFIRMATION,
                 DialogText.CONFIRMATION_TITLE.getText(),
@@ -88,13 +88,13 @@ dialog.showAndWait();
 ```
 
 For an exception dialog:
-```
+```java
 Dialog dialog = new Dialog(exception);
 dialog.showAndWait();
 ```
 
 For undecorated exception dialog:
-```
+```java
 Dialog dialog = new Dialog(
                 DialogStyle.UNDECORATED,
                 exception);
@@ -102,11 +102,11 @@ dialog.showAndWait();
 ```
 
 To retrieve a response, simply use:
-```
+```java
 DialogResponse response = dialog.getResponse();
 ```
 Another example:
-```
+```java
 Dialog dialog = new Dialog(
                 DialogType.CONFIRMATION,
                 "This is a sample title",
@@ -126,7 +126,7 @@ Result:
 <br /><br />
 ##### <a name='font'></a>Font <sup><a href='#home'>[back to top]</a></sup>  
 Apply any style fonts using these methods:
-```
+```java
 setFontSize(int font_size)
 setFontSize(int header_font_size, int details_font_size)
 setFontFamily(String font_family)
@@ -146,7 +146,7 @@ The list of all available dialog responses:
 
 ##### <a name='misc'></a>Misc <sup><a href='#home'>[back to top]</a></sup>  
 UI components can be extracted, allowing you to customize the dialog as you see fit.
-```
+```java
 getHeaderLabel()    // The colored head label
 getDetailsLabel()   // The label text below header
 getTextField()      // For Input dialog's textfield
