@@ -2,7 +2,22 @@
 
 Easy to use lightweight dialog library for JavaFX applications.
 
-### Features
+### Contents
+* <a href='#features'>Features</a>
+* <a href='#dialogs'>Dialogs</a>
+* <a href='#installation'>Installation</a>
+* <a href='#usage'>Usage</a>
+ * <a href='#construction'>Construction</a>
+ * <a href='#font'>Font</a>
+ * <a href='#responses'>Responses</a>
+ * <a href='#misc'>Misc</a>
+* <a href='#documentation'>Documentation</a>
+* <a href='#development'>Development</a>
+* <a href='#license'>License</a>
+
+***
+
+### <a name='features'></a>Features
   - Minimal design 
   - Apply custom fonts
   - Add your own custom title, head and message texts
@@ -11,7 +26,7 @@ Easy to use lightweight dialog library for JavaFX applications.
   - Automatically resize to fit your contents
 
 
-### Dialogs
+### <a name='dialogs'></a>Dialogs
 <p align="center">
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InfoDialog.png?token=AGk1WtIl0yQai-c3MiXwwyPwtbakmtY4ks5UmUB6wA%3D%3D" alt="Information Dialog" />
 <br /><br />
@@ -31,7 +46,7 @@ Easy to use lightweight dialog library for JavaFX applications.
 <br /><br />
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ExceptionDialog.png" alt="Generic OK CANCEL Dialog" />
 </p>
-### Installation
+### <a name='installation'></a>Installation
 SimpleDialogFX is available in Maven Central. To start using, simply add the following elements to your pom.xml file:
 
 ```
@@ -42,8 +57,8 @@ SimpleDialogFX is available in Maven Central. To start using, simply add the fol
 </dependency>
 ```
 
-### Usage
-#####Construction
+### <a name='usage'></a>Usage
+#####<a name='construction'></a>Construction
 For any type of dialog with native window style, you only have to create a new `Dialog` object. For example a confirmation dialog would look like this:
 ```
 Dialog dialog = new Dialog(
@@ -108,7 +123,7 @@ Result:
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D" alt="Result Example Dialog" />
 </p>
 <br /><br />
-##### Font
+##### <a name='font'></a>Font
 Apply any style fonts using these methods:
 ```
 setFontSize(int font_size)
@@ -118,7 +133,7 @@ setFontFamily(String header_font_family, String details_font_family)
 setFont(String font_family, int font_size)
 setFont(String header_font_family, int header_font_size, String details_font_family, int details_font_size)
 ```
-##### Responses
+##### <a name='responses'></a>Responses
 The list of all available dialog responses:
 - OK
 - CANCEL
@@ -128,7 +143,7 @@ The list of all available dialog responses:
 - SEND
 - NO_RESPONSE (Default value until the user interacts with it)
 
-##### Misc
+##### <a name='misc'></a>Misc
 UI components can be extracted, allowing you to customize the dialog as you see fit.
 ```
 getHeaderLabel()    // The colored head label
@@ -138,17 +153,17 @@ getException_area() // For Exception dialog's textarea
 ```
 In addition, the Dialog class itself is a subclass of the Stage class, so you can further customize the look and style of your dialogs.
 
-### Documentation
+### <a name='documentation'></a>Documentation
 See [Javadoc] for more information.
 
-### Development
+### <a name='development'></a>Development
 
 Want to contribute? Please do open up an issue for any bug reports, recommendation or feedback. 
 
 
 
-License
-----
+### <a name='license'></a>License
+
 
 MIT
 
