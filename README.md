@@ -1,8 +1,8 @@
-# SimpleDialogFX   
+# <a name='home'></a>SimpleDialogFX   
 
 Easy to use lightweight dialog library for JavaFX applications.
 
-### <a name='home'></a>Contents
+### Contents
 * <a href='#features'>Features</a>
 * <a href='#dialogs'>Dialogs</a>
 * <a href='#installation'>Installation</a>
@@ -14,22 +14,23 @@ Easy to use lightweight dialog library for JavaFX applications.
 * <a href='#documentation'>Documentation</a>
 * <a href='#development'>Development</a>
 * <a href='#license'>License</a>
-
+ 
 ***
 
 ### <a name='features'></a>Features 
-<sup><a href='#home'>[back to top]</a></sup> 
+<sup><a href='#home'>[back to top]</a></sup>
 
-  - Minimal design 
-  - Apply custom fonts
-  - Add your own custom title, head and message texts
-  - Flexible constructor options
-  - Apply custom CSS style on all dialog UI components
-  - Automatically resize to fit your contents
+- Minimal design 
+- Apply custom fonts
+- Add your own custom title, head and message texts
+- Flexible constructor options
+- Apply custom CSS style on all dialog UI components
+- Automatically resize to fit your contents
 
 
 ### <a name='dialogs'></a>Dialogs 
-<sup><a href='#home'>[back to top]</a></sup> 
+<sup><a href='#home'>[back to top]</a></sup>
+
 <p align="center">
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InfoDialog.png?token=AGk1WtIl0yQai-c3MiXwwyPwtbakmtY4ks5UmUB6wA%3D%3D" alt="Information Dialog" />
 <br /><br />
@@ -51,6 +52,7 @@ Easy to use lightweight dialog library for JavaFX applications.
 </p>
 ### <a name='installation'></a>Installation 
 <sup><a href='#home'>[back to top]</a></sup>  
+
 SimpleDialogFX is available in Maven Central. To start using, simply add the following elements to your pom.xml file:
 
 ```xml
@@ -65,6 +67,7 @@ SimpleDialogFX is available in Maven Central. To start using, simply add the fol
 <sup><a href='#home'>[back to top]</a></sup> 
 #####<a name='construction'></a>Construction
 <sup><a href='#home'>[back to top]</a></sup> 
+
 For any type of dialog with native window style, you only have to create a new `Dialog` object. For example a confirmation dialog would look like this:
 ```java
 Dialog dialog = new Dialog(
@@ -131,6 +134,7 @@ Result:
 <br /><br />
 ##### <a name='font'></a>Font 
 <sup><a href='#home'>[back to top]</a></sup>  
+
 Apply any style fonts using these methods:
 ```java
 setFontSize(int font_size)
@@ -142,6 +146,7 @@ setFont(String header_font_family, int header_font_size, String details_font_fam
 ```
 ##### <a name='responses'></a>Responses 
 <sup><a href='#home'>[back to top]</a></sup> 
+
 The list of all available dialog responses:
 - `OK`
 - `CANCEL`
@@ -153,6 +158,7 @@ The list of all available dialog responses:
 
 ##### <a name='misc'></a>Misc 
 <sup><a href='#home'>[back to top]</a></sup>  
+
 UI components can be extracted, allowing you to customize the dialog as you see fit.
 ```java
 getHeaderLabel()    // The colored head label
@@ -164,6 +170,7 @@ In addition, the Dialog class itself is a subclass of the Stage class, so you ca
 
 ### <a name='documentation'></a>Documentation 
 <sup><a href='#home'>[back to top]</a></sup> 
+
 See [Javadoc] for more information.
 
 ### <a name='development'></a>Development 
