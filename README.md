@@ -135,13 +135,13 @@ setFont(String header_font_family, int header_font_size, String details_font_fam
 ```
 ##### <a name='responses'></a>Responses
 The list of all available dialog responses:
-- OK
-- CANCEL
-- YES
-- NO
-- CLOSE (When user clicks dialog's close button instead)
-- SEND
-- NO_RESPONSE (Default value until the user interacts with it)
+- `OK`
+- `CANCEL`
+- `YES`
+- `NO`
+- `CLOSE` (When user clicks dialog's close button instead)
+- `SEND`
+- `NO_RESPONSE` (Default value until the user interacts with it)
 
 ##### <a name='misc'></a>Misc
 UI components can be extracted, allowing you to customize the dialog as you see fit.
