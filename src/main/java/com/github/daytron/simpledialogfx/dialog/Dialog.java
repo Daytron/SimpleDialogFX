@@ -181,8 +181,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Constructs a dialog with specified DialogType, DialogStyle, title,
-     * header text and details text.
+     * Constructs a dialog with specified DialogType, DialogStyle, title, header
+     * text and details text.
      * <p>
      * Note: Using an exception dialog will overwrite the header's and details'
      * texts with predefined exception header message and Exception object's
@@ -321,8 +321,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Constructs a dialog with specified DialogType, DialogStyle, title,
-     * header text, details text and exception object.
+     * Constructs a dialog with specified DialogType, DialogStyle, title, header
+     * text, details text and exception object.
      * <p>
      * Note: Using exception dialog will overwrite the header's and details'
      * texts with predefined exception header message and Exception object's
@@ -353,9 +353,8 @@ public class Dialog extends Stage implements Initializable {
 
     /**
      * Constructs a dialog using all possible parameters. Allows full explicit
-     * customization for dialog building with specified DialogType,
-     * DialogStyle, title, header text, HeaderColorStyle, details text and
-     * exception object.
+     * customization for dialog building with specified DialogType, DialogStyle,
+     * title, header text, HeaderColorStyle, details text and exception object.
      * <p>
      * Note: Using exception dialog will overwrite the header's and details'
      * texts with predefined exception header message and Exception object's
@@ -439,8 +438,11 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Initializes the dialog. Set default focus to OK button. Wrap the text for
-     * details message label and apply the user-defined header and details.
+     * Initializes the dialog. Sets default focus to OK button. Wraps the text
+     * for details message label and apply the user-defined header and details.
+     * Filter the behavior for the exception dialog for a null and non-null
+     * exception object given. Applies corresponding header background css
+     * style.
      *
      * @param location The location used to resolve relative paths for the root
      * object, or null if the location is not known
@@ -525,7 +527,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Apply different JavaFX CSS background color style for the header label
+     * Applies a predefined JavaFX CSS background color style for the header
+     * label
      *
      * @param headerColorStyle A <code>HeaderColorStyle</code> option containing
      * a color scheme.
@@ -587,7 +590,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve a response.
+     * Retrieves the dialog's response.
      *
      * @return A DialogResponse object pass as an argument
      */
@@ -596,7 +599,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the message details text.
+     * Retrieves the message details text.
      *
      * @return A <code>String</code> object pertaining to the message details
      */
@@ -605,7 +608,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the header text.
+     * Retrieves the header text.
      *
      * @return A <code>String</code> object pertaining to the header
      */
@@ -614,7 +617,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the header's JavaFX CSS background color style
+     * Retrieves the header's JavaFX CSS background color style
      *
      * @return A <code>HeaderColorStyle</code> option containing a color scheme.
      */
@@ -623,11 +626,11 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Apply custom JavaFX CSS background color style on header label. Improper
-     * JavaFX CSS declaration will result to nothing.
+     * Applies custom JavaFX CSS background color style on header label.
+     * Improper JavaFX CSS declaration will result to nothing.
      *
      * @param colorStyle A JavaFX CSS style declaration in <code>String</code>
-     * form.
+     * format.
      */
     public final void setCustomHeaderColorStyle(String colorStyle) {
         this.headerColorStyle = HeaderColorStyle.CUSTOM;
@@ -635,7 +638,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Allows to change both font sizes in pixels for the header and the details
+     * Sets both font sizes in pixels for the header and the details
      * label with a single font size <code>integer</code> parameter given.
      *
      * @param font_size Font size in pixels for both header and details labels
@@ -646,7 +649,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Allows to change both font sizes in pixels for the header and the details
+     * Sets both font sizes in pixels for the header and the details
      * label with two font sizes <code>integer</code> parameters given.
      *
      * @param header_font_size The header font size in pixels
@@ -660,7 +663,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Set header label's font size in pixels
+     * Sets header label's font size in pixels
      *
      * @param font_size Header label font size
      */
@@ -670,7 +673,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Set details label's font size in pixels
+     * Sets details label's font size in pixels
      *
      * @param font_size Details label font size
      */
@@ -680,7 +683,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Allows to change both font families for the header and the details label
+     * Sets both font families for the header and the details label
      * with a single font family <code>String</code> parameter given.
      *
      * @param font_family Font family for both header and details labels in
@@ -691,7 +694,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Allows to change both font families for the header and the details label
+     * Sets both font families for the header and the details label
      * with two font families <code>String</code> parameters given.
      *
      * @param header_font_family The header font family in <code>Strings</code>
@@ -706,7 +709,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Set header label's font family using local machine fonts.
+     * Sets header label's font family using local machine fonts.
      *
      * @param font_family Font family in <code>Strings</code>
      */
@@ -716,7 +719,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Set details label's font family using local machine fonts.
+     * Sets details label's font family using local machine fonts.
      *
      * @param font_family Font family in <code>Strings</code>
      */
@@ -726,7 +729,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Allows to change the font sizes and the font families for the header and
+     * Sets the font sizes and the font families for the header and
      * details label with a single font family and a single font size.
      *
      * @param font_family The font family for header and details labels in
@@ -739,7 +742,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Allows to change the font sizes and the font families for the header and
+     * Sets the font sizes and the font families for the header and
      * details label.
      *
      * @param header_font_family The header font family in <code>Strings</code>
@@ -760,7 +763,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Set both header label's font family and size.
+     * Sets both header label's font family and size.
      *
      * @param font_family Font family in <code>Strings</code>
      * @param font_size Font size in <code>integer</code> (pixels)
@@ -772,7 +775,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Set both details label's font family and size.
+     * Sets both details label's font family and size.
      *
      * @param font_family Font family in <code>Strings</code>
      * @param font_size Font size in <code>integer</code> (pixels)
@@ -784,7 +787,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the header label object. Allows user to customize FX label
+     * Retrieves the header label object. Allows user to customize FX label
      * object.
      *
      * @return HeaderLabel object
@@ -794,7 +797,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the details label object. Allows user to customize FX label
+     * Retrieves the details label object. Allows user to customize FX label
      * object.
      *
      * @return DetailsLabel object
@@ -804,7 +807,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the <code>TextArea</code> object for the exception area. Allows
+     * Retrieves the <code>TextArea</code> object for the exception area. Allows
      * user to customize FX <code>TextArea</code> object.
      *
      * @return TextArea object
@@ -814,7 +817,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the exception object, if the dialog does not hold an exception,
+     * Retrieves the exception object, if the dialog does not hold an exception,
      * return null.
      *
      * @return The <code>Exception</code> object
@@ -824,7 +827,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve user input text from the Input Text Dialog, if no text is given
+     * Retrieves user input text from the Input Text Dialog, if no text is given
      * or a different dialog is used, then return string value is empty as the
      * default value. Returns an empty <code>String</code> if the dialog created
      * is not an input dialog.
@@ -836,7 +839,7 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Retrieve the <code>TextField</code> object. Allows user to customize FX
+     * Retrieves the <code>TextField</code> object. Allows user to customize FX
      * <code>TextField</code> object. This is only for input's text field
      * dialog. Returns null if the dialog created is not an input dialog.
      *
