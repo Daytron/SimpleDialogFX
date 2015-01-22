@@ -5,9 +5,11 @@ Easy to use lightweight dialog library for JavaFX applications.
 ### Contents
 * <a href='#features'>Features</a>
 * <a href='#dialogs'>Dialogs</a>
+* <a href='#colorthemes'>Color Themes</a>
 * <a href='#installation'>Installation</a>
 * <a href='#usage'>Usage</a>
  * <a href='#construction'>Construction</a>
+ * <a href='#colorstyle'>Color Style</a>
  * <a href='#font'>Font</a>
  * <a href='#responses'>Responses</a>
  * <a href='#misc'>Misc</a>
@@ -21,10 +23,12 @@ Easy to use lightweight dialog library for JavaFX applications.
 <sup><a href='#home'>[back to top]</a></sup>
 
 - Minimal design 
-- Apply custom fonts
-- Add your own custom title, head and message texts
+- Apply various custom font styles
+- Interchangeble color style themes with 54 background styles to choose from
+- Apply your own custom style theme
+- Add custom title, header and details/message texts
 - Flexible constructor options
-- Apply custom CSS style on all dialog UI components
+- Allows CSS style customization on dialog UI components
 - Automatically resize to fit your contents
 
 
@@ -50,6 +54,27 @@ Easy to use lightweight dialog library for JavaFX applications.
 <br /><br />
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ExceptionDialog.png" alt="Generic OK CANCEL Dialog" />
 </p>
+
+### <a name='colorthemes'></a>Color Themes 
+<sup><a href='#home'>[back to top]</a></sup>
+
+If none of those colors hook you, try mix and match various color styles.
+
+##### Gloss Series
+<p align="center">
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/GlossSeries.png" alt="Generic OK CANCEL Dialog" />
+</p>
+
+##### Linear Fade Left Series
+<p align="center">
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/LinearFadeLeftSeries.png" alt="Generic OK CANCEL Dialog" />
+</p>
+
+##### Linear Fade Right Series
+<p align="center">
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/LinearFadeRightSeries.png" alt="Generic OK CANCEL Dialog" />
+</p>
+
 ### <a name='installation'></a>Installation 
 <sup><a href='#home'>[back to top]</a></sup>  
 
@@ -59,7 +84,7 @@ SimpleDialogFX is available in Maven Central. To start using, simply add the fol
 <dependency>
   <groupId>com.github.daytron</groupId>
   <artifactId>SimpleDialogFX</artifactId>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
 </dependency>
 ```
 
@@ -132,6 +157,21 @@ Result:
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D" alt="Result Example Dialog" />
 </p>
 <br /><br />
+
+##### <a name='colorstyle'></a>Color Style 
+<sup><a href='#home'>[back to top]</a></sup>
+
+You can set the color style with `HeaderColorStyle` enum either via the constructor or through a method.
+
+###### Via constructor: 
+
+`Dialog(DialogType dialogType, HeaderColorStyle headerColorStyle, String header, String details)` and
+
+`Dialog(DialogType dialogType, DialogStyle dialogStyle, String title, String header, HeaderColorStyle headerColorStyle, String details, Exception exception)`
+
+###### Via method:
+`setHeaderColorStyle(HeaderColorStyle headerColorStyle)`
+
 ##### <a name='font'></a>Font 
 <sup><a href='#home'>[back to top]</a></sup>  
 
@@ -143,6 +183,15 @@ setFontFamily(String font_family)
 setFontFamily(String header_font_family, String details_font_family)
 setFont(String font_family, int font_size)
 setFont(String header_font_family, int header_font_size, String details_font_family, int details_font_size)
+```
+
+```java
+ setHeaderFontSize(int font_size)
+ setDetailsFontSize(int font_size)
+ setHeaderFontFamily(String font_family)
+ setDetailsFontFamily(String font_family)
+ setHeaderFont(String font_family, int font_size)
+ setDetailsFont(String font_family, int font_size)
 ```
 ##### <a name='responses'></a>Responses 
 <sup><a href='#home'>[back to top]</a></sup> 
@@ -164,7 +213,7 @@ UI components can be extracted, allowing you to customize the dialog as you see 
 getHeaderLabel()    // The colored head label
 getDetailsLabel()   // The label text below header
 getTextField()      // For Input dialog's textfield
-getException_area() // For Exception dialog's textarea
+getExceptionArea() // For Exception dialog's textarea
 ```
 In addition, the Dialog class itself is a subclass of the Stage class, so you can further customize the look and style of your dialogs.
 
