@@ -29,6 +29,7 @@ THE SOFTWARE.
     -fx-font-family: "Helvetica";
     -fx-font-size: 25px;
     -fx-padding: 10 10 10 10;
+    -fx-background-color: #FFFFFF;
     -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }
 

@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.github.daytron.simpledialogfx.data;
+package com.github.daytron.simpledialogfx.dialog;
 
 /**
- * List of dialog types
+ * List of dialog types and their corresponding Fxml file path
  *
  * @author Ryan Gilera
  */
@@ -33,37 +33,52 @@ public enum DialogType {
     /**
      * Confirmation dialog
      */
-    CONFIRMATION,
+    CONFIRMATION("/fxml/YesNoDialog.fxml"),
     /**
      * Information dialog
      */
-    INFORMATION,
+    INFORMATION("/fxml/OkDialog.fxml"),
     /**
      * Warning dialog
      */
-    WARNING,
+    WARNING("/fxml/OkDialog.fxml"),
     /**
      * Error dialog
      */
-    ERROR,
+    ERROR("/fxml/OkDialog.fxml"),
     /**
      * Exception dialog
      */
-    EXCEPTION,
+    EXCEPTION("/fxml/ExceptionDialog.fxml"),
     /**
      * Input text dialog
      */
-    INPUT_TEXT,
+    INPUT_TEXT("/fxml/InputTextDialog.fxml"),
     /**
      * Generic OK dialog
      */
-    GENERIC_OK,
+    GENERIC_OK("/fxml/OkDialog.fxml"),
     /**
      * Generic OK and CANCEL dialog
      */
-    GENERIC_OK_CANCEL,
+    GENERIC_OK_CANCEL("/fxml/OkCancelDialog.fxml"),
     /**
      * Generic YES and NO dialog
      */
-    GENERIC_YES_NO;
+    GENERIC_YES_NO("/fxml/YesNoDialog.fxml");
+    
+    private final String path;
+
+    private DialogType(String msg) {
+        this.path = msg;
+    }
+
+    /**
+     * Retrieve the FXML file path
+     *
+     * @return The <code>String</code> object as file path
+     */
+    protected String getPath() {
+        return path;
+    }
 }

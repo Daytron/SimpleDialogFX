@@ -14,7 +14,7 @@
   <children>
     <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
       <children>
-        <Label id="header-warning" fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
+        <Label fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
           <font>
             <Font name="System Bold" size="13.0" />
           </font>
@@ -29,6 +29,7 @@
     <HBox maxHeight="-Infinity" maxWidth="+Infinity" minHeight="-Infinity" minWidth="-Infinity" GridPane.rowIndex="1">
       <children>
         <Pane HBox.hgrow="ALWAYS" />
+            <Button id="cancel-btn" fx:id="cancelButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#cancel_btn_on_click" text="Cancel" />
         <HBox fx:id="okParent" alignment="CENTER">
           <children>
             <Button id="ok-btn" fx:id="okButton" minWidth="80.0" mnemonicParsing="false" onAction="#ok_btn_on_click" text="Ok" HBox.hgrow="NEVER">

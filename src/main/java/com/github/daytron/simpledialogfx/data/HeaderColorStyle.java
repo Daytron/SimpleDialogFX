@@ -33,8 +33,15 @@ public enum HeaderColorStyle {
     /**
      * If no color is selected, this will be the default value, default CSS
      * styles will be used instead
+     *//**
+     * If no color is selected, this will be the default value, default CSS
+     * styles will be used instead
      */
     DEFAULT(""),
+    /**
+     * This value is selected when the user apply their own color style
+     */
+    CUSTOM(""),
     /**
      * The default color style for Error dialog (red)
      */
@@ -42,7 +49,7 @@ public enum HeaderColorStyle {
     /**
      * The default color style for information dialog (blue)
      */
-    GLOSS_INFO("-fx-background-color: linear-gradient(to bottom, #A3FFCE 0%, #92FAC3 44%, #7BF3B3 100% );"),
+    GLOSS_INFO("-fx-background-color: linear-gradient(to bottom, #A3D1FF 0%, #92C6FA 44%, #7BB7F3 100% );"),
     /**
      * The default color style for warning dialog (orange)
      */
@@ -63,10 +70,7 @@ public enum HeaderColorStyle {
      * The default color style for a generic dialog (gray)
      */
     GLOSS_GENERIC("-fx-background-color: rgb(216, 222, 227);"),
-    /**
-     * This value is selected whenever the user apply their own color style
-     */
-    GLOSS_CUSTOM(""),
+    
     
     GLOSS_ROYALBLUE("-fx-background-color: linear-gradient(to bottom, rgba(123,149,255,1) 0%,rgba(94,125,250,1) 44%,rgba(59,96,243,1) 100%);"),
     GLOSS_ELECTRICVIOLET("-fx-background-color: linear-gradient(to bottom, rgba(191,123,255,1) 0%,rgba(175,94,250,1) 44%,rgba(154,59,243,1) 100%);"),

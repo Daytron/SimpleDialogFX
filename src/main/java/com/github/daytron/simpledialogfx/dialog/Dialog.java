@@ -26,7 +26,6 @@ package com.github.daytron.simpledialogfx.dialog;
 import com.github.daytron.simpledialogfx.data.DialogResponse;
 import com.github.daytron.simpledialogfx.data.DialogStyle;
 import com.github.daytron.simpledialogfx.data.DialogText;
-import com.github.daytron.simpledialogfx.data.DialogType;
 import com.github.daytron.simpledialogfx.data.HeaderColorStyle;
 import java.io.IOException;
 import java.net.URL;
@@ -292,55 +291,10 @@ public class Dialog extends Stage implements Initializable {
         // Default dialog action response
         this.response = DialogResponse.NO_RESPONSE;
 
-        switch (dialogType) {
-            case INFORMATION:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.INFO_DIALOG.getPath()));
+        this.fxmlLoader = new FXMLLoader(getClass()
+                .getResource(dialogType.getPath()));
 
-                break;
-
-            case CONFIRMATION:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.CONFIRMATION_DIALOG.getPath()));
-                break;
-
-            case WARNING:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.WARNING_DIALOG.getPath()));
-                break;
-
-            case ERROR:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.ERROR_DIALOG.getPath()));
-                break;
-
-            case EXCEPTION:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.EXCEPTION_DIALOG.getPath()));
-                break;
-
-            case INPUT_TEXT:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.INPUT_TEXT_DIALOG.getPath()));
-                break;
-
-            case GENERIC_OK:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.GENERIC_OK_DIALOG.getPath()));
-                break;
-
-            case GENERIC_OK_CANCEL:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.GENERIC_OK_CANCEL_DIALOG.getPath()));
-                break;
-
-            case GENERIC_YES_NO:
-                fxmlLoader = new FXMLLoader(getClass()
-                        .getResource(Fxml.GENERIC_YES_NO_DIALOG.getPath()));
-                break;
-        }
-
-        fxmlLoader.setController(this);
+        this.fxmlLoader.setController(this);
 
         try {
             this.scene = new Scene((Parent) fxmlLoader.load());
@@ -453,14 +407,61 @@ public class Dialog extends Stage implements Initializable {
         }
 
         // Apply Header CSS style color
-        this.applyHeaderColorStyle(this.headerColorStyle);
+        this.setHeaderColorStyle(this.headerColorStyle);
     }
 
-    private void applyHeaderColorStyle(HeaderColorStyle headerColorStyle) {
+    /**
+     * Apply different JavaFX CSS background color style for the header label
+     *
+     * @param headerColorStyle A <code>HeaderColorStyle</code> option containing
+     * a color scheme.
+     */
+    public final void setHeaderColorStyle(HeaderColorStyle headerColorStyle) {
+        this.headerColorStyle = headerColorStyle;
+        
         if (!headerColorStyle.getColorStyle().isEmpty()) {
             this.getHeaderLabel().setStyle(headerColorStyle.getColorStyle());
+        
+        // It's either DEFAULT or CUSTOM value (all empty values)
+        // If it is DEFAULT, it sets the default style color
+        // Otherwise if it is CUSTOM, by default no style is applied 
+        // (default css white background is in play), user has
+        // to manually set it via setCustomHeaderColorStyle(String colorStyle)
+        } else {
+            if (headerColorStyle == HeaderColorStyle.DEFAULT) {
+                switch (this.dialogType) {
+                    case INFORMATION:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_INFO);
+                        break;
+                    case ERROR:
+                       this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_ERROR);
+                        break;
+                    case WARNING:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_WARNING);
+                        break;
+                    case CONFIRMATION:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_CONFIRM);
+                        break;
+                    case EXCEPTION:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_EXCEPTION);
+                        break;
+                    case INPUT_TEXT:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_INPUT);
+                        break;
+                    default:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_GENERIC);
+                        break;
+                }
+            }
         }
+        
+        
 
+    }
+    
+    private void updateHeaderColorStyle(HeaderColorStyle headerColorStyle) {
+        this.headerColorStyle = headerColorStyle;
+        this.getHeaderLabel().setStyle(headerColorStyle.getColorStyle());
     }
 
     /**
@@ -509,16 +510,6 @@ public class Dialog extends Stage implements Initializable {
         return this.headerColorStyle;
     }
 
-    /**
-     * Apply different JavaFX CSS background color style for the header label
-     *
-     * @param headerColorStyle A <code>HeaderColorStyle</code> option containing
-     * a color scheme.
-     */
-    public final void setHeaderColorStyle(HeaderColorStyle headerColorStyle) {
-        this.headerColorStyle = headerColorStyle;
-        this.applyHeaderColorStyle(headerColorStyle);
-    }
 
     /**
      * Apply custom JavaFX CSS background color style on header label. Improper
@@ -528,7 +519,7 @@ public class Dialog extends Stage implements Initializable {
      * form.
      */
     public final void setCustomHeaderColorStyle(String colorStyle) {
-        this.headerColorStyle = HeaderColorStyle.GLOSS_CUSTOM;
+        this.headerColorStyle = HeaderColorStyle.CUSTOM;
         this.getHeaderLabel().setStyle(colorStyle);
     }
 
@@ -724,8 +715,8 @@ public class Dialog extends Stage implements Initializable {
     /**
      * Retrieve user input text from the Input Text Dialog, if no text is given
      * or a different dialog is used, then return string value is empty as the
-     * default value. Returns an empty <code>String</code> if the dialog 
-     * created is not an input dialog.
+     * default value. Returns an empty <code>String</code> if the dialog created
+     * is not an input dialog.
      *
      * @return The string input text entered from the Input Text Dialog
      */
