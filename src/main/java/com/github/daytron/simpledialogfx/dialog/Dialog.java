@@ -100,9 +100,22 @@ public class Dialog extends Stage implements Initializable {
     private boolean isLoadingError;
 
     /**
-     * Construct a dialog using the default "native" dialog style. The type of
-     * dialog to be created is determine by the dialogType parameter. The
-     * default title is set to empty;
+     * Constructs a dialog with specified DialogType, header text and details
+     * text.
+     * <p>
+     * Note: Using an exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. Since there is no exception given (will yield to
+     * null), it will result to pre-built error texts in exception dialog's
+     * header, details and trace messages.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogStyle is set to NATIVE</li>
+     * <li>Title is set to an empty <code>String</code></li>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * <li>Exception object is set to NULL</li>
+     * </ul>
      *
      * @param dialogType The dialog type to be created
      * @param header The text for the colored header label
@@ -113,12 +126,24 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct a dialog using the default "native" dialog style with custom
-     * header background style color. The type of dialog to be created is
-     * determine by the dialogType parameter. The default title is set to empty;
+     * Constructs a dialog with specified DialogType, HeaderColorStyle, header
+     * text and details text.
+     * <p>
+     * Note: Using an exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. Since there is no exception given (will yield to
+     * null), it will result to pre-built error texts in exception dialog's
+     * header, details and trace messages.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogStyle is set to NATIVE</li>
+     * <li>Title is set to an empty <code>String</code></li>
+     * <li>Exception object is set to NULL</li>
+     * </ul>
      *
      * @param dialogType The dialog type to be created
-     * @param headerColorStyle
+     * @param headerColorStyle The chosen color style for the header
      * @param header The text for the colored header label
      * @param details The text for the message details label
      */
@@ -129,9 +154,21 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct a dialog with optional dialog style. The type of dialog to be
-     * created is determine by the dialogType parameter. The default title is
-     * set to empty;
+     * Constructs a dialog with specified DialogType, DialogStyle, header text
+     * and details text.
+     * <p>
+     * Note: Using an exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. Since there is no exception given (will yield to
+     * null), it will result to pre-built error texts in exception dialog's
+     * header, details and trace messages.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>Title is set to an empty <code>String</code></li>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * <li>Exception object is set to NULL</li>
+     * </ul>
      *
      * @param dialogType The dialog type to be created
      * @param dialogStyle The dialog style to be created
@@ -144,8 +181,20 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct a dialog with optional dialog style. The type of dialog to be
-     * created is determine by the dialogType parameter.
+     * Constructs a dialog with specified DialogType, DialogStyle, title,
+     * header text and details text.
+     * <p>
+     * Note: Using an exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. Since there is no exception given (will yield to
+     * null), it will result to pre-built error texts in exception dialog's
+     * header, details and trace messages.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * <li>Exception object is set to NULL</li>
+     * </ul>
      *
      * @param dialogType The dialog type to be created
      * @param dialogStyle The dialog style to be created
@@ -159,8 +208,21 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct a dialog using the default "native" dialog style. The type of
-     * dialog to be created is determine by the dialogType parameter.
+     * Constructs a dialog with specified DialogType, title, header text and
+     * details text.
+     * <p>
+     * Note: Using an exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. Since there is no exception given (will yield to
+     * null), it will result to pre-built error texts in exception dialog's
+     * header, details and trace messages.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogStyle is set to NATIVE</li>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * <li>Exception object is set to NULL</li>
+     * </ul>
      *
      * @param dialogType The dialog type to be created
      * @param title The window title of the dialog
@@ -173,9 +235,18 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct an exception dialog using the default "native" dialog style.
-     * The header is automatically set to the default exception header label
-     * text with the title empty.
+     * Constructs an exception dialog with a specified Exception object.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogType is set to EXCEPTION</li>
+     * <li>DialogStyle is set to NATIVE</li>
+     * <li>Title is set to an empty <code>String</code></li>
+     * <li>Header text is set to a pre-built exception message from
+     * <code>DialogText.EXCEPTION_HEADER</code></li>
+     * <li>Details text is set to the Exception object's class name</li>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * </ul>
      *
      * @param exception An exception object to be displayed
      */
@@ -184,9 +255,18 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct an exception dialog using the default "native" dialog style.
-     * The header is automatically set to the default exception header label
-     * text with the title given.
+     * Constructs an exception dialog with specified title and an Exception
+     * object.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogType is set to EXCEPTION</li>
+     * <li>DialogStyle is set to NATIVE</li>
+     * <li>Header text is set to a pre-built exception message from
+     * <code>DialogText.EXCEPTION_HEADER</code></li>
+     * <li>Details text is set to the Exception object's class name</li>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * </ul>
      *
      * @param title The window title of the dialog
      * @param exception An exception object to be displayed
@@ -196,10 +276,18 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct an exception dialog with optional dialog style. The header is
-     * automatically set to the default exception header label text with the
-     * title empty. The details label is set to the class name of the exception
-     * object.
+     * Constructs an exception dialog with specified DialogStyle and an
+     * Exception object.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogType is set to EXCEPTION</li>
+     * <li>Title is set to an empty <code>String</code></li>
+     * <li>Header text is set to a pre-built exception message from
+     * <code>DialogText.EXCEPTION_HEADER</code></li>
+     * <li>Details text is set to the Exception object's class name</li>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * </ul>
      *
      * @param dialogStyle The dialog style to be created
      * @param exception An exception object to be displayed
@@ -209,10 +297,17 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct an exception dialog with optional dialog style. The header is
-     * automatically set to the default exception header label text with the
-     * title given. The details label is set to the class name of the exception
-     * object.
+     * Constructs an exception dialog with specified DialogStyle, title and an
+     * Exception object.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogType is set to EXCEPTION</li>
+     * <li>Header text is set to a pre-built exception message from
+     * <code>DialogText.EXCEPTION_HEADER</code></li>
+     * <li>Details text is set to the Exception object's class name</li>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * </ul>
      *
      * @param dialogStyle The dialog style to be created
      * @param title The window title of the dialog
@@ -226,11 +321,22 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct a dialog with default color style for the header label.
+     * Constructs a dialog with specified DialogType, DialogStyle, title,
+     * header text, details text and exception object.
      * <p>
-     * Note: Using exception dialog will overwrite the details message with the
-     * exception's name and null exception parameter will result to pre-built
-     * error text in exception dialog's header, details and trace texts.
+     * Note: Using exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. If the given exception object is
+     * <code>NULL</code> , it will result to pre-built error texts in exception
+     * dialog's header, details and trace texts.
+     * <p>
+     * Exception object is ignored, using any other dialog types other than
+     * Exception dialog with a non-null exception object given.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>HeaderColorStyle is set to DEFAULT</li>
+     * </ul>
      *
      * @param dialogType The type of dialog to build
      * @param dialogStyle The dialog style to be created
@@ -246,12 +352,20 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Construct a dialog with all parameters given. Allows full explicit
-     * customization for dialog building.
+     * Constructs a dialog using all possible parameters. Allows full explicit
+     * customization for dialog building with specified DialogType,
+     * DialogStyle, title, header text, HeaderColorStyle, details text and
+     * exception object.
      * <p>
-     * Note: Using exception dialog will overwrite the details message with the
-     * exception's name and null exception parameter will result to pre-built
-     * error text in exception dialog's header, details and trace texts.
+     * Note: Using exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. If the given exception object is
+     * <code>NULL</code> , it will result to pre-built error texts in exception
+     * dialog's header, details and trace texts.
+     * <p>
+     * Exception object is ignored, using any other dialog types other than
+     * Exception dialog with a non-null exception object given.
+     * <p>
      *
      * @param dialogType The type of dialog to build
      * @param dialogStyle The dialog style to be created
@@ -418,15 +532,15 @@ public class Dialog extends Stage implements Initializable {
      */
     public final void setHeaderColorStyle(HeaderColorStyle headerColorStyle) {
         this.headerColorStyle = headerColorStyle;
-        
+
         if (!headerColorStyle.getColorStyle().isEmpty()) {
             this.getHeaderLabel().setStyle(headerColorStyle.getColorStyle());
-        
-        // It's either DEFAULT or CUSTOM value (all empty values)
-        // If it is DEFAULT, it sets the default style color
-        // Otherwise if it is CUSTOM, by default no style is applied 
-        // (default css white background is in play), user has
-        // to manually set it via setCustomHeaderColorStyle(String colorStyle)
+
+            // It's either DEFAULT or CUSTOM value (all empty values)
+            // If it is DEFAULT, it sets the default style color
+            // Otherwise if it is CUSTOM, by default no style is applied 
+            // (default css white background is in play), user has
+            // to manually set it via setCustomHeaderColorStyle(String colorStyle)
         } else {
             if (headerColorStyle == HeaderColorStyle.DEFAULT) {
                 switch (this.dialogType) {
@@ -434,7 +548,7 @@ public class Dialog extends Stage implements Initializable {
                         this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_INFO);
                         break;
                     case ERROR:
-                       this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_ERROR);
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_ERROR);
                         break;
                     case WARNING:
                         this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_WARNING);
@@ -454,11 +568,9 @@ public class Dialog extends Stage implements Initializable {
                 }
             }
         }
-        
-        
 
     }
-    
+
     private void updateHeaderColorStyle(HeaderColorStyle headerColorStyle) {
         this.headerColorStyle = headerColorStyle;
         this.getHeaderLabel().setStyle(headerColorStyle.getColorStyle());
@@ -509,7 +621,6 @@ public class Dialog extends Stage implements Initializable {
     public final HeaderColorStyle getHeaderColorStyle() {
         return this.headerColorStyle;
     }
-
 
     /**
      * Apply custom JavaFX CSS background color style on header label. Improper
