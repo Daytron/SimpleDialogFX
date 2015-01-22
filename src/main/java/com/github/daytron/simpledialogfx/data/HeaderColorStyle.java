@@ -36,6 +36,12 @@ public enum HeaderColorStyle {
      *//**
      * If no color is selected, this will be the default value, default CSS
      * styles will be used instead
+     *//**
+     * If no color is selected, this will be the default value, default CSS
+     * styles will be used instead
+     *//**
+     * If no color is selected, this will be the default value, default CSS
+     * styles will be used instead
      */
     DEFAULT(""),
     /**
@@ -79,34 +85,122 @@ public enum HeaderColorStyle {
     GLOSS_PICTONBLUE("-fx-background-color: linear-gradient(to bottom, rgba(123,209,255,1) 0%,rgba(94,195,250,1) 44%,rgba(59,179,243,1) 100%);"),
     GLOSS_BRIGHTTURQUOISE("-fx-background-color: linear-gradient(to bottom, rgba(123,255,204,1) 0%,rgba(94,250,190,1) 44%,rgba(59,243,173,1) 100%);"),
     GLOSS_MALACHITE("-fx-background-color: linear-gradient(to bottom, rgba(123,255,130,1) 0%,rgba(94,250,102,1) 44%,rgba(59,243,68,1) 100%);"),
-    GLOSS_GREEN("-fx-background-color: linear-gradient(to bottom, rgba(123,255,174,1) 0%,rgba(94,250,154,1) 44%,rgba(59,243,129,1) 100%);"),
-    GLOSS_SCREAMINGGREEN("-fx-background-color: linear-gradient(to bottom, rgba(141,255,123,1) 0%,rgba(115,250,94,1) 44%,rgba(83,243,59,1) 100%);"),
+    GLOSS_SANDSTORM("-fx-background-color: linear-gradient(to bottom, rgba(255,229,123,1) 0%,rgba(250,219,94,1) 44%,rgba(243,206,59,1) 100%);"),
+    GLOSS_MEDIUMTURQUOISE("-fx-background-color: linear-gradient(to bottom, rgba(123,242,255,1) 0%,rgba(94,234,250,1) 44%,rgba(59,225,243,1) 100%);"),
     GLOSS_STARSHIP("-fx-background-color: linear-gradient(to bottom, rgba(255,255,123,1) 0%,rgba(250,250,94,1) 44%,rgba(243,243,59,1) 100%);"),
     GLOSS_JAFFA("-fx-background-color: linear-gradient(to bottom, rgba(255,189,123,1) 0%,rgba(250,172,94,1) 44%,rgba(243,151,59,1) 100%);"),
     
-    LINEAR_FADE_LEFT_ROYALBLUE("-fx-background-color: linear-gradient(to right, rgba(190,226,240,1) 0%,rgba(61,137,223,1) 100%);"),
-    LINEAR_FADE_LEFT_TURQUOISE("-fx-background-color: linear-gradient(to right, rgba(190,240,225,1) 0%,rgba(61,223,215,1) 100%);"),
-    LINEAR_FADE_LEFT_EMERALD("-fx-background-color: linear-gradient(to right, rgba(191,240,190,1) 0%,rgba(61,223,99,1) 100%);"),
-    LINEAR_FADE_LEFT_WATTLE("-fx-background-color: linear-gradient(to right, rgba(240,228,190,1) 0%,rgba(220,223,61,1) 100%);"),
-    LINEAR_FADE_LEFT_ANZAC("-fx-background-color: linear-gradient(to right, rgba(240,204,190,1) 0%,rgba(223,147,61,1) 100%);"),
-    LINEAR_FADE_LEFT_PUNCH("-fx-background-color: linear-gradient(to right, rgba(240,190,203,1) 0%,rgba(223,61,64,1) 100%);"),
-    LINEAR_FADE_LEFT_CERISE("-fx-background-color: linear-gradient(to right, rgba(233,190,240,1) 0%,rgba(223,61,204,1) 100%); "),
-    LINEAR_FADE_LEFT_MEDIUMPURPLE("-fx-background-color: linear-gradient(to right, rgba(212,190,240,1) 0%,rgba(174,61,223,1) 100%);"),
-    LINEAR_FADE_LEFT_PURPLEHEART("-fx-background-color: linear-gradient(to right, rgba(202,190,240,1) 0%,rgba(139,61,223,1) 100%); "),
-    LINEAR_FADE_LEFT_BLUERIBBON("-fx-background-color: linear-gradient(to right, rgba(190,212,240,1) 0%,rgba(36,79,255,1) 100%); "),
-    LINEAR_FADE_LEFT_PICTONBLUE("-fx-background-color: linear-gradient(to right, rgba(190,231,240,1) 0%,rgba(61,153,223,1) 100%);"),
+    // Hue -180 or +180
+    LINEAR_FADE_LEFT_TIGERSEYE("-fx-background-color: linear-gradient(to right, rgba(240,204,190,1) 0%,rgba(223,147,61,1) 100%);"),
     
-    LINEAR_FADE_RIGHT_ROYALBLUE("-fx-background-color: linear-gradient(to left, rgba(190,226,240,1) 0%,rgba(61,137,223,1) 100%);"),
-    LINEAR_FADE_RIGHT_TURQUOISE("-fx-background-color: linear-gradient(to left, rgba(190,240,225,1) 0%,rgba(61,223,215,1) 100%);"),
-    LINEAR_FADE_RIGHT_EMERALD("-fx-background-color: linear-gradient(to left, rgba(191,240,190,1) 0%,rgba(61,223,99,1) 100%);"),
-    LINEAR_FADE_RIGHT_WATTLE("-fx-background-color: linear-gradient(to left, rgba(240,228,190,1) 0%,rgba(220,223,61,1) 100%);"),
-    LINEAR_FADE_RIGHT_ANZAC("-fx-background-color: linear-gradient(to left, rgba(240,204,190,1) 0%,rgba(223,147,61,1) 100%);"),
-    LINEAR_FADE_RIGHT_PUNCH("-fx-background-color: linear-gradient(to left, rgba(240,190,203,1) 0%,rgba(223,61,64,1) 100%);"),
-    LINEAR_FADE_RIGHT_CERISE("-fx-background-color: linear-gradient(to left, rgba(233,190,240,1) 0%,rgba(223,61,204,1) 100%); "),
-    LINEAR_FADE_RIGHT_MEDIUMPURPLE("-fx-background-color: linear-gradient(to left, rgba(212,190,240,1) 0%,rgba(174,61,223,1) 100%);"),
-    LINEAR_FADE_RIGHT_PURPLEHEART("-fx-background-color: linear-gradient(to left, rgba(202,190,240,1) 0%,rgba(139,61,223,1) 100%); "),
-    LINEAR_FADE_RIGHT_BLUERIBBON("-fx-background-color: linear-gradient(to left, rgba(190,212,240,1) 0%,rgba(36,79,255,1) 100%); "),
-    LINEAR_FADE_RIGHT_PICTONBLUE("-fx-background-color: linear-gradient(to left, rgba(190,231,240,1) 0%,rgba(61,153,223,1) 100%); ");
+    // Hue -160
+    LINEAR_FADE_LEFT_WATTLE("-fx-background-color: linear-gradient(to right, rgba(240,221,190,1) 0%,rgba(223,201,61,1) 100%);"),
+    
+    // Hue -140
+    LINEAR_FADE_LEFT_PEAR("-fx-background-color: linear-gradient(to right, rgba(240,238,190,1) 0%,rgba(191,223,61,1) 100%);"),
+    
+    // Hue -120
+    LINEAR_FADE_LEFT_YELLOWGREEN("-fx-background-color: linear-gradient(to right, rgba(226,240,190,1) 0%,rgba(137,223,61,1) 100%);"),
+    
+    // Hue -100
+    LINEAR_FADE_LEFT_LIMEGREEN("-fx-background-color: linear-gradient(to right, rgba(209,240,190,1) 0%,rgba(83,223,61,1) 100%);"),
+    
+    // Hue -80
+    LINEAR_FADE_LEFT_UFOGREEN("-fx-background-color: linear-gradient(to right, rgba(192,240,190,1) 0%,rgba(61,223,93,1) 100%);"),
+    
+    // Hue -60
+    LINEAR_FADE_LEFT_SHAMROCK("-fx-background-color: linear-gradient(to right, rgba(190,240,204,1) 0%,rgba(61,223,147,1) 100%);"),
+    
+    // Hue -40
+    LINEAR_FADE_LEFT_TURQUOISE("-fx-background-color: linear-gradient(to right, rgba(190,240,221,1) 0%,rgba(61,223,201,1) 100%);"),
+    
+    // Hue -20
+    LINEAR_FADE_LEFT_PICTONBLUE("-fx-background-color: linear-gradient(to right, rgba(190,240,238,1) 0%,rgba(61,191,223,1) 100%);"),
+    
+    // Hue 0
+    LINEAR_FADE_LEFT_BlEUDEFRANCE("-fx-background-color: linear-gradient(to right, rgba(190,227,240,1) 0%,rgba(61,139,223,1) 100%);"),
+    
+    // Hue +20
+    LINEAR_FADE_LEFT_ROYALBLUE("-fx-background-color: linear-gradient(to right, rgba(190,209,240,1) 0%,rgba(61,83,223,1) 100%);"),
+    
+    // Hue +40
+    LINEAR_FADE_LEFT_MAJORELLEBLUE("-fx-background-color: linear-gradient(to right, rgba(190,192,240,1) 0%,rgba(93,61,223,1) 100%);"),
+    
+    // Hue +60
+    LINEAR_FADE_LEFT_BLUEPURPLE("-fx-background-color: linear-gradient(to right, rgba(204,190,240,1) 0%,rgba(147,61,223,1) 100%);"),
+    
+    // Hue +80
+    LINEAR_FADE_LEFT_MEDIUMORCHID("-fx-background-color: linear-gradient(to right, rgba(221,190,240,1) 0%,rgba(201,61,223,1) 100%);"),
+    
+    // Hue +100
+    LINEAR_FADE_LEFT_RAZZLEROSE("-fx-background-color: linear-gradient(to right, rgba(238,190,240,1) 0%,rgba(223,61,191,1) 100%);"),
+    
+     // Hue +120
+    LINEAR_FADE_LEFT_CERISE("-fx-background-color: linear-gradient(to right, rgba(240,190,226,1) 0%,rgba(223,61,137,1) 100%);"),
+    
+     // Hue +140
+    LINEAR_FADE_LEFT_AMARANTH("-fx-background-color: linear-gradient(to right, rgba(240,190,209,1) 0%,rgba(223,61,83,1) 100%);"),
+    
+     // Hue +160
+    LINEAR_FADE_LEFT_FLAMEPEA("-fx-background-color: linear-gradient(to right, rgba(240,190,192,1) 0%,rgba(223,93,61,1) 100%);"),
+    
+    
+    
+    
+    
+    // Hue -180 or +180
+    LINEAR_FADE_RIGHT_TIGERSEYE("-fx-background-color: linear-gradient(to left, rgba(240,204,190,1) 0%,rgba(223,147,61,1) 100%);"),
+    
+    // Hue -160
+    LINEAR_FADE_RIGHT_WATTLE("-fx-background-color: linear-gradient(to left, rgba(240,221,190,1) 0%,rgba(223,201,61,1) 100%);"),
+    
+    // Hue -140
+    LINEAR_FADE_RIGHT_PEAR("-fx-background-color: linear-gradient(to left, rgba(240,238,190,1) 0%,rgba(191,223,61,1) 100%);"),
+    
+    // Hue -120
+    LINEAR_FADE_RIGHT_YELLOWGREEN("-fx-background-color: linear-gradient(to left, rgba(226,240,190,1) 0%,rgba(137,223,61,1) 100%);"),
+    
+    // Hue -100
+    LINEAR_FADE_RIGHT_LIMEGREEN("-fx-background-color: linear-gradient(to left, rgba(209,240,190,1) 0%,rgba(83,223,61,1) 100%);"),
+    
+    // Hue -80
+    LINEAR_FADE_RIGHT_UFOGREEN("-fx-background-color: linear-gradient(to left, rgba(192,240,190,1) 0%,rgba(61,223,93,1) 100%);"),
+    
+    // Hue -60
+    LINEAR_FADE_RIGHT_SHAMROCK("-fx-background-color: linear-gradient(to left, rgba(190,240,204,1) 0%,rgba(61,223,147,1) 100%);"),
+    
+    // Hue -40
+    LINEAR_FADE_RIGHT_TURQUOISE("-fx-background-color: linear-gradient(to left, rgba(190,240,221,1) 0%,rgba(61,223,201,1) 100%);"),
+    
+    // Hue -20
+    LINEAR_FADE_RIGHT_PICTONBLUE("-fx-background-color: linear-gradient(to left, rgba(190,240,238,1) 0%,rgba(61,191,223,1) 100%);"),
+    
+    // Hue 0
+    LINEAR_FADE_RIGHT_BlEUDEFRANCE("-fx-background-color: linear-gradient(to left, rgba(190,227,240,1) 0%,rgba(61,139,223,1) 100%);"),
+    
+    // Hue +20
+    LINEAR_FADE_RIGHT_ROYALBLUE("-fx-background-color: linear-gradient(to left, rgba(190,209,240,1) 0%,rgba(61,83,223,1) 100%);"),
+    
+    // Hue +40
+    LINEAR_FADE_RIGHT_MAJORELLEBLUE("-fx-background-color: linear-gradient(to left, rgba(190,192,240,1) 0%,rgba(93,61,223,1) 100%);"),
+    
+    // Hue +60
+    LINEAR_FADE_RIGHT_BLUEPURPLE("-fx-background-color: linear-gradient(to left, rgba(204,190,240,1) 0%,rgba(147,61,223,1) 100%);"),
+    
+    // Hue +80
+    LINEAR_FADE_RIGHT_MEDIUMORCHID("-fx-background-color: linear-gradient(to left, rgba(221,190,240,1) 0%,rgba(201,61,223,1) 100%);"),
+    
+    // Hue +100
+    LINEAR_FADE_RIGHT_RAZZLEROSE("-fx-background-color: linear-gradient(to left, rgba(238,190,240,1) 0%,rgba(223,61,191,1) 100%);"),
+    
+     // Hue +120
+    LINEAR_FADE_RIGHT_CERISE("-fx-background-color: linear-gradient(to left, rgba(240,190,226,1) 0%,rgba(223,61,137,1) 100%);"),
+    
+     // Hue +140
+    LINEAR_FADE_RIGHT_AMARANTH("-fx-background-color: linear-gradient(to left, rgba(240,190,209,1) 0%,rgba(223,61,83,1) 100%);"),
+    
+     // Hue +160
+    LINEAR_FADE_RIGHT_FLAMEPEA("-fx-background-color: linear-gradient(to left, rgba(240,190,192,1) 0%,rgba(223,93,61,1) 100%);");
     
     private final String colorStyle;
 
