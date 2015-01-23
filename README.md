@@ -171,7 +171,8 @@ Result:
 <p align="center">
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D" alt="Result Example Dialog" />
 </p>
-<br /><br />
+<br />
+For the complete list of constructors, see [Javadoc].
 
 ##### <a name='colorstyle'></a>Color Style 
 <sup><a href='#home'>[back to top]</a></sup>
