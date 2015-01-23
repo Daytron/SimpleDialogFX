@@ -8,6 +8,7 @@ Easy to use lightweight dialog library for JavaFX applications.
 * <a href='#colorthemes'>Color Themes</a>
 * <a href='#installation'>Installation</a>
 * <a href='#usage'>Usage</a>
+ * <a href='#overview'>Overview</a> 
  * <a href='#construction'>Construction</a>
  * <a href='#colorstyle'>Color Style</a>
  * <a href='#font'>Font</a>
@@ -48,11 +49,11 @@ Easy to use lightweight dialog library for JavaFX applications.
 <br /><br />
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKCANCELDialog.png" alt="Generic OK CANCEL Dialog" />
 <br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericYESNODialog.png" alt="Generic OK CANCEL Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericYESNODialog.png" alt="Generic YES NO Dialog" />
 <br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InputTextDialog.png" alt="Generic OK CANCEL Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InputTextDialog.png" alt="Input Text Dialog" />
 <br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ExceptionDialog.png" alt="Generic OK CANCEL Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ExceptionDialog.png" alt="Exception Dialog" />
 </p>
 
 ### <a name='colorthemes'></a>Color Themes 
@@ -62,17 +63,17 @@ If none of those colors hook you, try mix and match various color styles.
 
 ##### Gloss Series
 <p align="center">
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/GlossSeries.png" alt="Generic OK CANCEL Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/GlossSeries.png" alt="Gloss Series" />
 </p>
 
 ##### Linear Fade Left Series
 <p align="center">
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/LinearFadeLeftSeries.png" alt="Generic OK CANCEL Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/LinearFadeLeftSeries.png" alt="Linear Fade Left Series" />
 </p>
 
 ##### Linear Fade Right Series
 <p align="center">
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/LinearFadeRightSeries.png" alt="Generic OK CANCEL Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/LinearFadeRightSeries.png" alt="Linear Fade Right Series" />
 </p>
 
 ### <a name='installation'></a>Installation 
@@ -90,6 +91,20 @@ SimpleDialogFX is available in Maven Central. To start using, simply add the fol
 
 ### <a name='usage'></a>Usage 
 <sup><a href='#home'>[back to top]</a></sup> 
+
+#####<a name='overview'></a>Overview
+<sup><a href='#home'>[back to top]</a></sup> 
+
+A dialog consists of the following areas shown in the figure below:
+- Title
+- Header
+- Details
+- and Buttons
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/OverviewUsage.png" alt="Dialog overview" />
+</p>
+
 #####<a name='construction'></a>Construction
 <sup><a href='#home'>[back to top]</a></sup> 
 
