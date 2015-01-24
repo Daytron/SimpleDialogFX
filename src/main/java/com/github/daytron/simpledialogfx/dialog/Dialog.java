@@ -542,7 +542,7 @@ public class Dialog extends Stage implements Initializable {
             // It's either DEFAULT or CUSTOM value (all empty values)
             // If it is DEFAULT, it sets the default style color
             // Otherwise if it is CUSTOM, by default no style is applied 
-            // (default css white background is in play), user has
+            // (default css "generic" color is in play), user has
             // to manually set it via setCustomHeaderColorStyle(String colorStyle)
         } else {
             if (headerColorStyle == HeaderColorStyle.DEFAULT) {
@@ -566,7 +566,7 @@ public class Dialog extends Stage implements Initializable {
                         this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_INPUT);
                         break;
                     default:
-                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_GENERIC);
+                        this.updateHeaderColorStyle(HeaderColorStyle.GENERIC);
                         break;
                 }
             }

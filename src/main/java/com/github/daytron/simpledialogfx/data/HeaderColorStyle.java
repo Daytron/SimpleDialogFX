@@ -42,6 +42,18 @@ public enum HeaderColorStyle {
      *//**
      * If no color is selected, this will be the default value, default CSS
      * styles will be used instead
+     *//**
+     * If no color is selected, this will be the default value, default CSS
+     * styles will be used instead
+     *//**
+     * If no color is selected, this will be the default value, default CSS
+     * styles will be used instead
+     *//**
+     * If no color is selected, this will be the default value, default CSS
+     * styles will be used instead
+     *//**
+     * If no color is selected, this will be the default value, default CSS
+     * styles will be used instead
      */
     DEFAULT(""),
     /**
@@ -72,10 +84,11 @@ public enum HeaderColorStyle {
      * The default color style for exception dialog (pink)
      */
     GLOSS_EXCEPTION("-fx-background-color: linear-gradient(to bottom, #E2A3FF 0%, #D992FA 44%, #CD7BF3 100% );"),
+    
     /**
      * The default color style for a generic dialog (gray)
      */
-    GLOSS_GENERIC("-fx-background-color: rgb(216, 222, 227);"),
+    GENERIC("-fx-background-color: rgb(216, 222, 227);"),
     
     
     GLOSS_ROYALBLUE("-fx-background-color: linear-gradient(to bottom, rgba(123,149,255,1) 0%,rgba(94,125,250,1) 44%,rgba(59,96,243,1) 100%);"),
