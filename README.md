@@ -85,7 +85,7 @@ SimpleDialogFX is available in Maven Central. To start using, simply add the fol
 <dependency>
   <groupId>com.github.daytron</groupId>
   <artifactId>SimpleDialogFX</artifactId>
-  <version>2.1.0</version>
+  <version>2.1.1</version>
 </dependency>
 ```
 
