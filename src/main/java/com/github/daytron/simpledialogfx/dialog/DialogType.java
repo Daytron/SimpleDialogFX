@@ -73,7 +73,11 @@ public enum DialogType {
     /**
      * Generic YES and NO dialog
      */
-    GENERIC_YES_NO("/fxml/YesNoDialog.fxml");
+    GENERIC_YES_NO("/fxml/YesNoDialog.fxml"),
+    /**
+     * Generic YES, NO and CANCEL dialog
+     */
+    GENERIC_YES_NO_CANCEL("/fxml/YesNoCancelDialog.fxml");
     
     private final String path;
 

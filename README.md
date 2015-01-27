@@ -41,15 +41,13 @@ Easy to use lightweight dialog library for JavaFX applications.
 <br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/ConfirmDialog.png" alt="Confirmation Dialog" />
 <br /><br />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/ConfirmAlt1Dialog.png" alt="Confirmation Alternative 1 Dialog" />
+<br /><br />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/ConfirmAlt2Dialog.png" alt="Confirmation Alternative 2 Dialog" />
+<br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/WarningDialog.png?token=AGk1WkOat2dl0G-gUxoeE8ockiVejWY-ks5UmUC6wA%3D%3D" alt="Warning Dialog" />
 <br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ErrorDialog.png?token=AGk1Why_GDl4ELib3F_X8rq1NS2chp1kks5UmUDQwA%3D%3D" alt="Error Dialog" />
-<br /><br />
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKDialog.png?token=AGk1Whpo9J-RTuqldAtwGAGa-qAG1jXxks5UmUHzwA%3D%3D" alt="Generic OK Dialog" />
-<br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/GenericOKCANCELDialog.png" alt="Generic OK CANCEL Dialog" />
-<br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/GenericYESNODialog.png" alt="Generic YES NO Dialog" />
 <br /><br />
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/InputTextDialog.png" alt="Input Text Dialog" />
 <br /><br />

@@ -532,6 +532,10 @@ public class Dialog extends Stage implements Initializable {
                     case GENERIC_YES_NO:
                         yesButton.requestFocus();
                         break;
+                        
+                    case GENERIC_YES_NO_CANCEL:
+                        yesButton.requestFocus();
+                        break;
                 }
 
             }
