@@ -468,6 +468,14 @@ public class Dialog extends Stage implements Initializable {
                     case CONFIRMATION:
                         yesButton.requestFocus();
                         break;
+                        
+                    case CONFIRMATION_ALT1:
+                        okButton.requestFocus();
+                        break;
+                        
+                    case CONFIRMATION_ALT2:
+                        yesButton.requestFocus();
+                        break;
 
                     case WARNING:
                         okButton.requestFocus();
@@ -557,6 +565,12 @@ public class Dialog extends Stage implements Initializable {
                         this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_WARNING);
                         break;
                     case CONFIRMATION:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_CONFIRM);
+                        break;
+                    case CONFIRMATION_ALT1:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_CONFIRM);
+                        break;
+                    case CONFIRMATION_ALT2:
                         this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_CONFIRM);
                         break;
                     case EXCEPTION:

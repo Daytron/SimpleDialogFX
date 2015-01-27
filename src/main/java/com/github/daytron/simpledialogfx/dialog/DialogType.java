@@ -35,6 +35,14 @@ public enum DialogType {
      */
     CONFIRMATION("/fxml/YesNoDialog.fxml"),
     /**
+     * Confirmation dialog
+     */
+    CONFIRMATION_ALT1("/fxml/OkCancelDialog.fxml"),
+    /**
+     * Confirmation dialog
+     */
+    CONFIRMATION_ALT2("/fxml/YesNoCancelDialog.fxml"),
+    /**
      * Information dialog
      */
     INFORMATION("/fxml/OkDialog.fxml"),
