@@ -46,6 +46,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -58,6 +60,12 @@ import javafx.stage.WindowEvent;
  */
 public class Dialog extends Stage implements Initializable {
 
+    @FXML
+    private VBox topBoxContainer;
+    @FXML
+    private StackPane headContainer;
+    @FXML
+    private StackPane bodyContainer;
     @FXML
     private Label headerLabel;
     @FXML
@@ -91,6 +99,8 @@ public class Dialog extends Stage implements Initializable {
     private FXMLLoader fxmlLoader;
 
     private final DialogType dialogType;
+
+    private final DialogStyle dialogStyle;
 
     private final Exception exception;
 
@@ -152,9 +162,9 @@ public class Dialog extends Stage implements Initializable {
         this(dialogType, DialogStyle.NATIVE, "", header, headerColorStyle,
                 details, null);
     }
-    
+
     /**
-     * Constructs a dialog with specified DialogType, HeaderColorStyle, title, 
+     * Constructs a dialog with specified DialogType, HeaderColorStyle, title,
      * header text and details text.
      * <p>
      * Note: Using an exception dialog will overwrite the header's and details'
@@ -411,6 +421,7 @@ public class Dialog extends Stage implements Initializable {
         this.headerColorStyle = headerColorStyle;
         this.dialogType = dialogType;
         this.exception = exception;
+        this.dialogStyle = dialogStyle;
 
         // Filter behaviour for exception dialog
         if (dialogType == DialogType.EXCEPTION) {
@@ -496,11 +507,11 @@ public class Dialog extends Stage implements Initializable {
                     case CONFIRMATION:
                         yesButton.requestFocus();
                         break;
-                        
+
                     case CONFIRMATION_ALT1:
                         okButton.requestFocus();
                         break;
-                        
+
                     case CONFIRMATION_ALT2:
                         yesButton.requestFocus();
                         break;
@@ -532,7 +543,7 @@ public class Dialog extends Stage implements Initializable {
                     case GENERIC_YES_NO:
                         yesButton.requestFocus();
                         break;
-                        
+
                     case GENERIC_YES_NO_CANCEL:
                         yesButton.requestFocus();
                         break;
@@ -562,8 +573,28 @@ public class Dialog extends Stage implements Initializable {
             this.exceptionArea.setEditable(false);
         }
 
+        // Filter whether it headless or not
+        if (this.dialogStyle == DialogStyle.HEADLESS) {
+            this.topBoxContainer.getChildren().remove(this.headContainer);
+            this.setHeadlessPadding();
+        }
+
         // Apply Header CSS style color
         this.setHeaderColorStyle(this.headerColorStyle);
+    }
+
+    private void setHeadlessPadding() {
+        if (dialogType == DialogType.INPUT_TEXT) {
+            bodyContainer.setStyle(
+                    PreDefinedStyle.INPUT_DIALOG_HEADLESS_PADDING.getStyle());
+
+        } else if (dialogType == DialogType.EXCEPTION) {
+            bodyContainer.setStyle(
+                    PreDefinedStyle.EXCEPTION_DIALOG_HEADLESS_PADDING.getStyle());
+        } else {
+            bodyContainer.setStyle(
+                    PreDefinedStyle.HEADLESS_PADDING.getStyle());
+        }
     }
 
     /**
@@ -684,8 +715,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets both font sizes in pixels for the header and the details
-     * label with a single font size <code>integer</code> parameter given.
+     * Sets both font sizes in pixels for the header and the details label with
+     * a single font size <code>integer</code> parameter given.
      *
      * @param font_size Font size in pixels for both header and details labels
      * in pixels
@@ -695,8 +726,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets both font sizes in pixels for the header and the details
-     * label with two font sizes <code>integer</code> parameters given.
+     * Sets both font sizes in pixels for the header and the details label with
+     * two font sizes <code>integer</code> parameters given.
      *
      * @param header_font_size The header font size in pixels
      * @param details_font_size The details font size in pixels
@@ -729,8 +760,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets both font families for the header and the details label
-     * with a single font family <code>String</code> parameter given.
+     * Sets both font families for the header and the details label with a
+     * single font family <code>String</code> parameter given.
      *
      * @param font_family Font family for both header and details labels in
      * <code>Strings</code>
@@ -740,8 +771,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets both font families for the header and the details label
-     * with two font families <code>String</code> parameters given.
+     * Sets both font families for the header and the details label with two
+     * font families <code>String</code> parameters given.
      *
      * @param header_font_family The header font family in <code>Strings</code>
      * @param details_font_family The details font family in
@@ -775,8 +806,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets the font sizes and the font families for the header and
-     * details label with a single font family and a single font size.
+     * Sets the font sizes and the font families for the header and details
+     * label with a single font family and a single font size.
      *
      * @param font_family The font family for header and details labels in
      * <code>Strings</code>
@@ -788,8 +819,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets the font sizes and the font families for the header and
-     * details label.
+     * Sets the font sizes and the font families for the header and details
+     * label.
      *
      * @param header_font_family The header font family in <code>Strings</code>
      * @param header_font_size The header font size in pixels

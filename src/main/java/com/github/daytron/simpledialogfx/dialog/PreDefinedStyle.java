@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2014-2015 Ryan Gilera.
+ * Copyright 2015 Ryan Gilera.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,25 +21,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package com.github.daytron.simpledialogfx.data;
+package com.github.daytron.simpledialogfx.dialog;
 
 /**
- * List of dialog styles
+ * List of predefined CSS style
  *
  * @author Ryan Gilera
  */
-public enum DialogStyle {
+enum PreDefinedStyle {
+
+    INPUT_DIALOG_HEADLESS_PADDING("-fx-padding: 20 10 15 10;"),
+    EXCEPTION_DIALOG_HEADLESS_PADDING("-fx-padding: 20 10 20 10;"),
+    HEADLESS_PADDING("-fx-padding: 20 10 15 25;");
+
+    private final String style;
+
+    private PreDefinedStyle(String style) {
+        this.style = style;
+    }
 
     /**
-     * Native window style depending on user OS
+     * Retrieve the FXML file style
+     *
+     * @return The <code>String</code> object as file style
      */
-    NATIVE,
-    /**
-     * Undecorated window style
-     */
-    UNDECORATED,
-    /**
-     * A dialog without its header
-     */
-    HEADLESS;
+    protected String getStyle() {
+        return style;
+    }
 }
