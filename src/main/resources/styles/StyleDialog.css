@@ -30,6 +30,12 @@ THE SOFTWARE.
     -fx-font-size: 25px;
     -fx-padding: 10 10 10 10;
     -fx-background-color: rgb(216, 222, 227);
+    -fx-background-insets: 0;
+    
+}
+
+.headerPane {
+    -fx-background-color: #fff;
     -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }
 
