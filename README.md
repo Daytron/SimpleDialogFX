@@ -39,7 +39,7 @@ Easy to use lightweight dialog library for JavaFX applications.
 <p align="center">
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InfoDialog.png?token=AGk1WtIl0yQai-c3MiXwwyPwtbakmtY4ks5UmUB6wA%3D%3D" alt="Information Dialog" />
 <br /><br />
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmDialog.png?token=AGk1Wszv2Ed0NeExs00rvs0RxzWKNHquks5UmUChwA%3D%3D" alt="Confirmation Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/ConfirmDialog.png" alt="Confirmation Dialog" />
 <br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/WarningDialog.png?token=AGk1WkOat2dl0G-gUxoeE8ockiVejWY-ks5UmUC6wA%3D%3D" alt="Warning Dialog" />
 <br /><br />
@@ -47,11 +47,11 @@ Easy to use lightweight dialog library for JavaFX applications.
 <br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKDialog.png?token=AGk1Whpo9J-RTuqldAtwGAGa-qAG1jXxks5UmUHzwA%3D%3D" alt="Generic OK Dialog" />
 <br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKCANCELDialog.png" alt="Generic OK CANCEL Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/GenericOKCANCELDialog.png" alt="Generic OK CANCEL Dialog" />
 <br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericYESNODialog.png" alt="Generic YES NO Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/GenericYESNODialog.png" alt="Generic YES NO Dialog" />
 <br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InputTextDialog.png" alt="Input Text Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/InputTextDialog.png" alt="Input Text Dialog" />
 <br /><br />
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ExceptionDialog.png" alt="Exception Dialog" />
 </p>
@@ -108,7 +108,7 @@ A dialog consists of the following areas shown in the figure below:
 - and Buttons
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/OverviewUsage.png" alt="Dialog overview" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/OverviewUsage.png" alt="Dialog overview" />
 </p>
 
 #####<a name='construction'></a>Construction
@@ -175,7 +175,7 @@ if (dialog.getResponse() == DialogResponse.YES) {
 
 Result:
 <p align="center">
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D" alt="Result Example Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/Example1.png" alt="Result Example Dialog" />
 </p>
 <br />
 For the complete list of constructors, see [Javadoc].
