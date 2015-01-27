@@ -152,6 +152,34 @@ public class Dialog extends Stage implements Initializable {
         this(dialogType, DialogStyle.NATIVE, "", header, headerColorStyle,
                 details, null);
     }
+    
+    /**
+     * Constructs a dialog with specified DialogType, HeaderColorStyle, title, 
+     * header text and details text.
+     * <p>
+     * Note: Using an exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. Since there is no exception given (will yield to
+     * null), it will result to pre-built error texts in exception dialog's
+     * header, details and trace messages.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogStyle is set to NATIVE</li>
+     * <li>Exception object is set to NULL</li>
+     * </ul>
+     *
+     * @param dialogType The dialog type to be created
+     * @param headerColorStyle The chosen color style for the header
+     * @param title The window title of the dialog
+     * @param header The text for the colored header label
+     * @param details The text for the message details label
+     */
+    public Dialog(DialogType dialogType, HeaderColorStyle headerColorStyle,
+            String title, String header, String details) {
+        this(dialogType, DialogStyle.NATIVE, title, header, headerColorStyle,
+                details, null);
+    }
 
     /**
      * Constructs a dialog with specified DialogType, DialogStyle, header text
