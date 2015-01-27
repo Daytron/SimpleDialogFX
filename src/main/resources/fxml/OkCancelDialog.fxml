@@ -33,10 +33,10 @@
     <HBox maxHeight="-Infinity" maxWidth="+Infinity" minHeight="-Infinity" minWidth="-Infinity" GridPane.rowIndex="1">
       <children>
         <Pane HBox.hgrow="ALWAYS" />
-            <Button id="cancel-btn" fx:id="cancelButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#cancel_btn_on_click" text="Cancel" />
+            <Button id="ok-btn" fx:id="okButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#ok_btn_on_click" text="Ok" />
         <HBox fx:id="okParent" alignment="CENTER">
           <children>
-            <Button id="ok-btn" fx:id="okButton" minWidth="80.0" mnemonicParsing="false" onAction="#ok_btn_on_click" text="Ok" HBox.hgrow="NEVER">
+            <Button id="cancel-btn" fx:id="cancelButton" minWidth="80.0" mnemonicParsing="false" onAction="#cancel_btn_on_click" text="Cancel" HBox.hgrow="NEVER">
               <HBox.margin>
                 <Insets left="14.0" />
               </HBox.margin>
