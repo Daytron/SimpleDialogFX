@@ -10,6 +10,7 @@ Easy to use lightweight dialog library for JavaFX applications.
 * <a href='#usage'>Usage</a>
  * <a href='#overview'>Overview</a> 
  * <a href='#construction'>Construction</a>
+ * <a href='#headless'>Headless</a>
  * <a href='#colorstyle'>Color Style</a>
  * <a href='#font'>Font</a>
  * <a href='#responses'>Responses</a>
@@ -183,6 +184,16 @@ Result:
 </p>
 <br />
 For the complete list of constructors, see [Javadoc].
+
+##### <a name='headless'></a>Headless 
+<sup><a href='#home'>[back to top]</a></sup>
+
+For a more simplistic approach, you can remove the header completely and only show the details section of the dialog. To choose a headless approach, simply use the `DialogStyle` option, `HEADLESS` in the constructor.
+
+<p align="center">
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/HeadlessVsHead.png" alt="Result Example Dialog" />
+</p>
+<br />
 
 ##### <a name='colorstyle'></a>Color Style 
 <sup><a href='#home'>[back to top]</a></sup>
