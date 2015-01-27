@@ -76,6 +76,12 @@ If none of those colors hook you, try mix and match various color styles.
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/LinearFadeRightSeries.png" alt="Linear Fade Right Series" />
 </p>
 
+
+##### Opaque Series
+<p align="center">
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/HeaderColors/OpaqueSeries.png" alt="Opaque Series" />
+</p>
+
 ### <a name='installation'></a>Installation 
 <sup><a href='#home'>[back to top]</a></sup>  
 
