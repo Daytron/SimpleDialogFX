@@ -12,9 +12,9 @@
 
 <GridPane hgap="14.0" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../styles/StyleDialog.css" vgap="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
+    <VBox fx:id="topBoxContainer" maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
       <children>
-            <StackPane fx:id="headerPane" styleClass="headerPane">
+            <StackPane fx:id="headContainer" styleClass="headerPane">
                <children>
               <Label fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
                 <font>
@@ -23,11 +23,15 @@
               </Label>
                </children>
             </StackPane>
-        <Label id="details" fx:id="detailsLabel" maxWidth="1.7976931348623157E308" text="details" textAlignment="LEFT" wrapText="true">
-          <font>
-            <Font size="12.0" />
-          </font>
-        </Label>
+            <StackPane id="bodyContainer" fx:id="bodyContainer">
+               <children>
+              <Label id="details" fx:id="detailsLabel" maxWidth="1.7976931348623157E308" text="details" textAlignment="LEFT" wrapText="true">
+                <font>
+                  <Font size="12.0" />
+                </font>
+              </Label>
+               </children>
+            </StackPane>
       </children>
     </VBox>
     <HBox maxHeight="-Infinity" maxWidth="+Infinity" minHeight="-Infinity" minWidth="-Infinity" GridPane.rowIndex="1">

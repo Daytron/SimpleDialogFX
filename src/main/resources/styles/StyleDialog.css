@@ -84,10 +84,13 @@ THE SOFTWARE.
     
 }
 
+#bodyContainer {
+    -fx-padding: 5 10 10 10;
+}
+
 #details {
     -fx-font-family: "Helvetica";
     -fx-font-size: 14px;
-    -fx-padding: 5 10 10 10;
 }
 
 #details-input-text {
@@ -99,5 +102,4 @@ THE SOFTWARE.
 #details-exception {
     -fx-font-family: "Helvetica";
     -fx-font-size: 14px;
-    -fx-padding: 5 10 5 10;
 }
