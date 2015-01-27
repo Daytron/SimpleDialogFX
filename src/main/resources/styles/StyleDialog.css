@@ -34,7 +34,7 @@ THE SOFTWARE.
     
 }
 
-.headerPane {
+.headContainer {
     -fx-background-color: #fff;
     -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }

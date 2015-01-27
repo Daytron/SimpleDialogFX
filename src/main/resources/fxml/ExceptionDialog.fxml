@@ -14,7 +14,7 @@
   <children>
     <VBox fx:id="topBoxContainer" maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="550.0" spacing="7.0" GridPane.rowIndex="0">
       <children>
-            <StackPane fx:id="headContainer" styleClass="headerPane">
+            <StackPane fx:id="headContainer" styleClass="headContainer">
                <children>
               <Label fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
                 <font>
