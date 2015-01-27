@@ -14,11 +14,15 @@
   <children>
     <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
       <children>
-        <Label fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
-          <font>
-            <Font name="System Bold" size="13.0" />
-          </font>
-        </Label>
+            <StackPane fx:id="headerPane" styleClass="headerPane">
+               <children>
+              <Label fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
+                <font>
+                  <Font name="System Bold" size="13.0" />
+                </font>
+              </Label>
+               </children>
+            </StackPane>
         <Label id="details" fx:id="detailsLabel" maxWidth="1.7976931348623157E308" text="details" textAlignment="LEFT" wrapText="true">
           <font>
             <Font size="12.0" />
