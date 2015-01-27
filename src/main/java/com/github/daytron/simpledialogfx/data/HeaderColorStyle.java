@@ -31,29 +31,8 @@ package com.github.daytron.simpledialogfx.data;
 public enum HeaderColorStyle {
 
     /**
-     * If no color is selected, this will be the default value, default CSS
-     * styles will be used instead
-     *//**
-     * If no color is selected, this will be the default value, default CSS
-     * styles will be used instead
-     *//**
-     * If no color is selected, this will be the default value, default CSS
-     * styles will be used instead
-     *//**
-     * If no color is selected, this will be the default value, default CSS
-     * styles will be used instead
-     *//**
-     * If no color is selected, this will be the default value, default CSS
-     * styles will be used instead
-     *//**
-     * If no color is selected, this will be the default value, default CSS
-     * styles will be used instead
-     *//**
-     * If no color is selected, this will be the default value, default CSS
-     * styles will be used instead
-     *//**
-     * If no color is selected, this will be the default value, default CSS
-     * styles will be used instead
+     * If no color is selected, this is the default value, corresponding style 
+     * is applied on predefined dialogs
      */
     DEFAULT(""),
     /**
