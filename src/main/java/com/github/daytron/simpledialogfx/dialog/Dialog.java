@@ -36,6 +36,7 @@ import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -48,7 +49,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
@@ -95,17 +95,12 @@ public class Dialog extends Stage implements Initializable {
     private DialogResponse response;
 
     private Scene scene;
-
     private FXMLLoader fxmlLoader;
-
     private final DialogType dialogType;
-
     private final DialogStyle dialogStyle;
-
     private final Exception exception;
 
     private String textEntry;
-
     private HeaderColorStyle headerColorStyle;
     private boolean isLoadingError;
 
@@ -443,12 +438,11 @@ public class Dialog extends Stage implements Initializable {
         // Default dialog action response
         this.response = DialogResponse.NO_RESPONSE;
 
-        this.fxmlLoader = new FXMLLoader(getClass()
-                .getResource(dialogType.getPath()));
-
-        this.fxmlLoader.setController(this);
-
         try {
+            this.fxmlLoader = new FXMLLoader(getClass()
+                    .getResource(dialogType.getPath()));
+            this.fxmlLoader.setController(this);
+
             this.scene = new Scene((Parent) fxmlLoader.load());
             setScene(scene);
             centerOnScreen();
@@ -469,10 +463,10 @@ public class Dialog extends Stage implements Initializable {
                     response = DialogResponse.CLOSE;
                 }
             });
-        } catch (IOException ex) {
-            Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             this.isLoadingError = true;
-
+            Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE,
+                    DialogText.CAUGHT_EXCEPTION_LOG_MSG.getText(), ex);
         }
 
     }
@@ -491,71 +485,86 @@ public class Dialog extends Stage implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (this.isLoadingError) {
-            close();
-            return;
-        }
-
-        // Set default focus to the appropriate button
-        Platform.runLater(new Runnable() {
+        // Add an event handler to automatically close the stage in the event of 
+        // any exception encountered.
+        addEventHandler(WindowEvent.ANY, new EventHandler<WindowEvent>() {
             @Override
-            public void run() {
-                switch (dialogType) {
-                    case INFORMATION:
-                        okButton.requestFocus();
-                        break;
-
-                    case CONFIRMATION:
-                        yesButton.requestFocus();
-                        break;
-
-                    case CONFIRMATION_ALT1:
-                        okButton.requestFocus();
-                        break;
-
-                    case CONFIRMATION_ALT2:
-                        yesButton.requestFocus();
-                        break;
-
-                    case WARNING:
-                        okButton.requestFocus();
-                        break;
-
-                    case ERROR:
-                        okButton.requestFocus();
-                        break;
-
-                    case EXCEPTION:
-                        okButton.requestFocus();
-                        break;
-
-                    case INPUT_TEXT:
-                        sendButton.requestFocus();
-                        break;
-
-                    case GENERIC_OK:
-                        okButton.requestFocus();
-                        break;
-
-                    case GENERIC_OK_CANCEL:
-                        okButton.requestFocus();
-                        break;
-
-                    case GENERIC_YES_NO:
-                        yesButton.requestFocus();
-                        break;
-
-                    case GENERIC_YES_NO_CANCEL:
-                        yesButton.requestFocus();
-                        break;
-                }
-
+            public void handle(WindowEvent window) {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (isLoadingError) {
+                            close();
+                        }
+                    }
+                });
             }
         });
 
-        this.detailsLabel.setWrapText(true);
+        // Set default focus to the appropriate UI component
+        Platform.runLater(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        switch (dialogType) {
+                            case INFORMATION:
+                                okButton.requestFocus();
+                                break;
+
+                            case CONFIRMATION:
+                                yesButton.requestFocus();
+                                break;
+
+                            case CONFIRMATION_ALT1:
+                                okButton.requestFocus();
+                                break;
+
+                            case CONFIRMATION_ALT2:
+                                yesButton.requestFocus();
+                                break;
+
+                            case WARNING:
+                                okButton.requestFocus();
+                                break;
+
+                            case ERROR:
+                                okButton.requestFocus();
+                                break;
+
+                            case EXCEPTION:
+                                okButton.requestFocus();
+                                break;
+
+                            case INPUT_TEXT:
+                                inputTextField.requestFocus();
+                                break;
+
+                            case GENERIC_OK:
+                                okButton.requestFocus();
+                                break;
+
+                            case GENERIC_OK_CANCEL:
+                                okButton.requestFocus();
+                                break;
+
+                            case GENERIC_YES_NO:
+                                yesButton.requestFocus();
+                                break;
+
+                            case GENERIC_YES_NO_CANCEL:
+                                yesButton.requestFocus();
+                                break;
+                        }
+
+                    }
+                }
+        );
+
+        this.detailsLabel.setWrapText(
+                true);
 
         this.headerLabel.setText(getHeader());
+
         this.detailsLabel.setText(getDetails());
 
         // Filter behaviour for exception dialog
@@ -580,10 +589,14 @@ public class Dialog extends Stage implements Initializable {
             this.setHeadlessPadding();
         }
 
-        // Apply Header CSS style color
-        this.setHeaderColorStyle(this.headerColorStyle);
+            // Apply Header CSS style color
+        this.setHeaderColorStyle(
+                this.headerColorStyle);
     }
 
+    /**
+     * Sets the padding for a headless dialog
+     */
     private void setHeadlessPadding() {
         if (dialogType == DialogType.INPUT_TEXT) {
             bodyContainer.setStyle(
@@ -991,4 +1004,5 @@ public class Dialog extends Stage implements Initializable {
         setResponse(DialogResponse.SEND);
         close();
     }
+
 }
