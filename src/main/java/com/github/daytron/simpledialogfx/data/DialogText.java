@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of default window titles for the dialogs.
+ * List of predefined texts for the library.
  *
  * @author Ryan Gilera
  */
