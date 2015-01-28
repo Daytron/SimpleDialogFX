@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of pre-built CSS color styles for the dialog's header label.
+ * List of predefined CSS color styles for the dialog's header label.
  *
  * @author Ryan Gilera
  */
@@ -32,7 +32,7 @@ public enum HeaderColorStyle {
 
     /**
      * If no color is selected, this is the default value, corresponding style 
-     * is applied on predefined dialogs
+     * is applied on their selected dialog instead
      */
     DEFAULT(""),
     
@@ -47,7 +47,7 @@ public enum HeaderColorStyle {
     GENERIC("-fx-background-color: rgb(216, 222, 227);"),
     
     
-    /***  GLOSS SERIES ***/
+    // GLOSS SERIES
     
     /**
      * The default color style for Error dialog (red)
@@ -131,7 +131,7 @@ public enum HeaderColorStyle {
             + "0%,rgba(250,172,94,1) 44%,rgba(243,151,59,1) 100%);"),
     
     
-     /***  LINEAR FADE LEFT SERIES ***/
+    // LINEAR FADE LEFT SERIES 
     
     // Hue -180 or +180
     LINEAR_FADE_LEFT_TIGERSEYE("-fx-background-color: "
@@ -224,7 +224,7 @@ public enum HeaderColorStyle {
             + "0%,rgba(223,93,61,1) 100%);"),
     
     
-     /***  LINEAR FADE RIGHT SERIES ***/
+    // LINEAR FADE RIGHT SERIES
     
     // Hue -180 or +180
     LINEAR_FADE_RIGHT_TIGERSEYE("-fx-background-color: "
@@ -317,7 +317,7 @@ public enum HeaderColorStyle {
             + "0%,rgba(223,93,61,1) 100%);"),
     
     
-    /***  OPAQUE SERIES ***/
+    // OPAQUE SERIES
     
     // Hue -180 or +180
     OPAQUE_SPRINGBUD("-fx-background-color: rgba(170,255,1,0.4)"),
