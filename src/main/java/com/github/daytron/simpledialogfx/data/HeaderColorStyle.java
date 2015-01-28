@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of pre-built CSS color styles for the dialog's header label
+ * List of pre-built CSS color styles for the dialog's header label.
  *
  * @author Ryan Gilera
  */

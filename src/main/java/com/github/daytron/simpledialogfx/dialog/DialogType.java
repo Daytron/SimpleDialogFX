@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.dialog;
 
 /**
- * List of dialog types and their corresponding Fxml file path
+ * List of dialog types and their corresponding Fxml file path.
  *
  * @author Ryan Gilera
  */
