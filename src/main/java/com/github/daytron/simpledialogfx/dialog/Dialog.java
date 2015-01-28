@@ -454,8 +454,9 @@ public class Dialog extends Stage implements Initializable {
             centerOnScreen();
 
             if (dialogStyle == DialogStyle.UNDECORATED) {
-                getScene().setFill(Color.TRANSPARENT);
-                initStyle(StageStyle.TRANSPARENT);
+                //getScene().setFill(Color.TRANSPARENT);
+                //initStyle(StageStyle.TRANSPARENT);
+                initStyle(StageStyle.UNDECORATED);
             }
 
             setResizable(false);
