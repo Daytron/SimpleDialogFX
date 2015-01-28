@@ -32,6 +32,12 @@ public enum DialogText {
 
     /**
      * Confirmation Dialog window title
+     *//**
+     * Confirmation Dialog window title
+     *//**
+     * Confirmation Dialog window title
+     *//**
+     * Confirmation Dialog window title
      */
     CONFIRMATION_TITLE("Confirmation Dialog"),
     /**
@@ -92,7 +98,12 @@ public enum DialogText {
      * No exception trace message if the exception parameter in the constructor
      * is null
      */
-    NO_EXCEPTION_TRACE("No trace found.");
+    NO_EXCEPTION_TRACE("No trace found."),
+    /**
+     * No exception trace message if the exception parameter in the constructor
+     * is null
+     */
+    CAUGHT_EXCEPTION_LOG_MSG("Unable to build dialog. Exception encountered.");
 
     private final String text;
 
