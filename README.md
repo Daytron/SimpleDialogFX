@@ -120,20 +120,11 @@ A dialog consists of the following areas shown in the figure below:
 #####<a name='construction'></a>Construction
 <sup><a href='#home'>[back to top]</a></sup> 
 
-For any type of dialog with native window style, you only have to create a new `Dialog` object. For example a confirmation dialog would look like this:
+To create a dialog, you only have to create a new `Dialog` object. For example, a confirmation dialog would look like this:
 ```java
 Dialog dialog = new Dialog(
                 DialogType.CONFIRMATION,
                 "Confirm Action",
-                "Are you sure?");
-dialog.showAndWait();
-```
-For a confirmation dialog with prebuilt texts:
-```java
-Dialog dialog = new Dialog(
-                DialogType.CONFIRMATION,
-                DialogText.CONFIRMATION_TITLE.getText(),
-                DialogText.CONFIRMATION_HEADER.getText(),
                 "Are you sure?");
 dialog.showAndWait();
 ```
