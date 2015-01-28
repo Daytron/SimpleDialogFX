@@ -31,35 +31,35 @@ package com.github.daytron.simpledialogfx.dialog;
 public enum DialogType {
 
     /**
-     * Confirmation dialog
+     * Confirmation dialog with YES and NO buttons
      */
     CONFIRMATION("/fxml/YesNoDialog.fxml"),
     /**
-     * Confirmation dialog
+     * Alternative confirmation dialog with OK and CANCEL buttons
      */
     CONFIRMATION_ALT1("/fxml/OkCancelDialog.fxml"),
     /**
-     * Confirmation dialog
+     * Alternative confirmation dialog with YES, NO and CANCEL buttons
      */
     CONFIRMATION_ALT2("/fxml/YesNoCancelDialog.fxml"),
     /**
-     * Information dialog
+     * Information dialog with a single OK button
      */
     INFORMATION("/fxml/OkDialog.fxml"),
     /**
-     * Warning dialog
+     * Warning dialog with a single OK button
      */
     WARNING("/fxml/OkDialog.fxml"),
     /**
-     * Error dialog
+     * Error dialog with a single OK button
      */
     ERROR("/fxml/OkDialog.fxml"),
     /**
-     * Exception dialog
+     * Exception dialog that includes an exception trace, displayed in a TextArea
      */
     EXCEPTION("/fxml/ExceptionDialog.fxml"),
     /**
-     * Input text dialog
+     * Input text dialog with a single input text field for <code>Strings</code>
      */
     INPUT_TEXT("/fxml/InputTextDialog.fxml"),
     /**
