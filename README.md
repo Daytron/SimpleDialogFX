@@ -10,6 +10,7 @@ Easy to use lightweight dialog library for JavaFX applications.
 * <a href='#usage'>Usage</a>
  * <a href='#overview'>Overview</a> 
  * <a href='#construction'>Construction</a>
+ * <a href='#undecorated'>Undecorated</a>
  * <a href='#headless'>Headless</a>
  * <a href='#colorstyle'>Color Style</a>
  * <a href='#font'>Font</a>
@@ -127,15 +128,6 @@ Dialog dialog = new Dialog(
                 "Are you sure?");
 dialog.showAndWait();
 ```
-For an undecorated window style:
-```java
-Dialog dialog = new Dialog(
-                DialogType.CONFIRMATION,
-                DialogStyle.UNDECORATED,
-                "Confirm Action",
-                "Are you sure?");
-dialog.showAndWait();
-```
 For a confirmation dialog with prebuilt texts:
 ```java
 Dialog dialog = new Dialog(
@@ -152,15 +144,7 @@ Dialog dialog = new Dialog(exception);
 dialog.showAndWait();
 ```
 
-For undecorated exception dialog:
-```java
-Dialog dialog = new Dialog(
-                DialogStyle.UNDECORATED,
-                exception);
-dialog.showAndWait();
-```
-
-To retrieve a response, simply use:
+Retrieving a response::
 ```java
 DialogResponse response = dialog.getResponse();
 ```
@@ -185,13 +169,34 @@ Result:
 <br />
 For the complete list of constructors, see [Javadoc].
 
+
+##### <a name='undecorated'></a>Undecorated
+<sup><a href='#home'>[back to top]</a></sup>
+
+For an undecorated window style approach, simply use the `DialogStyle` option, `UNDECORATED` in the constructor.
+
+```java
+Dialog dialog = new Dialog(
+                DialogType.CONFIRMATION,
+                DialogStyle.UNDECORATED,
+                "Confirm Action",
+                "Are you sure?");
+dialog.showAndWait();
+```
+
+<p align="center">
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/UndecoratedVsNative.png" alt="Undecorated style Dialog" />
+</p>
+<br />
+
+
 ##### <a name='headless'></a>Headless 
 <sup><a href='#home'>[back to top]</a></sup>
 
-For a more simplistic approach, you can remove the header completely and only show the details section of the dialog. To choose a headless approach, simply use the `DialogStyle` option, `HEADLESS` in the constructor.
+For a more simplistic approach, you may remove the header completely and show only the details section of the dialog. To choose a headless approach, simply use the `DialogStyle` option, `HEADLESS` in the constructor.
 
 <p align="center">
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/HeadlessVsHead.png" alt="Result Example Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/HeadlessVsHead.png" alt="Headless style Dialog" />
 </p>
 <br />
 
