@@ -24,34 +24,42 @@
 package com.github.daytron.simpledialogfx.dialog;
 
 /**
- * List of dialog types and their corresponding Fxml file path
+ * List of dialog types and their corresponding Fxml file path.
  *
  * @author Ryan Gilera
  */
 public enum DialogType {
 
     /**
-     * Confirmation dialog
+     * Confirmation dialog with YES and NO buttons
      */
     CONFIRMATION("/fxml/YesNoDialog.fxml"),
     /**
-     * Information dialog
+     * Alternative confirmation dialog with OK and CANCEL buttons
+     */
+    CONFIRMATION_ALT1("/fxml/OkCancelDialog.fxml"),
+    /**
+     * Alternative confirmation dialog with YES, NO and CANCEL buttons
+     */
+    CONFIRMATION_ALT2("/fxml/YesNoCancelDialog.fxml"),
+    /**
+     * Information dialog with a single OK button
      */
     INFORMATION("/fxml/OkDialog.fxml"),
     /**
-     * Warning dialog
+     * Warning dialog with a single OK button
      */
     WARNING("/fxml/OkDialog.fxml"),
     /**
-     * Error dialog
+     * Error dialog with a single OK button
      */
     ERROR("/fxml/OkDialog.fxml"),
     /**
-     * Exception dialog
+     * Exception dialog that includes an exception trace, displayed in a TextArea
      */
     EXCEPTION("/fxml/ExceptionDialog.fxml"),
     /**
-     * Input text dialog
+     * Input text dialog with a single input text field for <code>Strings</code>
      */
     INPUT_TEXT("/fxml/InputTextDialog.fxml"),
     /**
@@ -65,7 +73,11 @@ public enum DialogType {
     /**
      * Generic YES and NO dialog
      */
-    GENERIC_YES_NO("/fxml/YesNoDialog.fxml");
+    GENERIC_YES_NO("/fxml/YesNoDialog.fxml"),
+    /**
+     * Generic YES, NO and CANCEL dialog
+     */
+    GENERIC_YES_NO_CANCEL("/fxml/YesNoCancelDialog.fxml");
     
     private final String path;
 

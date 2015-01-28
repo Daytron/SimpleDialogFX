@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2014 Ryan Gilera.
+ * Copyright 2014-2015 Ryan Gilera.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -55,7 +55,7 @@ public enum DialogResponse {
      */
     SEND,
     /**
-     * NO response at all - Default
+     * Default response
      */
     NO_RESPONSE;
 }

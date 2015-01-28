@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of default window titles for the dialogs.
+ * List of predefined texts for the library.
  *
  * @author Ryan Gilera
  */
@@ -92,7 +92,12 @@ public enum DialogText {
      * No exception trace message if the exception parameter in the constructor
      * is null
      */
-    NO_EXCEPTION_TRACE("No trace found.");
+    NO_EXCEPTION_TRACE("No trace found."),
+    /**
+     * Log exception message printed on the console whenever an exception is
+     * encountered
+     */
+    CAUGHT_EXCEPTION_LOG_MSG("Unable to build dialog. Exception encountered.");
 
     private final String text;
 

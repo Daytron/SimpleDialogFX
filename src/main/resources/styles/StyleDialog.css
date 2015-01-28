@@ -1,7 +1,7 @@
 /*
 The MIT License
 
-Copyright 2014 Ryan Gilera.
+Copyright 2014-2015 Ryan Gilera.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +30,12 @@ THE SOFTWARE.
     -fx-font-size: 25px;
     -fx-padding: 10 10 10 10;
     -fx-background-color: rgb(216, 222, 227);
+    -fx-background-insets: 0;
+    
+}
+
+.headContainer {
+    -fx-background-color: #fff;
     -fx-effect: dropshadow(two-pass-box,black,5,.2,0,0);
 }
 
@@ -78,10 +84,13 @@ THE SOFTWARE.
     
 }
 
+#bodyContainer {
+    -fx-padding: 5 10 10 10;
+}
+
 #details {
     -fx-font-family: "Helvetica";
     -fx-font-size: 14px;
-    -fx-padding: 5 10 10 10;
 }
 
 #details-input-text {
@@ -93,5 +102,4 @@ THE SOFTWARE.
 #details-exception {
     -fx-font-family: "Helvetica";
     -fx-font-size: 14px;
-    -fx-padding: 5 10 5 10;
 }

@@ -10,6 +10,8 @@ Easy to use lightweight dialog library for JavaFX applications.
 * <a href='#usage'>Usage</a>
  * <a href='#overview'>Overview</a> 
  * <a href='#construction'>Construction</a>
+ * <a href='#undecorated'>Undecorated</a>
+ * <a href='#headless'>Headless</a>
  * <a href='#colorstyle'>Color Style</a>
  * <a href='#font'>Font</a>
  * <a href='#responses'>Responses</a>
@@ -39,17 +41,15 @@ Easy to use lightweight dialog library for JavaFX applications.
 <p align="center">
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InfoDialog.png?token=AGk1WtIl0yQai-c3MiXwwyPwtbakmtY4ks5UmUB6wA%3D%3D" alt="Information Dialog" />
 <br /><br />
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmDialog.png?token=AGk1Wszv2Ed0NeExs00rvs0RxzWKNHquks5UmUChwA%3D%3D" alt="Confirmation Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmDialog.png" alt="Confirmation Dialog" />
+<br /><br />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmAlt1Dialog.png" alt="Confirmation Alternative 1 Dialog" />
+<br /><br />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmAlt2Dialog.png" alt="Confirmation Alternative 2 Dialog" />
 <br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/WarningDialog.png?token=AGk1WkOat2dl0G-gUxoeE8ockiVejWY-ks5UmUC6wA%3D%3D" alt="Warning Dialog" />
 <br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ErrorDialog.png?token=AGk1Why_GDl4ELib3F_X8rq1NS2chp1kks5UmUDQwA%3D%3D" alt="Error Dialog" />
-<br /><br />
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKDialog.png?token=AGk1Whpo9J-RTuqldAtwGAGa-qAG1jXxks5UmUHzwA%3D%3D" alt="Generic OK Dialog" />
-<br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericOKCANCELDialog.png" alt="Generic OK CANCEL Dialog" />
-<br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/GenericYESNODialog.png" alt="Generic YES NO Dialog" />
 <br /><br />
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InputTextDialog.png" alt="Input Text Dialog" />
 <br /><br />
@@ -74,6 +74,18 @@ If none of those colors hook you, try mix and match various color styles.
 ##### Linear Fade Right Series
 <p align="center">
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/LinearFadeRightSeries.png" alt="Linear Fade Right Series" />
+</p>
+
+
+##### Opaque Series
+<p align="center">
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/OpaqueSeries.png" alt="Opaque Series" />
+</p>
+
+
+##### Generic Style
+<p align="center">
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/GenericSeries.png" alt="Generic Style" />
 </p>
 
 ### <a name='installation'></a>Installation 
@@ -108,29 +120,11 @@ A dialog consists of the following areas shown in the figure below:
 #####<a name='construction'></a>Construction
 <sup><a href='#home'>[back to top]</a></sup> 
 
-For any type of dialog with native window style, you only have to create a new `Dialog` object. For example a confirmation dialog would look like this:
+To create a dialog, you only have to create a new `Dialog` object. For example, a confirmation dialog would look like this:
 ```java
 Dialog dialog = new Dialog(
                 DialogType.CONFIRMATION,
                 "Confirm Action",
-                "Are you sure?");
-dialog.showAndWait();
-```
-For an undecorated window style:
-```java
-Dialog dialog = new Dialog(
-                DialogType.CONFIRMATION,
-                DialogStyle.UNDECORATED,
-                "Confirm Action",
-                "Are you sure?");
-dialog.showAndWait();
-```
-For a confirmation dialog with prebuilt texts:
-```java
-Dialog dialog = new Dialog(
-                DialogType.CONFIRMATION,
-                DialogText.CONFIRMATION_TITLE.getText(),
-                DialogText.CONFIRMATION_HEADER.getText(),
                 "Are you sure?");
 dialog.showAndWait();
 ```
@@ -141,15 +135,7 @@ Dialog dialog = new Dialog(exception);
 dialog.showAndWait();
 ```
 
-For undecorated exception dialog:
-```java
-Dialog dialog = new Dialog(
-                DialogStyle.UNDECORATED,
-                exception);
-dialog.showAndWait();
-```
-
-To retrieve a response, simply use:
+Retrieving a response::
 ```java
 DialogResponse response = dialog.getResponse();
 ```
@@ -169,10 +155,41 @@ if (dialog.getResponse() == DialogResponse.YES) {
 
 Result:
 <p align="center">
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png?token=AGk1WoIR64Ya--Vi2cwke9I-LhXW-_fsks5UmUF-wA%3D%3D" alt="Result Example Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png" alt="Result Example Dialog" />
 </p>
 <br />
 For the complete list of constructors, see [Javadoc].
+
+
+##### <a name='undecorated'></a>Undecorated
+<sup><a href='#home'>[back to top]</a></sup>
+
+For an undecorated window style approach, simply use the `DialogStyle` option, `UNDECORATED` in the constructor.
+
+```java
+Dialog dialog = new Dialog(
+                DialogType.CONFIRMATION,
+                DialogStyle.UNDECORATED,
+                "Confirm Action",
+                "Are you sure?");
+dialog.showAndWait();
+```
+
+<p align="center">
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/UndecoratedVsNative.png" alt="Undecorated style Dialog" />
+</p>
+<br />
+
+
+##### <a name='headless'></a>Headless 
+<sup><a href='#home'>[back to top]</a></sup>
+
+For a more simplistic approach, you may remove the header completely and show only the details section of the dialog. To choose a headless approach, simply use the `DialogStyle` option, `HEADLESS` in the constructor.
+
+<p align="center">
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeadlessVsHead.png" alt="Headless style Dialog" />
+</p>
+<br />
 
 ##### <a name='colorstyle'></a>Color Style 
 <sup><a href='#home'>[back to top]</a></sup>

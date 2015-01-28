@@ -27,7 +27,6 @@ import com.github.daytron.simpledialogfx.data.DialogResponse;
 import com.github.daytron.simpledialogfx.data.DialogStyle;
 import com.github.daytron.simpledialogfx.data.DialogText;
 import com.github.daytron.simpledialogfx.data.HeaderColorStyle;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -46,18 +45,25 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 /**
- * The controller class for building any derivatives of dialogs
+ * The controller class for building any derivatives of dialogs.
  *
  * @author Ryan Gilera
  */
 public class Dialog extends Stage implements Initializable {
 
+    @FXML
+    private VBox topBoxContainer;
+    @FXML
+    private StackPane headContainer;
+    @FXML
+    private StackPane bodyContainer;
     @FXML
     private Label headerLabel;
     @FXML
@@ -87,15 +93,12 @@ public class Dialog extends Stage implements Initializable {
     private DialogResponse response;
 
     private Scene scene;
-
     private FXMLLoader fxmlLoader;
-
     private final DialogType dialogType;
-
+    private final DialogStyle dialogStyle;
     private final Exception exception;
 
     private String textEntry;
-
     private HeaderColorStyle headerColorStyle;
     private boolean isLoadingError;
 
@@ -150,6 +153,34 @@ public class Dialog extends Stage implements Initializable {
     public Dialog(DialogType dialogType, HeaderColorStyle headerColorStyle,
             String header, String details) {
         this(dialogType, DialogStyle.NATIVE, "", header, headerColorStyle,
+                details, null);
+    }
+
+    /**
+     * Constructs a dialog with specified DialogType, HeaderColorStyle, title,
+     * header text and details text.
+     * <p>
+     * Note: Using an exception dialog will overwrite the header's and details'
+     * texts with predefined exception header message and Exception object's
+     * class name respectively. Since there is no exception given (will yield to
+     * null), it will result to pre-built error texts in exception dialog's
+     * header, details and trace messages.
+     * <p>
+     * Default values:
+     * <ul>
+     * <li>DialogStyle is set to NATIVE</li>
+     * <li>Exception object is set to NULL</li>
+     * </ul>
+     *
+     * @param dialogType The dialog type to be created
+     * @param headerColorStyle The chosen color style for the header
+     * @param title The window title of the dialog
+     * @param header The text for the colored header label
+     * @param details The text for the message details label
+     */
+    public Dialog(DialogType dialogType, HeaderColorStyle headerColorStyle,
+            String title, String header, String details) {
+        this(dialogType, DialogStyle.NATIVE, title, header, headerColorStyle,
                 details, null);
     }
 
@@ -383,6 +414,7 @@ public class Dialog extends Stage implements Initializable {
         this.headerColorStyle = headerColorStyle;
         this.dialogType = dialogType;
         this.exception = exception;
+        this.dialogStyle = dialogStyle;
 
         // Filter behaviour for exception dialog
         if (dialogType == DialogType.EXCEPTION) {
@@ -404,19 +436,19 @@ public class Dialog extends Stage implements Initializable {
         // Default dialog action response
         this.response = DialogResponse.NO_RESPONSE;
 
-        this.fxmlLoader = new FXMLLoader(getClass()
-                .getResource(dialogType.getPath()));
-
-        this.fxmlLoader.setController(this);
-
         try {
+            this.fxmlLoader = new FXMLLoader(getClass()
+                    .getResource(dialogType.getPath()));
+            this.fxmlLoader.setController(this);
+
             this.scene = new Scene((Parent) fxmlLoader.load());
             setScene(scene);
             centerOnScreen();
 
             if (dialogStyle == DialogStyle.UNDECORATED) {
-                getScene().setFill(Color.TRANSPARENT);
-                initStyle(StageStyle.TRANSPARENT);
+                //getScene().setFill(Color.TRANSPARENT);
+                //initStyle(StageStyle.TRANSPARENT);
+                initStyle(StageStyle.UNDECORATED);
             }
 
             setResizable(false);
@@ -429,10 +461,10 @@ public class Dialog extends Stage implements Initializable {
                     response = DialogResponse.CLOSE;
                 }
             });
-        } catch (IOException ex) {
-            Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             this.isLoadingError = true;
-
+            Logger.getLogger(Dialog.class.getName()).log(Level.SEVERE,
+                    DialogText.CAUGHT_EXCEPTION_LOG_MSG.getText(), ex);
         }
 
     }
@@ -451,59 +483,86 @@ public class Dialog extends Stage implements Initializable {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if (this.isLoadingError) {
-            close();
-            return;
-        }
-
-        // Set default focus to the appropriate button
-        Platform.runLater(new Runnable() {
+        // Add an event handler to automatically close the stage in the event of 
+        // any exception encountered.
+        addEventHandler(WindowEvent.ANY, new EventHandler<WindowEvent>() {
             @Override
-            public void run() {
-                switch (dialogType) {
-                    case INFORMATION:
-                        okButton.requestFocus();
-                        break;
-
-                    case CONFIRMATION:
-                        yesButton.requestFocus();
-                        break;
-
-                    case WARNING:
-                        okButton.requestFocus();
-                        break;
-
-                    case ERROR:
-                        okButton.requestFocus();
-                        break;
-
-                    case EXCEPTION:
-                        okButton.requestFocus();
-                        break;
-
-                    case INPUT_TEXT:
-                        sendButton.requestFocus();
-                        break;
-
-                    case GENERIC_OK:
-                        okButton.requestFocus();
-                        break;
-
-                    case GENERIC_OK_CANCEL:
-                        okButton.requestFocus();
-                        break;
-
-                    case GENERIC_YES_NO:
-                        yesButton.requestFocus();
-                        break;
-                }
-
+            public void handle(WindowEvent window) {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (isLoadingError) {
+                            close();
+                        }
+                    }
+                });
             }
         });
 
-        this.detailsLabel.setWrapText(true);
+        // Set default focus to the appropriate UI component
+        Platform.runLater(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        switch (dialogType) {
+                            case INFORMATION:
+                                okButton.requestFocus();
+                                break;
+
+                            case CONFIRMATION:
+                                yesButton.requestFocus();
+                                break;
+
+                            case CONFIRMATION_ALT1:
+                                okButton.requestFocus();
+                                break;
+
+                            case CONFIRMATION_ALT2:
+                                yesButton.requestFocus();
+                                break;
+
+                            case WARNING:
+                                okButton.requestFocus();
+                                break;
+
+                            case ERROR:
+                                okButton.requestFocus();
+                                break;
+
+                            case EXCEPTION:
+                                okButton.requestFocus();
+                                break;
+
+                            case INPUT_TEXT:
+                                inputTextField.requestFocus();
+                                break;
+
+                            case GENERIC_OK:
+                                okButton.requestFocus();
+                                break;
+
+                            case GENERIC_OK_CANCEL:
+                                okButton.requestFocus();
+                                break;
+
+                            case GENERIC_YES_NO:
+                                yesButton.requestFocus();
+                                break;
+
+                            case GENERIC_YES_NO_CANCEL:
+                                yesButton.requestFocus();
+                                break;
+                        }
+
+                    }
+                }
+        );
+
+        this.detailsLabel.setWrapText(
+                true);
 
         this.headerLabel.setText(getHeader());
+
         this.detailsLabel.setText(getDetails());
 
         // Filter behaviour for exception dialog
@@ -522,8 +581,32 @@ public class Dialog extends Stage implements Initializable {
             this.exceptionArea.setEditable(false);
         }
 
-        // Apply Header CSS style color
-        this.setHeaderColorStyle(this.headerColorStyle);
+        // Filter whether it headless or not
+        if (this.dialogStyle == DialogStyle.HEADLESS) {
+            this.topBoxContainer.getChildren().remove(this.headContainer);
+            this.setHeadlessPadding();
+        }
+
+            // Apply Header CSS style color
+        this.setHeaderColorStyle(
+                this.headerColorStyle);
+    }
+
+    /**
+     * Sets the padding for a headless dialog
+     */
+    private void setHeadlessPadding() {
+        if (dialogType == DialogType.INPUT_TEXT) {
+            bodyContainer.setStyle(
+                    PreDefinedStyle.INPUT_DIALOG_HEADLESS_PADDING.getStyle());
+
+        } else if (dialogType == DialogType.EXCEPTION) {
+            bodyContainer.setStyle(
+                    PreDefinedStyle.EXCEPTION_DIALOG_HEADLESS_PADDING.getStyle());
+        } else {
+            bodyContainer.setStyle(
+                    PreDefinedStyle.HEADLESS_PADDING.getStyle());
+        }
     }
 
     /**
@@ -559,6 +642,12 @@ public class Dialog extends Stage implements Initializable {
                     case CONFIRMATION:
                         this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_CONFIRM);
                         break;
+                    case CONFIRMATION_ALT1:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_CONFIRM);
+                        break;
+                    case CONFIRMATION_ALT2:
+                        this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_CONFIRM);
+                        break;
                     case EXCEPTION:
                         this.updateHeaderColorStyle(HeaderColorStyle.GLOSS_EXCEPTION);
                         break;
@@ -586,7 +675,6 @@ public class Dialog extends Stage implements Initializable {
      */
     private void setResponse(DialogResponse response) {
         this.response = response;
-
     }
 
     /**
@@ -638,8 +726,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets both font sizes in pixels for the header and the details
-     * label with a single font size <code>integer</code> parameter given.
+     * Sets both font sizes in pixels for the header and the details label with
+     * a single font size <code>integer</code> parameter given.
      *
      * @param font_size Font size in pixels for both header and details labels
      * in pixels
@@ -649,8 +737,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets both font sizes in pixels for the header and the details
-     * label with two font sizes <code>integer</code> parameters given.
+     * Sets both font sizes in pixels for the header and the details label with
+     * two font sizes <code>integer</code> parameters given.
      *
      * @param header_font_size The header font size in pixels
      * @param details_font_size The details font size in pixels
@@ -683,8 +771,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets both font families for the header and the details label
-     * with a single font family <code>String</code> parameter given.
+     * Sets both font families for the header and the details label with a
+     * single font family <code>String</code> parameter given.
      *
      * @param font_family Font family for both header and details labels in
      * <code>Strings</code>
@@ -694,8 +782,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets both font families for the header and the details label
-     * with two font families <code>String</code> parameters given.
+     * Sets both font families for the header and the details label with two
+     * font families <code>String</code> parameters given.
      *
      * @param header_font_family The header font family in <code>Strings</code>
      * @param details_font_family The details font family in
@@ -729,8 +817,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets the font sizes and the font families for the header and
-     * details label with a single font family and a single font size.
+     * Sets the font sizes and the font families for the header and details
+     * label with a single font family and a single font size.
      *
      * @param font_family The font family for header and details labels in
      * <code>Strings</code>
@@ -742,8 +830,8 @@ public class Dialog extends Stage implements Initializable {
     }
 
     /**
-     * Sets the font sizes and the font families for the header and
-     * details label.
+     * Sets the font sizes and the font families for the header and details
+     * label.
      *
      * @param header_font_family The header font family in <code>Strings</code>
      * @param header_font_size The header font size in pixels
@@ -759,7 +847,6 @@ public class Dialog extends Stage implements Initializable {
         this.detailsLabel
                 .setStyle("-fx-font-family: \"" + details_font_family + "\";"
                         + "-fx-font-size:" + Integer.toString(details_font_size) + "px;");
-
     }
 
     /**
@@ -913,4 +1000,5 @@ public class Dialog extends Stage implements Initializable {
         setResponse(DialogResponse.SEND);
         close();
     }
+
 }

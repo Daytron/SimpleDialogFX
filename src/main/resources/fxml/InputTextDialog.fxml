@@ -12,35 +12,43 @@
 
 <GridPane hgap="14.0" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../styles/StyleDialog.css" vgap="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <VBox maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
+    <VBox fx:id="topBoxContainer" maxHeight="+Infinity" maxWidth="+Infinity" minHeight="-Infinity" prefWidth="400.0" spacing="7.0" GridPane.rowIndex="0">
       <children>
-        <Label fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
-          <font>
-            <Font name="System Bold" size="13.0" />
-          </font>
-        </Label>
-            <HBox prefWidth="200.0">
+            <StackPane fx:id="headContainer" styleClass="headContainer">
                <children>
-              <Label id="details-input-text" fx:id="detailsLabel" alignment="BOTTOM_CENTER" prefHeight="33.0" text="details" textAlignment="LEFT" wrapText="true">
+              <Label fx:id="headerLabel" maxWidth="1.7976931348623157E308" styleClass="header" text="message" textAlignment="LEFT" wrapText="true">
                 <font>
-                  <Font size="12.0" />
+                  <Font name="System Bold" size="13.0" />
                 </font>
               </Label>
-                  <TextField id="text-label" fx:id="text_field" prefHeight="25.0" prefWidth="193.0" />
                </children>
-               <padding>
-                  <Insets top="10.0" />
-               </padding>
-            </HBox>
+            </StackPane>
+            <StackPane id="bodyContainer" fx:id="bodyContainer">
+               <children>
+                  <HBox>
+                     <children>
+                    <Label id="details-input-text" fx:id="detailsLabel" alignment="BOTTOM_CENTER" prefHeight="33.0" text="details" textAlignment="LEFT" wrapText="true">
+                      <font>
+                        <Font size="12.0" />
+                      </font>
+                    </Label>
+                        <TextField id="text-label" fx:id="inputTextField" prefHeight="25.0" prefWidth="193.0" />
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </StackPane>
       </children>
     </VBox>
     <HBox maxHeight="-Infinity" maxWidth="+Infinity" minHeight="-Infinity" minWidth="-Infinity" GridPane.rowIndex="1">
       <children>
         <Pane HBox.hgrow="ALWAYS" />
-            <Button id="cancel-btn" fx:id="cancelButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#cancel_btn_on_click" text="Cancel" />
+            <Button id="send-btn" fx:id="sendButton" cancelButton="true" minWidth="80.0" mnemonicParsing="false" onAction="#send_btn_on_click" text="Send" />
         <HBox fx:id="okParent" alignment="CENTER">
           <children>
-            <Button id="send-btn" fx:id="sendButton" minWidth="80.0" mnemonicParsing="false" onAction="#send_btn_on_click" text="Send" HBox.hgrow="NEVER">
+            <Button id="cancel-btn" fx:id="cancelButton" minWidth="80.0" mnemonicParsing="false" onAction="#cancel_btn_on_click" text="Cancel" HBox.hgrow="NEVER">
               <HBox.margin>
                 <Insets left="14.0" />
               </HBox.margin>
