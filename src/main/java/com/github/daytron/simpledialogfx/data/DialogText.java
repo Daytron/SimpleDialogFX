@@ -94,8 +94,8 @@ public enum DialogText {
      */
     NO_EXCEPTION_TRACE("No trace found."),
     /**
-     * No exception trace message if the exception parameter in the constructor
-     * is null
+     * Log exception message printed on the console whenever an exception is
+     * encountered
      */
     CAUGHT_EXCEPTION_LOG_MSG("Unable to build dialog. Exception encountered.");
 
