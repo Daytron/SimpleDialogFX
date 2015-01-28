@@ -55,7 +55,7 @@ public enum DialogResponse {
      */
     SEND,
     /**
-     * NO response at all - Default
+     * Default response
      */
     NO_RESPONSE;
 }
