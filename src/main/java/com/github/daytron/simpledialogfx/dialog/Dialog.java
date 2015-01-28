@@ -27,7 +27,6 @@ import com.github.daytron.simpledialogfx.data.DialogResponse;
 import com.github.daytron.simpledialogfx.data.DialogStyle;
 import com.github.daytron.simpledialogfx.data.DialogText;
 import com.github.daytron.simpledialogfx.data.HeaderColorStyle;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -36,7 +35,6 @@ import java.util.logging.Logger;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -677,7 +675,6 @@ public class Dialog extends Stage implements Initializable {
      */
     private void setResponse(DialogResponse response) {
         this.response = response;
-
     }
 
     /**
@@ -850,7 +847,6 @@ public class Dialog extends Stage implements Initializable {
         this.detailsLabel
                 .setStyle("-fx-font-family: \"" + details_font_family + "\";"
                         + "-fx-font-size:" + Integer.toString(details_font_size) + "px;");
-
     }
 
     /**

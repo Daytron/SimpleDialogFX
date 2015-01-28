@@ -24,19 +24,13 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of default window titles for the dialogs.
+ * List of default window titles for the dialogs
  *
  * @author Ryan Gilera
  */
 public enum DialogText {
 
     /**
-     * Confirmation Dialog window title
-     *//**
-     * Confirmation Dialog window title
-     *//**
-     * Confirmation Dialog window title
-     *//**
      * Confirmation Dialog window title
      */
     CONFIRMATION_TITLE("Confirmation Dialog"),

@@ -31,7 +31,9 @@ package com.github.daytron.simpledialogfx.dialog;
 enum PreDefinedStyle {
 
     INPUT_DIALOG_HEADLESS_PADDING("-fx-padding: 20 10 15 10;"),
+    
     EXCEPTION_DIALOG_HEADLESS_PADDING("-fx-padding: 20 10 20 10;"),
+    
     HEADLESS_PADDING("-fx-padding: 20 10 15 25;");
 
     private final String style;
