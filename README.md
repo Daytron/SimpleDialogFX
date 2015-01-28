@@ -41,17 +41,17 @@ Easy to use lightweight dialog library for JavaFX applications.
 <p align="center">
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InfoDialog.png?token=AGk1WtIl0yQai-c3MiXwwyPwtbakmtY4ks5UmUB6wA%3D%3D" alt="Information Dialog" />
 <br /><br />
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/ConfirmDialog.png" alt="Confirmation Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmDialog.png" alt="Confirmation Dialog" />
 <br /><br />
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/ConfirmAlt1Dialog.png" alt="Confirmation Alternative 1 Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmAlt1Dialog.png" alt="Confirmation Alternative 1 Dialog" />
 <br /><br />
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/ConfirmAlt2Dialog.png" alt="Confirmation Alternative 2 Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ConfirmAlt2Dialog.png" alt="Confirmation Alternative 2 Dialog" />
 <br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/WarningDialog.png?token=AGk1WkOat2dl0G-gUxoeE8ockiVejWY-ks5UmUC6wA%3D%3D" alt="Warning Dialog" />
 <br /><br />
 <img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ErrorDialog.png?token=AGk1Why_GDl4ELib3F_X8rq1NS2chp1kks5UmUDQwA%3D%3D" alt="Error Dialog" />
 <br /><br />
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/InputTextDialog.png" alt="Input Text Dialog" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/InputTextDialog.png" alt="Input Text Dialog" />
 <br /><br />
 <img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/ExceptionDialog.png" alt="Exception Dialog" />
 </p>
@@ -79,13 +79,13 @@ If none of those colors hook you, try mix and match various color styles.
 
 ##### Opaque Series
 <p align="center">
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/HeaderColors/OpaqueSeries.png" alt="Opaque Series" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/OpaqueSeries.png" alt="Opaque Series" />
 </p>
 
 
 ##### Generic Style
 <p align="center">
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/HeaderColors/GenericSeries.png" alt="Generic Style" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeaderColors/GenericSeries.png" alt="Generic Style" />
 </p>
 
 ### <a name='installation'></a>Installation 
@@ -114,7 +114,7 @@ A dialog consists of the following areas shown in the figure below:
 - and Buttons
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/OverviewUsage.png" alt="Dialog overview" />
+<img src="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/OverviewUsage.png" alt="Dialog overview" />
 </p>
 
 #####<a name='construction'></a>Construction
@@ -155,7 +155,7 @@ if (dialog.getResponse() == DialogResponse.YES) {
 
 Result:
 <p align="center">
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/Example1.png" alt="Result Example Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/Example1.png" alt="Result Example Dialog" />
 </p>
 <br />
 For the complete list of constructors, see [Javadoc].
@@ -176,7 +176,7 @@ dialog.showAndWait();
 ```
 
 <p align="center">
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/UndecoratedVsNative.png" alt="Undecorated style Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/UndecoratedVsNative.png" alt="Undecorated style Dialog" />
 </p>
 <br />
 
@@ -187,7 +187,7 @@ dialog.showAndWait();
 For a more simplistic approach, you may remove the header completely and show only the details section of the dialog. To choose a headless approach, simply use the `DialogStyle` option, `HEADLESS` in the constructor.
 
 <p align="center">
-<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/develop/Screenshots/HeadlessVsHead.png" alt="Headless style Dialog" />
+<img src ="https://raw.githubusercontent.com/Daytron/SimpleDialogFX/master/Screenshots/HeadlessVsHead.png" alt="Headless style Dialog" />
 </p>
 <br />
 

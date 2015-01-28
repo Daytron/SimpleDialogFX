@@ -24,7 +24,7 @@
 package com.github.daytron.simpledialogfx.dialog;
 
 /**
- * List of predefined CSS style
+ * List of predefined CSS style.
  *
  * @author Ryan Gilera
  */

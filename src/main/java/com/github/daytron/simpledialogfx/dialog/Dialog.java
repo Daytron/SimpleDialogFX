@@ -52,7 +52,7 @@ import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 /**
- * The controller class for building any derivatives of dialogs
+ * The controller class for building any derivatives of dialogs.
  *
  * @author Ryan Gilera
  */

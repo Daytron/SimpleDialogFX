@@ -24,14 +24,14 @@
 package com.github.daytron.simpledialogfx.data;
 
 /**
- * List of dialog styles
+ * List of dialog styles available.
  *
  * @author Ryan Gilera
  */
 public enum DialogStyle {
 
     /**
-     * Native window style depending on user OS
+     * Native window style depending on user OS (Default style)
      */
     NATIVE,
     /**
